@@ -53,3 +53,4 @@ platforms
 hooks
 src/js/vendor/
 node_modules
+www/*
