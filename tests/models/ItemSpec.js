@@ -1,27 +1,13 @@
 /*global define*/
 
 define([
-    'underscore',
-    'backbone'
-], function (_, Backbone) {
+    'models/Item'
+], function (ItemModel) {
     'use strict';
 
-    var ItemModel = Backbone.Model.extend({
-        url: '',
+    describe('ItemModel',function(){
+        it('is something',function(){
 
-        initialize: function() {
-        },
-
-        defaults: {
-        },
-
-        validate: function(attrs, options) {
-        },
-
-        parse: function(response, options)  {
-            return response;
-        }
-    });
-
-    return ItemModel;
+        });
+    })
 });

@@ -4,12 +4,14 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'text!templates/archive'
-], function ($, _, Backbone, templates) {
+    'handlebars',
+    'collections/Archive',
+    'text!../templates/archive.hbs'
+], function ($, _, Backbone, Handlebars, Archive, archiveTemplate) {
     'use strict';
 
     var ArchiveView = Backbone.View.extend({
-        template: JST['app/scripts/templates/GameListView.ejs'],
+        template: Handlebars.compile(archiveTemplate),
 
         tagName: 'div',
 

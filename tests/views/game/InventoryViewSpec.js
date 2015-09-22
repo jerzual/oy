@@ -1,17 +1,8 @@
-/**
- * Display player information (hearts, gold, items) over the game screen.
- */
+/*global define*/
 
 define([
-    'underscore',
-    'backbone',
-    'models/Item',
-    'collections/Inventory'
-], function (_, Backbone, ItemModel, Inventory) {
-   var InventoryView = Backbone.View.extend(
-       {
-           collection:Inventory
-       }
-   );
-    return InventoryView;
+    'views/game/InventoryView'
+], function (InventoryView) {
+    'use strict';
+
 });

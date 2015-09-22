@@ -13,6 +13,10 @@ define([
         },
 
         defaults: {
+            'name':'item name',
+            //infinite durability
+            'durability':-1,
+
         },
 
         validate: function(attrs, options) {

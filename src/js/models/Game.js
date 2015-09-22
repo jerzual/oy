@@ -4,7 +4,7 @@ define([
     'underscore',
     'backbone',
     'rng',
-    '../SeedGenerator'
+    '../generator/SeedGenerator'
 ], function (_, Backbone, RNG, SeedGenerator) {
     'use strict';
 
@@ -17,7 +17,9 @@ define([
         },
 
         defaults: {
-            seed : SeedGenerator.randomString(),
+            seed : SeedGenerator.randomSeed(),
+            lastPlayDate:new Date(),
+            lastPlayDuration:0,
             width:32,
             height:32
         },

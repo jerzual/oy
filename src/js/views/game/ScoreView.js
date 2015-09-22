@@ -1,5 +1,5 @@
 /**
- * Displays the Map, collision and general ingormations
+ * Displays the final score of a Game.
  */
 
 define([

@@ -4,6 +4,7 @@
   "description": "a rogue platformer",
   "main": "gulpfile.js",
   "scripts": {
+    "postinstall": "gulp build",
     "test": "gulp test"
   },
   "keywords": [
@@ -11,9 +12,17 @@
     "rogue-like",
     "pixi"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jerzual/oy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jerzual/oy/issues"
+  },
   "author": "jibhaine",
   "license": "ISC",
   "devDependencies": {
+    "chai": "^3.3.0",
     "cordova-lib": "^5.0.0",
     "del": "^2.0.2",
     "gulp": "^3.8.11",
@@ -30,14 +39,16 @@
     "gulp-uglify": "^1.2.0",
     "karma": "^0.12.31",
     "karma-browserify": "^4.3.0",
+    "karma-chai": "^0.1.0",
     "karma-coverage": "^0.3.1",
     "karma-firefox-launcher": "^0.1.4",
     "karma-junit-reporter": "^0.2.2",
     "karma-mocha": "^0.1.10",
+    "karma-mocha-reporter": "^1.1.1",
     "karma-phantomjs-launcher": "^0.1.4",
     "karma-requirejs": "^0.2.2",
     "karma-safari-launcher": "^0.1.1",
-    "karma-sinon-chai": "^0.3.0",
+    "karma-sinon-chai": "^1.1.0",
     "main-bower-files": "^2.7.0",
     "mocha": "^2.2.4",
     "requirejs": "^2.1.17"

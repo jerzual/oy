@@ -6,9 +6,9 @@ define([
     'models/Tile',
     'models/Item',
     'collections/Room',
-    'collections/Level',
-    'data/rooms.json'
-], function (_, RNG, TileModel, ItemModel, Room, Level, rooms) {
+    'collections/Level'/*,
+    'text!data/rooms.json'*/
+], function (_, RNG, TileModel, ItemModel, Room, Level/*, rooms*/) {
     'use strict';
 
     var DungeonGenerator = _.extend({

@@ -1,19 +1,18 @@
-define(['app', 'jquery', 'underscore'], function(App, $, _) {
+/*global define*/
+define(
+    ['generator/DungeonBuilder'],
+    function (DungeonBuilder) {
+    'use strict';
+    describe('DungeonBuilder', function () {
 
-    describe('just checking', function() {
+        var dungeonBuilder = DungeonBuilder;
 
-        it('works for app', function() {
-            var el = $('<div></div>');
-
-            var app = new App(el);
-            app.render();
-
-            expect(el.text()).toEqual('require.js up and running');
+        it('can be instanciated', function () {
+            expect(dungeonBuilder).to.be.a('Object');
         });
 
-        it('works for underscore', function() {
-            // just checking that _ works
-            expect(_.size([1,2,3])).toEqual(3);
+        it('has a generateEmptyLevel method', function () {
+            expect(dungeonBuilder).to.have.property('generateEmptyLevel');
         });
 
     });

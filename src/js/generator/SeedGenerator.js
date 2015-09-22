@@ -1,29 +1,40 @@
 /*global define*/
 
 define([
-    'rng',
-    'models/Tile'
-    ],function(RNG,Tile){
+    'rng'
+], function (RNG) {
     var CHARSET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     var MAX_CHARS = 8;
-return {
-    randomString: function () {
-        var randomString = '';
-        for (var i = 0; i < MAX_CHARS; i++) {
-            var randomPoz = Math.floor(Math.random() * CHARSET.length);
-            randomString += CHARSET.substring(randomPoz, randomPoz + 1);
+    return {
+        /**
+         * Constructs an 8 character string, made of random alphanumeric characters ([A-Z][0-9]
+         * @returns {string} an 8 char alphanumeric string.
+         */
+        randomSeed: function () {
+            var randomSeed = '';
+            for (var i = 0; i < MAX_CHARS; i++) {
+                var randomPoz = Math.floor(Math.random() * CHARSET.length);
+                randomSeed += CHARSET.substring(randomPoz, randomPoz + 1);
+            }
+            return randomSeed;
+        },
+        /**
+         * Generates a seed from the current date.
+         * Always the same on a given day.
+         *
+         * @param date optional Date object.
+         * @returns {string} an 8 char alphanumeric string.
+         */
+        dailyChallengeSeed: function (date) {
+            var day = date ? date : new Date();
+            //takes the 10 first char of an iso date : 2015-09-22T09:19:23.111Z becomes 2015-09-22
+            var dailySeed = '';
+            var rng = new RNG(day.toISOString().substr(0, 10));
+            for (var i = 0; i < MAX_CHARS; i++) {
+                var randomPoz = Math.floor(rng.random() * CHARSET.length);
+                dailySeed += CHARSET.substring(randomPoz, randomPoz + 1);
+            }
+            return dailySeed;
         }
-        return randomString;
-    },
-    randomDailyChallenge: function(date){
-        var randomString = '';
-        var day = date ? date : new Date();
-        var rng = new RNG(''+day.year + day.month + day.day)
-        for (var i = 0; i < MAX_CHARS; i++) {
-            var randomPoz = Math.floor(rng.random() * CHARSET.length);
-            randomString += CHARSET.substring(randomPoz, randomPoz + 1);
-        }
-
-    }
-};
+    };
 });

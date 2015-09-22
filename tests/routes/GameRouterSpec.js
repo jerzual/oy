@@ -1,29 +1,25 @@
 /*global define*/
 
 define([
-    'jquery',
-    'backbone'
-], function ($, Backbone) {
+    'routes/GameRouter'
+], function (GameRouter) {
     'use strict';
 
-    var GameRouter = Backbone.Router.extend({
-        routes: {
-            "":"menu",
-            "game":"game",
-            "seed":"enterSeed",
-            "games":"savedGames",
-            "options":"options",
-            "credits":"credits",
-            "quit":"quit"
-        },
-        index:function(){},
-        game:function(){},
-        enterSeed:function(){},
-        savedGames:function(){},
-        options:function(){},
-        credits:function(){}
+    describe('GameRouter',function(){
+        it('redirects to menu on empty hash',function(){
 
-    });
+        });
+        it('redirects to menu on #menu',function(){
 
-    return GameRouter;
+        });
+        it('redirects to options on #options',function(){
+
+        });
+        it('redirects to credits on #credits',function(){
+
+        });
+        it('quit/close the app on #quit',function(){
+
+        });
+    })
 });

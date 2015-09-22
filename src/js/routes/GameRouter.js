@@ -16,12 +16,24 @@ define([
             "credits":"credits",
             "quit":"quit"
         },
-        index:function(){},
-        game:function(){},
-        enterSeed:function(){},
-        savedGames:function(){},
-        options:function(){},
-        credits:function(){}
+        index:function(){
+
+        },
+        game:function(){
+
+        },
+        enterSeed:function(){
+
+        },
+        savedGames:function(){
+
+        },
+        options:function(){
+
+        },
+        credits:function(){
+
+        }
 
     });
 
