@@ -4,7 +4,7 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'text!templates/menu'
+    'text!templates/menu.hbs'
 ], function ($, _, Backbone, menuTemplate) {
     'use strict';
 

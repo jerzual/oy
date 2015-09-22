@@ -3,8 +3,9 @@
 define([
     'underscore',
     'backbone',
-    'rng'
-], function (_, Backbone, RNG) {
+    'rng',
+    '../SeedGenerator'
+], function (_, Backbone, RNG, SeedGenerator) {
     'use strict';
 
     var GameModel = Backbone.Model.extend({
@@ -16,7 +17,7 @@ define([
         },
 
         defaults: {
-            seed : randomString(),
+            seed : SeedGenerator.randomString(),
             width:32,
             height:32
         },
@@ -27,15 +28,6 @@ define([
 
         parse: function (response, options) {
             return response;
-        },
-        randomString: function () {
-            var charSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
-                randomString = '';
-            for (var i = 0; i < 8; i++) {
-                var randomPoz = Math.floor(Math.random() * charSet.length);
-                randomString += charSet.substring(randomPoz, randomPoz + 1);
-            }
-            return randomString;
         }
     });
 

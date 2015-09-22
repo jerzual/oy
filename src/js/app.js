@@ -16,12 +16,12 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-define(['Backbone','underscore'], function (Backbone, _) {
-    var App = {
+define(['backbone','underscore','views/MenuView'], function (Backbone, _) {
+    var App = function(){return {
         // Application Constructor
         initialize: function () {
             this.bindEvents();
-            //this.views = new MenuView();
+            this.views = new MenuView();
             Backbone.history.start();
             return this;
         },
@@ -37,7 +37,7 @@ define(['Backbone','underscore'], function (Backbone, _) {
         // The scope of 'this' is the event. In order to call the 'receivedEvent'
         // function, we must explicitly call 'app.receivedEvent(...);'
         onDeviceReady: function () {
-            App.receivedEvent('deviceready');
+            this.receivedEvent('deviceready');
         },
         // Update DOM on a Received Event
         receivedEvent: function (id) {
@@ -50,7 +50,7 @@ define(['Backbone','underscore'], function (Backbone, _) {
 
             console.log('Received Event: ' + id);
         }
-    };
+    }};
 
     return App;
 });
