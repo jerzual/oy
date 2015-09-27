@@ -53,19 +53,11 @@ gulp.task('images', function (done) {
 });
 
 //uglify js
-gulp.task('uglify', function (done) {
+gulp.task('copy-js', function (done) {
     //copy source to www
-    gulp.src(paths.src + '/js/**/*')
+    return gulp.src(paths.src + '/js/**/*')
         .pipe(size('js'))
-        .pipe(gulp.dest(paths.build + '/js'));
-    //minify it
-    return gulp.src(paths.src + '/js/**/*.js')
-        .pipe(sourcemaps.init())
-        .pipe(uglify())
-        .pipe(rename({'extname':'.min.js'}))
-        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(paths.build + '/js'))
-        .pipe(size())
         .pipe(connect.reload());
 });
 //runs requirejs optimizer
@@ -84,7 +76,9 @@ gulp.task('rjs', function (done) {
             jquery: 'vendor/zepto',
             underscore: 'vendor/lodash',
             backbone: 'vendor/backbone',
+            'backbone-localStorage': 'vendor/backbone.localStorage',
             ratchet: 'vendor/ratchet',
+            handlebars: 'vendor/handlebars',
             pixi: 'vendor/pixi',
             rng: 'vendor/rng',
             text:'vendor/text'
@@ -103,6 +97,10 @@ gulp.task('rjs', function (done) {
             backbone: {
                 exports: 'Backbone',
                 deps: ['jquery', 'underscore']
+            },
+            'backbone-localStorage': {
+                exports: 'Backbone',
+                deps:'Backbone'
             }
         },
         // for source maps
@@ -148,10 +146,12 @@ gulp.task('test', function (done) {
 });
 
 
-gulp.task('build', ['less', 'uglify', 'html']);
+gulp.task('build', ['less', 'copy-js', 'html']);
+
+gulp.task('build:prod', ['less', 'copy-js','rjs', 'html']);
 
 gulp.task('watch',['connect'], function () {
-    gulp.watch([__dirname + '/src/js/**/*.js'], ['rjs','uglify']);
+    gulp.watch([__dirname + '/src/js/**/*.js'], ['copy-js']);
     gulp.watch([__dirname + '/src/**/*.html'], ['html']);
     gulp.watch([__dirname + '/src/less/*.less'], ['less']);
 });
