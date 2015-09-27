@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "postinstall": "gulp build",
-    "test": "gulp test"
+    "test": "./node_modules/.bin/karma start --single-run --browsers Firefox"
   },
   "keywords": [
     "platformer",
