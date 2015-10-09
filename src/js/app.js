@@ -16,12 +16,12 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-define(['backbone','underscore','views/MenuView'], function (Backbone, _) {
+define(['backbone','underscore','routes/GameRouter'], function (Backbone, _, GameRouter) {
     var App = function(){return {
         // Application Constructor
         initialize: function () {
             this.bindEvents();
-            this.views = new MenuView();
+            this.router = new GameRouter();
             Backbone.history.start();
             return this;
         },
