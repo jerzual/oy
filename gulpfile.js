@@ -53,7 +53,7 @@ gulp.task('images', function (done) {
 });
 
 //uglify js
-gulp.task('copy-js', function (done) {
+gulp.task('copy-js',['bower-files'], function (done) {
     //copy source to www
     return gulp.src(paths.src + '/js/**/*')
         .pipe(size('js'))
@@ -141,7 +141,7 @@ gulp.task('clean', function (done) {
     del.sync([paths.build +'/**', '!'+paths.build]);
 });
 
-gulp.task('test', function (done) {
+gulp.task('test',['build'], function (done) {
 
 });
 
