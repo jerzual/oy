@@ -1,8 +1,9 @@
-var Seed = function(seed) {
+class Seed {
+  constructor(seed) {
     this.seedString = seed || this.randomString();
     //this.creationDate = moment().now();
-};
-Seed.prototype.randomString = function() {
+}
+static randomString() {
     var charSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     var randomString = '';
     for (var i = 0; i < 8; i++) {
@@ -10,7 +11,10 @@ Seed.prototype.randomString = function() {
         randomString += charSet.substring(randomPoz, randomPoz + 1);
     }
     return randomString;
-};
+  }
+}
+
 var s = new Seed(Seed.randomString());
 alert(s.seedString);
+
 export default Seed;

@@ -4,10 +4,10 @@ class Entity{
     this.body = {};
     //PIXI.js sprite
     this.sprite = {};
-    this.
+    this.textureName = 'default';
   }
   update(){
-
+    //TODO connect 
   }
 }
 
