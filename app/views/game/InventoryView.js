@@ -6,8 +6,9 @@ define([
     'underscore',
     'backbone',
     'models/Item',
-    'collections/Inventory'
-], function (_, Backbone, ItemModel, Inventory) {
+    'collections/Inventory',
+    'text!../../templates/inventory.hbs'
+], function (_, Backbone, Item, Inventory) {
    var InventoryView = Backbone.View.extend(
        {
            collection:Inventory

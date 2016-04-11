@@ -1,6 +1,6 @@
 /*global define*/
 
-define([
+define('collections/Archive',[
     'underscore',
     'backbone',
     'models/Game'

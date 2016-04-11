@@ -4,12 +4,13 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'text!templates/options'
-], function ($, _, Backbone, template) {
+    'handlebars',
+    'text!../templates/options.hbs'
+], function ($, _, Backbone, Handlebars, optionsTemplate) {
     'use strict';
 
     var OptionsView = Backbone.View.extend({
-        template: JST['app/scripts/templates/OptionsView.ejs'],
+        template: Handlebars.compile(optionsTemplate),
 
         tagName: 'div',
 

@@ -5,57 +5,114 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     minifyCSS = require('gulp-minify-css'),
     del = require('del'),
-    rjs = require('gulp-r'),
+    rjs = require('requirejs'),
     size = require('gulp-size'),
     rename = require('gulp-rename'),
     connect = require('gulp-connect'),
+    bower = require('gulp-bower'),
     karma = require('karma'),
     mainBowerFiles = require('main-bower-files');
 
 var paths = {
     src: './src',
     build: './www'
-}
-
+};
+//runs a bower install
 gulp.task('bower', function (done) {
-    gulp.src(mainBowerFiles())
-        .pipe(gulp.dest(paths.src + '/js/vendor'))
-    .pipe(gulp.dest(paths.build + '/js/vendor'));
+    return bower();
 });
+
+//copy bower dependencies to ./src/js/vendor/
+gulp.task('bower-files',['bower'], function (done) {
+    gulp.src(mainBowerFiles())
+        .pipe(gulp.dest(paths.src + '/js/vendor'));
+});
+
+//js linting
 gulp.task('jshint', function (done) {
     return gulp.src(paths.src + '/js/*.js')
         .pipe(jshint())
         .pipe(gulp.dest(paths.build + '/js/'));
 
 });
+
+//copy html files to destination directory
 gulp.task('html', function (done) {
-    return gulp.src(paths.src + '/*.html')
+    return gulp.src([paths.src + '/**/*.html',paths.src + '/**/*.mustache'])
         .pipe(gulp.dest(paths.build))
         .pipe(connect.reload());
 
 });
+
+//copy image files to destination directory
 gulp.task('images', function (done) {
     return gulp.src(paths.src + '/img/**/*')
-        .pipe(gulp.dest(paths.build + '/img'));
+        .pipe(gulp.dest(paths.build + '/img'))
+        .pipe(connect.reload());
 
 });
-gulp.task('uglify', function (done) {
-    return gulp.src(paths.src + '/js/**/*.js')
-        .pipe(size())
-        .pipe(sourcemaps.init())
-        .pipe(uglify())
-        .pipe(rename({"extname":".min.js"}))
-        .pipe(sourcemaps.write())
+
+//uglify js
+gulp.task('copy-js',['bower-files'], function (done) {
+    //copy source to www
+    return gulp.src(paths.src + '/js/**/*')
+        .pipe(size('js'))
         .pipe(gulp.dest(paths.build + '/js'))
-        .pipe(size())
         .pipe(connect.reload());
 });
-
+//runs requirejs optimizer
 gulp.task('rjs', function (done) {
-    return gulp.src(paths.src + '/*.html')
-        .pipe(gulp.dest(paths.build));
+    rjs.optimize({
+        'baseUrl': paths.src +'/js',
+        'generateSourceMaps': true,
+        'include': [
+            'vendor/require',
+            'main'
+    ],
+    'optimize': 'uglify2',
+        'out': './www/js/oy.js',
+
+        paths: {
+            jquery: 'vendor/zepto',
+            underscore: 'vendor/lodash',
+            backbone: 'vendor/backbone',
+            'backbone-localStorage': 'vendor/backbone.localStorage',
+            ratchet: 'vendor/ratchet',
+            handlebars: 'vendor/handlebars',
+            pixi: 'vendor/pixi',
+            rng: 'vendor/rng',
+            text:'vendor/text'
+        },
+        shim: {
+            // Libraries
+            jquery: {
+                exports: '$'
+            },
+            underscore: {
+                exports: '_'
+            },
+            rng: {
+                exports: 'RNG'
+            },
+            backbone: {
+                exports: 'Backbone',
+                deps: ['jquery', 'underscore']
+            },
+            'backbone-localStorage': {
+                exports: 'Backbone',
+                deps:'Backbone'
+            }
+        },
+        // for source maps
+        'preserveLicenseComments': false,
+        'wrapShim': false
+}, function () {
+    done();
+}, done);
 
 });
+
+//compile less files to css
 gulp.task('less', function (done) {
     return gulp.src(paths.src + '/less/*.less')
         .pipe(sourcemaps.init())
@@ -67,6 +124,7 @@ gulp.task('less', function (done) {
 
 });
 
+//runs a web server on www directory
 gulp.task('connect', function () {
     connect.server({
         root: 'www',
@@ -74,19 +132,26 @@ gulp.task('connect', function () {
     });
 });
 
+gulp.task('cordova:init', function() {
+    gulp.src('./package.json')
+        .pipe(cordova())
+});
+
 gulp.task('clean', function (done) {
+    del.sync([paths.build +'/**', '!'+paths.build]);
+});
+
+gulp.task('test',['build'], function (done) {
 
 });
 
-gulp.task('test', function (done) {
 
-});
+gulp.task('build', ['less', 'copy-js', 'html']);
 
-
-gulp.task('build', ['less', 'uglify', 'html']);
+gulp.task('build:prod', ['less', 'copy-js','rjs', 'html']);
 
 gulp.task('watch',['connect'], function () {
-    gulp.watch([__dirname + '/src/js/**/*.js'], ['uglify']);
+    gulp.watch([__dirname + '/src/js/**/*.js'], ['copy-js']);
     gulp.watch([__dirname + '/src/**/*.html'], ['html']);
     gulp.watch([__dirname + '/src/less/*.less'], ['less']);
 });

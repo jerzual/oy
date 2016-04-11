@@ -3,13 +3,17 @@
 // Require.js allows us to configure shortcut alias
 // There usage will become more apparent further along in the tutorial.
 require.config({
+    baseUrl: '/js/',
     paths: {
         jquery: 'vendor/zepto',
         underscore: 'vendor/lodash',
         backbone: 'vendor/backbone',
+        localStorage: 'vendor/backbone.localStorage',
+        handlebars: 'vendor/handlebars',
         ratchet: 'vendor/ratchet',
         pixi: 'vendor/pixi',
-        rng: 'vendor/rng'
+        rng: 'vendor/rng',
+        text: 'vendor/text'
     },
     shim: {
         // Libraries
@@ -26,6 +30,13 @@ require.config({
             exports: 'Backbone',
             deps: ['jquery', 'underscore']
         },
+        'backbone-localStorage': {
+            exports : 'Backbone',
+            deps: 'Backbone'
+        },
+        handlebars: {
+            exports: 'Handlebars'
+        },
 
         /*
          * Our app requires Backbone
@@ -41,7 +52,7 @@ require.config({
 require([
 
     // Load our app module and pass it to our definition function
-    'app',
+    'App',
     'jquery',
     'pixi',
     'rng'

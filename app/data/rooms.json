@@ -1,4 +1,4 @@
-{
+[{
   "legend": {
     " ": "empty space",
     "W": "non movable wall",
@@ -63,4 +63,4 @@
       }
     ]
   }
-}
+}]

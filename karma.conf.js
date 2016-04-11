@@ -5,17 +5,17 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: './',
 
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'requirejs'],
+    frameworks: ['requirejs','mocha','chai'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      'test-main.js',
+      'tests/test-main.js',
       {pattern: 'src/js/**/', included: false},
       {pattern: 'tests/**/*Spec.js', included: false},
       {pattern: 'src/js/**/*.js', included: false}
@@ -24,7 +24,7 @@ module.exports = function(config) {
 
     // list of files to exclude
     exclude: [
-      'src/js/vendor/**/*.js'
+      'src/js/main.js'
     ],
 
 
@@ -37,7 +37,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress','mocha'],
 
 
     // web server port
@@ -58,12 +58,12 @@ module.exports = function(config) {
 
 
     // start these browsers
-    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS', 'Firefox'],
+      // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+    browsers: ['PhantomJS', 'Firefox','Safari','Chrome'],
 
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false
+    singleRun: true
   });
 };

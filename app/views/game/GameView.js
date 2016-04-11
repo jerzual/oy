@@ -1,17 +1,17 @@
 /**
- * Displays the Map, collision and general ingormations
+ * Displays the Game canvas.
  */
 
 define([
     'underscore',
     'backbone',
-    'models/Item',
-    'collections/Inventory'
-], function (_, Backbone, ItemModel, Inventory) {
-    var InventoryView = Backbone.View.extend(
+    'models/Game',
+    'text!../../templates/game.hbs'
+], function (_, Backbone, Game) {
+    var GameView = Backbone.View.extend(
         {
-            collection:Inventory
+            model:Game
         }
     );
-    return InventoryView;
+    return GameView;
 });

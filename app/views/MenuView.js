@@ -4,12 +4,13 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'text!templates/menu'
-], function ($, _, Backbone, menuTemplate) {
+    'handlebars',
+    'text!../templates/menu.hbs'
+], function ($, _, Backbone,Handlebars, menuTemplate) {
     'use strict';
 
     var MenuView = Backbone.View.extend({
-        template: menuTemplate,
+        template: Handlebars.compile(menuTemplate),
 
         tagName: 'div',
 
