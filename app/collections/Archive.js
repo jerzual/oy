@@ -1,15 +1,9 @@
-/*global define*/
+import _ from 'underscore';import Backbone from 'backbone';
+import Seed from 'models/Seed';
 
-define('collections/Archive',[
-    'underscore',
-    'backbone',
-    'models/Game'
-], function (_, Backbone, GameModel) {
-    'use strict';
 
-    var Archive = Backbone.Collection.extend({
-        model: GameModel
-    });
-
-    return Archive;
+var Archive = Backbone.Collection.extend({
+    model: Seed
 });
+
+export default Archive;

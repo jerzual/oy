@@ -1,41 +1,38 @@
 /*global define*/
 
-define([
-    'jquery',
-    'backbone'
-], function ($, Backbone) {
-    'use strict';
+import $ from 'jquery';
+import Backbone from 'backbone';
 
-    var GameRouter = Backbone.Router.extend({
-        routes: {
-            "":"menu",
-            "game":"game",
-            "seed":"enterSeed",
-            "games":"savedGames",
-            "options":"options",
-            "credits":"credits",
-            "quit":"quit"
-        },
-        index:function(){
 
-        },
-        game:function(){
+var GameRouter = Backbone.Router.extend({
+    routes: {
+        "": "menu",
+        "game": "game",
+        "seed": "enterSeed",
+        "games": "savedGames",
+        "options": "options",
+        "credits": "credits",
+        "quit": "quit"
+    },
+    index: function() {
 
-        },
-        enterSeed:function(){
+    },
+    game: function() {
 
-        },
-        savedGames:function(){
+    },
+    enterSeed: function() {
 
-        },
-        options:function(){
+    },
+    savedGames: function() {
 
-        },
-        credits:function(){
+    },
+    options: function() {
 
-        }
+    },
+    credits: function() {
 
-    });
+    }
 
-    return GameRouter;
 });
+
+export default GameRouter;

@@ -1,39 +1,36 @@
 /*global define*/
 
-define([
-    'jquery',
-    'underscore',
-    'backbone',
-    'handlebars',
-    'text!../templates/menu.hbs'
-], function ($, _, Backbone,Handlebars, menuTemplate) {
-    'use strict';
+import $ from 'jquery';
+import _ from 'underscore';
+import Backbone from 'backbone';
+import Handlebars from 'handlebars';
+import menuTemplate from 'text!../templates/menu.hbs';
 
-    var MenuView = Backbone.View.extend({
-        template: Handlebars.compile(menuTemplate),
 
-        tagName: 'div',
+var MenuView = Backbone.View.extend({
+    template: Handlebars.compile(menuTemplate),
 
-        id: '',
+    tagName: 'div',
 
-        className: '',
+    id: '',
 
-        events: {
-            "click .menu-quit": "quit",
-            "click .menu-new": "newGame",
-            "click .menu-seed": "enterSeed",
-            "click .menu-archive": "archive",
-            "click .menu-options": "options"
-        },
+    className: '',
 
-        initialize: function () {
-            this.listenTo(this.model, 'change', this.render);
-        },
+    events: {
+        "click .menu-quit": "quit",
+        "click .menu-new": "newGame",
+        "click .menu-seed": "enterSeed",
+        "click .menu-archive": "archive",
+        "click .menu-options": "options"
+    },
 
-        render: function () {
-            this.$el.html(this.template(this.model.toJSON()));
-        }
-    });
+    initialize: function() {
+        this.listenTo(this.model, 'change', this.render);
+    },
 
-    return MenuView;
+    render: function() {
+        this.$el.html(this.template(this.model.toJSON()));
+    }
 });
+
+export default MenuView;

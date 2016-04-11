@@ -1,37 +1,34 @@
 /*global define*/
 
-define([
-    'underscore',
-    'backbone',
-    'rng',
-    '../generator/SeedGenerator'
-], function (_, Backbone, RNG, SeedGenerator) {
-    'use strict';
+import _ from 'underscore';
+import Backbone from 'backbone';
+import RNG from 'rng';
+import SeedGenerator from '../generator/SeedGenerator';
 
-    var GameModel = Backbone.Model.extend({
-        seed: '',
 
-        initialize: function () {
-            this.rng = new RNG(this.get('seed'));
-            console.log(rng.seed);
-        },
+var GameModel = Backbone.Model.extend({
+    seed: '',
 
-        defaults: {
-            seed : SeedGenerator.randomSeed(),
-            lastPlayDate:new Date(),
-            lastPlayDuration:0,
-            width:32,
-            height:32
-        },
+    initialize: function() {
+        this.rng = new RNG(this.get('seed'));
+        console.log(rng.seed);
+    },
 
-        validate: function (attrs, options) {
-            console.log(attrs);
-        },
+    defaults: {
+        seed: SeedGenerator.randomSeed(),
+        lastPlayDate: new Date(),
+        lastPlayDuration: 0,
+        width: 32,
+        height: 32
+    },
 
-        parse: function (response, options) {
-            return response;
-        }
-    });
+    validate: function(attrs, options) {
+        console.log(attrs);
+    },
 
-    return GameModel;
+    parse: function(response, options) {
+        return response;
+    }
 });
+
+export default GameModel;

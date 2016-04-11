@@ -2,16 +2,11 @@
  * Displays the Game canvas.
  */
 
-define([
-    'underscore',
-    'backbone',
-    'models/Game',
-    'text!../../templates/game.hbs'
-], function (_, Backbone, Game) {
-    var GameView = Backbone.View.extend(
-        {
-            model:Game
-        }
-    );
-    return GameView;
+import _ from 'underscore';
+import Backbone from 'backbone';
+import Game from 'models/Game';
+import 'text!../../templates/game.hbs';
+var GameView = Backbone.View.extend({
+    model: Game
 });
+export default GameView;

@@ -1,29 +1,24 @@
 /*global define*/
 
-define([
-    'underscore',
-    'rng',
-    'models/Tile',
-    'models/Item',
-    'collections/Room',
-    'collections/Level'/*,
-    'text!data/rooms.json'*/
-], function (_, RNG, TileModel, ItemModel, Room, Level/*, rooms*/) {
-    'use strict';
+import _ from 'underscore';
+import RNG from 'rng';
+import TileModel from 'models/Tile';
+import ItemModel from 'models/Item';
+import Room from 'collections/Room';
+import Level from 'collections/Level';
 
-    var DungeonGenerator = _.extend({
-        generateEmptyLevel: function (width, height) {
-        },
-        placeRoomsInLevel: function (level, nbRooms, options) {
 
-        },
-        digMaze: function () {
+class DungeonGenerator{
+    generateEmptyLevel(width, height) {}
+    placeRoomsInLevel(level, nbRooms, options) {
 
-        },
-        floodFill: function () {
+    }
+    digMaze() {
 
-        }
-    });
+    }
+    floodFill() {
 
-    return DungeonGenerator;
-});
+    }
+};
+
+export default DungeonGenerator;

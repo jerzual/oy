@@ -1,31 +1,26 @@
 /*global define*/
 
-define([
-    'underscore',
-    'backbone'
-], function (_, Backbone) {
-    'use strict';
+import _ from 'underscore';
+import Backbone from 'backbone';
 
-    var ItemModel = Backbone.Model.extend({
-        url: '',
 
-        initialize: function() {
-        },
+var ItemModel = Backbone.Model.extend({
+    url: '',
 
-        defaults: {
-            'name':'item name',
-            //infinite durability
-            'durability':-1,
+    initialize: function() {},
 
-        },
+    defaults: {
+        'name': 'item name',
+        //infinite durability
+        'durability': -1,
 
-        validate: function(attrs, options) {
-        },
+    },
 
-        parse: function(response, options)  {
-            return response;
-        }
-    });
+    validate: function(attrs, options) {},
 
-    return ItemModel;
+    parse: function(response, options) {
+        return response;
+    }
 });
+
+export default ItemModel;

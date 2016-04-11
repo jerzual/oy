@@ -1,15 +1,12 @@
 /*global define*/
 
-define([
-    'underscore',
-    'backbone',
-    'models/Item'
-], function (_, Backbone, ItemModel) {
-    'use strict';
+import _ from 'underscore';
+import Backbone from 'backbone';
+import ItemModel from 'models/Item';
 
-    var Inventory = Backbone.Collection.extend({
-        model: ItemModel
-    });
 
-    return Inventory;
+var Inventory = Backbone.Collection.extend({
+    model: ItemModel
 });
+
+export default Inventory;

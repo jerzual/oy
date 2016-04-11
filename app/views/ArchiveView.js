@@ -1,34 +1,31 @@
 /*global define*/
 
-define([
-    'jquery',
-    'underscore',
-    'backbone',
-    'handlebars',
-    'collections/Archive',
-    'text!../templates/archive.hbs'
-], function ($, _, Backbone, Handlebars, Archive, archiveTemplate) {
-    'use strict';
+import $ from 'jquery';
+import _ from 'underscore';
+import Backbone from 'backbone';
+import Handlebars from 'handlebars';
+import Archive from 'collections/Archive';
+import archiveTemplate from 'text!../templates/archive.hbs';
 
-    var ArchiveView = Backbone.View.extend({
-        template: Handlebars.compile(archiveTemplate),
 
-        tagName: 'div',
+var ArchiveView = Backbone.View.extend({
+    template: Handlebars.compile(archiveTemplate),
 
-        id: '',
+    tagName: 'div',
 
-        className: '',
+    id: '',
 
-        events: {},
+    className: '',
 
-        initialize: function () {
-            this.listenTo(this.model, 'change', this.render);
-        },
+    events: {},
 
-        render: function () {
-            this.$el.html(this.template(this.model.toJSON()));
-        }
-    });
+    initialize: function() {
+        this.listenTo(this.model, 'change', this.render);
+    },
 
-    return ArchiveView;
+    render: function() {
+        this.$el.html(this.template(this.model.toJSON()));
+    }
 });
+
+export default ArchiveView;

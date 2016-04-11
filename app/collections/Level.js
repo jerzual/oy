@@ -1,15 +1,12 @@
 /*global define*/
 
-define([
-    'underscore',
-    'backbone',
-    'models/Tile'
-], function (_, Backbone, TileModel) {
-    'use strict';
+import _ from 'underscore';
+import Backbone from 'backbone';
+import TileModel from 'models/Tile';
 
-    var Level = Backbone.Collection.extend({
-        model: TileModel
-    });
 
-    return Level;
+var Level = Backbone.Collection.extend({
+    model: TileModel
 });
+
+export default Level;

@@ -1,33 +1,30 @@
 /*global define*/
 
-define([
-    'jquery',
-    'underscore',
-    'backbone',
-    'handlebars',
-    'text!../templates/options.hbs'
-], function ($, _, Backbone, Handlebars, optionsTemplate) {
-    'use strict';
+import $ from 'jquery';
+import _ from 'underscore';
+import Backbone from 'backbone';
+import Handlebars from 'handlebars';
+import optionsTemplate from 'text!../templates/options.hbs';
 
-    var OptionsView = Backbone.View.extend({
-        template: Handlebars.compile(optionsTemplate),
 
-        tagName: 'div',
+var OptionsView = Backbone.View.extend({
+    template: Handlebars.compile(optionsTemplate),
 
-        id: '',
+    tagName: 'div',
 
-        className: '',
+    id: '',
 
-        events: {},
+    className: '',
 
-        initialize: function () {
-            this.listenTo(this.model, 'change', this.render);
-        },
+    events: {},
 
-        render: function () {
-            this.$el.html(this.template(this.model.toJSON()));
-        }
-    });
+    initialize: function() {
+        this.listenTo(this.model, 'change', this.render);
+    },
 
-    return OptionsView;
+    render: function() {
+        this.$el.html(this.template(this.model.toJSON()));
+    }
 });
+
+export default OptionsView;
