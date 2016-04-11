@@ -1,8 +1,3 @@
 /*global define*/
 
-define([
-    'views/CreditsView'
-], function (CreditsView) {
-    'use strict';
-
-});
+import CreditsView from 'views/CreditsView';

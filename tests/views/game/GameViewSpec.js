@@ -1,8 +1,3 @@
 /*global define*/
 
-define([
-    'views/game/GameView'
-], function (GameView) {
-    'use strict';
-
-});
+import GameView from 'views/game/GameView';

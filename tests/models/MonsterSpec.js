@@ -1,13 +1,10 @@
 /*global define*/
 
-define([
-    'models/Monster'
-], function (Monster) {
-    'use strict';
+import Monster from 'models/Monster';
 
-    describe('Monster',function(){
-        it('is something',function(){
 
-        });
-    })
-});
+describe('Monster', function() {
+    it('is something', function() {
+
+    });
+})

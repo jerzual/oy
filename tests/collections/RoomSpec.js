@@ -1,10 +1,8 @@
-define(['collections/Archive'], function(Archive) {
-    'use strict';
-    describe('Room (TileCollection)', function() {
+import Archive from 'collections/Archive';
 
-        it('is a Collection', function() {
+describe('Room (TileCollection)', function() {
 
-        });
+    it('is a Collection', function() {
 
     });
 

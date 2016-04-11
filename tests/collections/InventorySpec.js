@@ -1,10 +1,8 @@
-define(['collections/Inventory'], function(Inventory) {
-    'use strict';
-    describe('Inventory (ItemCollection)', function() {
+import Inventory from 'collections/Inventory';
 
-        it('is a Collection', function() {
+describe('Inventory (ItemCollection)', function() {
 
-        });
+    it('is a Collection', function() {
 
     });
 

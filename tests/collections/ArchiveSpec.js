@@ -1,10 +1,8 @@
-define(['collections/Archive'], function(Archive) {
-    'use strict';
-    describe('Archive (GameCollection)', function() {
+import Archive from 'collections/Archive';
 
-        it('is a Collection', function() {
+describe('Archive (GameCollection)', function() {
 
-        });
+    it('is a Collection', function() {
 
     });
 

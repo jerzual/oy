@@ -1,8 +1,3 @@
 /*global define*/
 
-define([
-    'views/MenuView'
-], function (MenuView) {
-    'use strict';
-
-});
+import MenuView from 'views/MenuView';

@@ -1,20 +1,16 @@
 /*global define*/
-define(
-    ['generator/DungeonBuilder'],
-    function (DungeonBuilder) {
-    'use strict';
-    describe('DungeonBuilder', function () {
+import DungeonBuilder from 'generator/DungeonBuilder';
 
-        var dungeonBuilder = DungeonBuilder;
+describe('DungeonBuilder', function() {
 
-        it('can be instanciated', function () {
-            expect(dungeonBuilder).to.be.a('Object');
-        });
+    var dungeonBuilder = DungeonBuilder;
 
-        it('has a generateEmptyLevel method', function () {
-            expect(dungeonBuilder).to.have.property('generateEmptyLevel');
-        });
+    it('can be instanciated', function() {
+        expect(dungeonBuilder).to.be.a('Object');
+    });
 
+    it('has a generateEmptyLevel method', function() {
+        expect(dungeonBuilder).to.have.property('generateEmptyLevel');
     });
 
 });

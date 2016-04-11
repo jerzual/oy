@@ -1,13 +1,10 @@
 /*global define*/
 
-define([
-    'models/Game'
-], function (GameModel) {
-    'use strict';
+import GameModel from 'models/Game';
 
-    describe('GameModel',function(){
-        it('is something',function(){
 
-        });
-    })
-});
+describe('GameModel', function() {
+    it('is something', function() {
+
+    });
+})

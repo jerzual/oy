@@ -1,10 +1,8 @@
-define(['collections/Level'], function(Level) {
-    'use strict';
-    describe('Level (RoomCollection)', function() {
+import Level from 'collections/Level';
 
-        it('is a Collection', function() {
+describe('Level (RoomCollection)', function() {
 
-        });
+    it('is a Collection', function() {
 
     });
 
