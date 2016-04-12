@@ -1,4 +1,4 @@
-import SeedGenerator from 'generator/SeedGenerator';
+import SeedGenerator from '../app/generator/SeedGenerator';
 describe('SeedGenerator', function() {
 
     it('provides a randomSeed method', function() {

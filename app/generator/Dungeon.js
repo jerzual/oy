@@ -1,4 +1,3 @@
-/*global define*/
 
 import _ from 'underscore';
 import RNG from 'rng';

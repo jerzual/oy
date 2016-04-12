@@ -1,4 +1,3 @@
-/*global define*/
 
 import RNG from 'rng';
 var CHARSET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';

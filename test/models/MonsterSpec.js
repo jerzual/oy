@@ -1,6 +1,5 @@
-/*global define*/
 
-import Monster from 'models/Monster';
+import Monster from '../app/models/Monster';
 
 
 describe('Monster', function() {

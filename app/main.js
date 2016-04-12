@@ -1,7 +1,7 @@
-import App from 'App';
+import App from './App';
 import $ from 'jquery';
 import PIXI from 'pixi';
-import RNG from 'rng';
+import RNG from 'rng-js';
 // The "app" dependency is passed in as "App"
 window.app = new App();
 app.initialize();

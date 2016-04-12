@@ -1,6 +1,5 @@
-/*global define*/
 
-import GameModel from 'models/Game';
+import GameModel from '../app/models/Game';
 
 
 describe('GameModel', function() {

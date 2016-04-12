@@ -1,4 +1,4 @@
-import Archive from 'collections/Archive';
+import Archive from '../app/collections/Archive';
 
 describe('Archive (GameCollection)', function() {
 

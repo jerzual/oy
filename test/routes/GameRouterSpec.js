@@ -1,6 +1,5 @@
-/*global define*/
 
-import GameRouter from 'routes/GameRouter';
+import GameRouter from '../app/routes/GameRouter';
 
 
 describe('GameRouter', function() {

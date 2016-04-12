@@ -1,5 +1,4 @@
-/*global define*/
-import DungeonBuilder from 'generator/DungeonBuilder';
+import DungeonBuilder from '../app/generator/DungeonBuilder';
 
 describe('DungeonBuilder', function() {
 

@@ -1,6 +1,5 @@
-/*global define*/
 
-import Tile from 'models/Tile';
+import Tile from '../app/models/Tile';
 
 
 describe('Tile', function() {
