@@ -1,4 +1,4 @@
-import Level from '../app/collections/Level';
+import Level from '../../app/collections/Level';
 
 describe('Level (RoomCollection)', function() {
 

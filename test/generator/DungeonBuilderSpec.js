@@ -1,11 +1,12 @@
-import DungeonBuilder from '../app/generator/DungeonBuilder';
+import DungeonBuilder from '../../app/generator/DungeonBuilder';
+import {expect} from 'chai';
 
 describe('DungeonBuilder', function() {
 
-    var dungeonBuilder = DungeonBuilder;
+    let dungeonBuilder = new DungeonBuilder();
 
     it('can be instanciated', function() {
-        expect(dungeonBuilder).to.be.a('Object');
+        expect(dungeonBuilder).to.be.an('object');
     });
 
     it('has a generateEmptyLevel method', function() {

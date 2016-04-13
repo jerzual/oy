@@ -1,5 +1,5 @@
 
-import Monster from '../app/models/Monster';
+import Monster from '../../app/models/Monster';
 
 
 describe('Monster', function() {

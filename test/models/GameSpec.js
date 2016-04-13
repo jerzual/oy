@@ -1,5 +1,5 @@
 
-import GameModel from '../app/models/Game';
+import GameModel from '../../app/models/Game';
 
 
 describe('GameModel', function() {

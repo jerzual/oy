@@ -1,1 +1,1 @@
-import InventoryView from '../app/views/game/InventoryView';
+import InventoryView from '../../../app/views/game/InventoryView';

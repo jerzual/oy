@@ -1,7 +1,7 @@
 
 import _ from 'underscore';
 import Backbone from 'backbone';
-import TileModel from 'models/Tile';
+import TileModel from '../models/Tile';
 
 
 var Room = Backbone.Collection.extend({

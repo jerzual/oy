@@ -3,12 +3,12 @@
 import $ from 'jquery';
 import _ from 'underscore';
 import Backbone from 'backbone';
-import Handlebars from 'handlebars';
-import optionsTemplate from 'text!../templates/options.hbs';
 
 
 var OptionsView = Backbone.View.extend({
-    template: Handlebars.compile(optionsTemplate),
+    template: function(data){
+        return `${data}`;
+    },
 
     tagName: 'div',
 

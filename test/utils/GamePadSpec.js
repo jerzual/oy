@@ -1,2 +1,2 @@
 
-import GamePad from '../app/utils/GamePad';
+import GamePad from '../../app/utils/GamePad';

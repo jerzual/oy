@@ -1,4 +1,4 @@
-import Inventory from '../app/collections/Inventory';
+import Inventory from '../../app/collections/Inventory';
 
 describe('Inventory (ItemCollection)', function() {
 

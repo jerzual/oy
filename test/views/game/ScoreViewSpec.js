@@ -1,1 +1,1 @@
-import ScoreView from '../app/views/game/ScoreView';
+import ScoreView from '../../../app/views/game/ScoreView';

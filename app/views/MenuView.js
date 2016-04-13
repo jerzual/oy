@@ -1,13 +1,15 @@
-
 import $ from 'jquery';
 import _ from 'underscore';
 import Backbone from 'backbone';
-import Handlebars from 'handlebars';
-import menuTemplate from 'text!../templates/menu.hbs';
 
 
 var MenuView = Backbone.View.extend({
-    template: Handlebars.compile(menuTemplate),
+
+    template: function (data) {
+
+        return `<li>${data.key}</li>`
+
+    },
 
     tagName: 'div',
 
@@ -23,11 +25,11 @@ var MenuView = Backbone.View.extend({
         "click .menu-options": "options"
     },
 
-    initialize: function() {
+    initialize: function () {
         this.listenTo(this.model, 'change', this.render);
     },
 
-    render: function() {
+    render: function () {
         this.$el.html(this.template(this.model.toJSON()));
     }
 });

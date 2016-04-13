@@ -1,1 +1,1 @@
-import GameView from '../app/views/game/GameView';
+import GameView from '../../../app/views/game/GameView';

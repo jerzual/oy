@@ -1,5 +1,5 @@
 
-import ItemModel from '../app/models/Item';
+import ItemModel from '../../app/models/Item';
 
 
 describe('ItemModel', function() {

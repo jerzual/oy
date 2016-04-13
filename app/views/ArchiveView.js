@@ -2,13 +2,13 @@
 import $ from 'jquery';
 import _ from 'underscore';
 import Backbone from 'backbone';
-import Handlebars from 'handlebars';
-import Archive from 'collections/Archive';
-import archiveTemplate from 'text!../templates/archive.hbs';
+import Archive from '../collections/Archive';
 
 
 var ArchiveView = Backbone.View.extend({
-    template: Handlebars.compile(archiveTemplate),
+    template: function(data){
+        return `<li id="${data.key}"></li>`;
+    },
 
     tagName: 'div',
 

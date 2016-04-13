@@ -1,10 +1,10 @@
 
 import _ from 'underscore';
-import RNG from 'rng';
-import TileModel from 'models/Tile';
-import ItemModel from 'models/Item';
-import Room from 'collections/Room';
-import Level from 'collections/Level';
+import RNG from 'rng-js';
+import TileModel from '../models/Tile';
+import ItemModel from '../models/Item';
+import Room from '../collections/Room';
+import Level from '../collections/Level';
 
 
 class DungeonGenerator{

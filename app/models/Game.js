@@ -1,7 +1,7 @@
 
 import _ from 'underscore';
 import Backbone from 'backbone';
-import RNG from 'rng';
+import RNG from 'rng-js';
 import SeedGenerator from '../generator/SeedGenerator';
 
 

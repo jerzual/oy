@@ -4,9 +4,9 @@
 
 import _ from 'underscore';
 import Backbone from 'backbone';
-import Item from 'models/Item';
-import Inventory from 'collections/Inventory';
-import 'text!../../templates/inventory.hbs';
+import Item from '../../models/Item';
+import Inventory from '../../collections/Inventory';
+
 var InventoryView = Backbone.View.extend({
     collection: Inventory
 });

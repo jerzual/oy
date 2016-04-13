@@ -1,6 +1,7 @@
 import Backbone from 'backbone';
+import SeedGenerator from './generator/SeedGenerator';
 
-const App = {
+const App = function(){return{
     // Application Constructor
     initialize: function () {
         this.bindEvents();
@@ -33,6 +34,6 @@ const App = {
 
         console.log('Received Event: ' + id);
     }
-};
+}};
 
 export default App;

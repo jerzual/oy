@@ -1,3 +1,3 @@
 /*global define*/
 
-import CreditsView from 'views/CreditsView';
+import CreditsView from '../../app/views/CreditsView';

@@ -1,1 +1,1 @@
-import OptionsView from '../app/views/OptionsView';
+import OptionsView from '../../app/views/OptionsView';

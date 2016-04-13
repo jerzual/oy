@@ -1,3 +1,3 @@
 /*global define*/
 
-import MenuView from 'views/MenuView';
+import MenuView from '../../app/views/MenuView';

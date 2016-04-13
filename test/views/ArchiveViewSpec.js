@@ -1,1 +1,1 @@
-import ArchiveView from '../app/views/ArchiveView';
+import ArchiveView from '../../app/views/ArchiveView';

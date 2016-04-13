@@ -1,20 +1,18 @@
-class Seed {
-  constructor(seed) {
-    this.seedString = seed || this.randomString();
-    //this.creationDate = moment().now();
-}
-static randomString() {
-    var charSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    var randomString = '';
-    for (var i = 0; i < 8; i++) {
-        var randomPoz = Math.floor(Math.random() * charSet.length);
-        randomString += charSet.substring(randomPoz, randomPoz + 1);
-    }
-    return randomString;
-  }
-}
+import RNG from 'rng-js';
 
-var s = new Seed(Seed.randomString());
-alert(s.seedString);
+/**
+ * Encapsulate rng-js.
+ */
+class Seed {
+
+    constructor(seed) {
+        this.seedString = seed || this.randomString();
+        this.rng = new RNG(seed);
+        //this.creationDate = moment().now();
+    }
+    random(){
+        return this.rng.random();
+    }
+}
 
 export default Seed;

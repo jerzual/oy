@@ -1,4 +1,4 @@
-import Archive from '../app/collections/Archive';
+import Archive from '../../app/collections/Archive';
 
 describe('Room (TileCollection)', function() {
 
