@@ -1,9 +1,13 @@
-import Level from '../../app/collections/Level';
+import LevelStore from '../../app/stores/LevelStore';
+import {expect} from 'chai';
 
-describe('Level (RoomCollection)', function() {
-
+describe('LevelStore', function() {
+  let world;
+  before(function(){
+   world = new LevelStore();
+  })
     it('is a Collection', function() {
-
+      expect(world).to.be.ok;
     });
 
 });

@@ -1,11 +1,20 @@
+import alt from '../Alt';
+import InventoryActions from '../actions/InventoryActions'
 
-import _ from 'underscore';
-import Backbone from 'backbone';
-import ItemModel from '../models/Item';
+class InventoryStore {
+  constructor() {
+    this.bindListeners({
+      addItem: InventoryActions.addItem
+    });
 
+    this.state = {
+      inventory: []
+    };
+  }
 
-var Inventory = Backbone.Collection.extend({
-    model: ItemModel
-});
+  addItem(item) {
+    this.setState({ inventory: this.state.inventory.concat(item) });
+  }
+}
 
-export default Inventory;
+export default alt.createStore(InventoryStore, 'InventoryStore');

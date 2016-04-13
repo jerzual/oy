@@ -1,11 +1,20 @@
+import alt from '../Alt'
+import LevelActions from '../actions/LevelActions'
 
-import _ from 'underscore';
-import Backbone from 'backbone';
-import TileModel from '../models/Tile';
+class LevelStore {
+  constructor() {
+    this.bindListeners({
+      enterLevel: LevelActions.enterLevel
+    });
 
+    this.state = {
+      levels: []
+    };
+  }
 
-var Level = Backbone.Collection.extend({
-    model: TileModel
-});
+  updateTodo(level) {
+    this.setState({ todos: this.state.levels.concat(level) });
+  }
+}
 
-export default Level;
+export default alt.createStore(LevelStore, 'LevelStore');

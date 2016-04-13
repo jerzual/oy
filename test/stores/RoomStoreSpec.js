@@ -1,9 +1,12 @@
-import Archive from '../../app/collections/Archive';
+import RoomStore from '../../app/stores/RoomStore'
+import { expect } from 'chai'
 
-describe('Room (TileCollection)', function() {
-
-    it('is a Collection', function() {
-
-    });
-
-});
+describe('RoomStore', () => {
+  let rooms
+  before(() => {
+    rooms = new RoomStore()
+  })
+  it('is a Collection', () => {
+    expect(rooms).to.be.ok
+  })
+})

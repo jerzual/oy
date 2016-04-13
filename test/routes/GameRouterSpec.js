@@ -1,10 +1,14 @@
 
-import GameRouter from '../../app/routes/GameRouter';
-
+import GameRouter from '../../app/routes/GameRouter'
+import {expect} from 'chai'
 
 describe('GameRouter', function() {
+  let router
+  before(()=>{
+    router = new GameRouter();
+  })
     it('redirects to menu on empty hash', function() {
-
+      expect(router).to.be.ok;
     });
     it('redirects to menu on #menu', function() {
 

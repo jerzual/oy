@@ -1,11 +1,16 @@
-
-import _ from 'underscore';
-import Backbone from 'backbone';
-import TileModel from '../models/Tile';
+import alt from '../Alt'
+import Tile from '../models/Tile'
 
 
-var Room = Backbone.Collection.extend({
-    model: TileModel
-});
+class RoomStore {
+  constructor() {
+    this.bindListeners({
 
-export default Room;
+    })
+  }
+  addTile(){
+    this.tiles.push(new Tile())
+  }
+}
+
+export default alt.createStore(RoomStore, 'RoomStore')
