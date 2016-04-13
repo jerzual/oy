@@ -1,25 +1,16 @@
-
-import _ from 'underscore';
-import Backbone from 'backbone';
-
-
-var ItemModel = Backbone.Model.extend({
-    url: '',
-
-    initialize: function() {},
-
-    defaults: {
+import Entity from './Entity';
+/**
+ * an item is something you can pick up.
+ */
+class Item extends Entity{
+    static defaults: {
         'name': 'item name',
         //infinite durability
-        'durability': -1,
-
-    },
-
-    validate: function(attrs, options) {},
-
-    parse: function(response, options) {
-        return response;
+        'durability': 1
     }
-});
+    initialize() {
 
-export default ItemModel;
+    }
+}
+
+export default Item;

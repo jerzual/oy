@@ -1,3 +1,6 @@
+//import Matter from 'matter-js';
+//import PIXI from 'pixi.js';
+
 class Entity{
   constructor(){
     //mater.js Physics object
@@ -7,7 +10,7 @@ class Entity{
     this.textureName = 'default';
   }
   update(){
-    //TODO connect 
+    //TODO connect
   }
 }
 

@@ -7,7 +7,7 @@ class Seed {
 
     constructor(seed) {
         this.seedString = seed || this.randomString();
-        this.rng = new RNG(seed);
+        this.rng = new RNG(this.seedString);
         //this.creationDate = moment().now();
     }
     random(){

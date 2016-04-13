@@ -1,14 +1,8 @@
 
 class Options{
   constructor(params){
-    this.options = [];
-  }
-  setOption(key,value){
-
-  }
-  getOptions(key){
-
+    this.options = params.data || [];
   }
 }
 
-export default class Options;
+export default Options;

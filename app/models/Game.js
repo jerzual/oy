@@ -1,5 +1,3 @@
-
-import _ from 'underscore';
 import Backbone from 'backbone';
 import RNG from 'rng-js';
 import SeedGenerator from '../generator/SeedGenerator';
@@ -10,7 +8,6 @@ var GameModel = Backbone.Model.extend({
 
     initialize: function() {
         this.rng = new RNG(this.get('seed'));
-        console.log(rng.seed);
     },
 
     defaults: {
@@ -19,14 +16,6 @@ var GameModel = Backbone.Model.extend({
         lastPlayDuration: 0,
         width: 32,
         height: 32
-    },
-
-    validate: function(attrs, options) {
-        console.log(attrs);
-    },
-
-    parse: function(response, options) {
-        return response;
     }
 });
 

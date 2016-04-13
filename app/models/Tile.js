@@ -1,31 +1,21 @@
 
-import _ from 'underscore';
-import Backbone from 'backbone';
+class Tile{
+  constructor(args){
+    this.x = args.x || 0;
+    this.y = args.y || 0;
+  }
+    initialize() {
 
+    }
 
-var TileModel = Backbone.Model.extend({
-    x: 0,
-    y: 0,
-    initialize: function() {
-
-    },
-
-    defaults: {
+    static defaultValues : {
         x: 0,
         y: 0,
         color: 'white',
         isInARoom: false,
         isWalkable: true,
         isDeadly: false
-    },
-
-    validate: function(attrs, options) {
-        console.log(attrs);
-    },
-
-    parse: function(response, options) {
-        return response;
     }
-});
+}
 
-export default TileModel;
+export default Tile;
