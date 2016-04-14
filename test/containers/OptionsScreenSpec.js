@@ -1,1 +1,1 @@
-import OptionsScreen from '../app/containers/OptionsScreen';
+import OptionsScreen from '../../app/containers/OptionsScreen';

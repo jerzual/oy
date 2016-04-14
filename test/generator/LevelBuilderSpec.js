@@ -1,9 +1,9 @@
-import DungeonBuilder from '../../app/generator/DungeonBuilder';
+import LevelBuilder from '../../app/generator/LevelBuilder';
 import {expect} from 'chai';
 
-describe('DungeonBuilder', function() {
+describe('LevelBuilder', function() {
 
-    let dungeonBuilder = new DungeonBuilder();
+    let dungeonBuilder = new LevelBuilder();
 
     it('can be instanciated', function() {
         expect(dungeonBuilder).to.be.an('object');

@@ -6,7 +6,7 @@ import RNG from 'rng-js';
 class Seed {
 
     constructor(seed) {
-        this.seedString = seed || this.randomString();
+        this.seedString = seed;
         this.rng = new RNG(this.seedString);
         //this.creationDate = moment().now();
     }

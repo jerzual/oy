@@ -1,0 +1,23 @@
+[
+  {
+    "name":"key-golden"
+  },
+  {
+    "name":"key-silver"
+  },
+  {
+    "name":"key-bronze"
+  },
+  {
+    "name":"coin-golden"
+  },
+  {
+    "name":"coin-silver"
+  },
+  {
+    "name":"coin-bronze"
+  },
+  {
+    "name":"chest"
+  }
+]

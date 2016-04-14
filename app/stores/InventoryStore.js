@@ -4,7 +4,7 @@ import InventoryActions from '../actions/InventoryActions'
 class InventoryStore {
   constructor() {
     this.bindListeners({
-      addItem: InventoryActions.addItem
+      addItem: InventoryActions.pickupItem
     });
 
     this.state = {

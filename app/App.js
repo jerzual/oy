@@ -1,7 +1,7 @@
 import React,{ PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import Routes from './routes/Routes';
-import { RouteHandler, Link } from 'react-router';
+import { browserHistory, Router, Link } from 'react-router';
 
 var App = React.createClass({
 
@@ -9,7 +9,9 @@ var App = React.createClass({
         params: PropTypes.object.isRequired,
         query: PropTypes.object.isRequired
     },
-
+    componentWillMount(){
+        this.state.currentSeed = this.props.currentSeed || SeedGenerator.randomSeed();
+    },
     render: function() {
         return (
             <div>
@@ -17,7 +19,9 @@ var App = React.createClass({
                 <ul className="navigation">
                     <Link to='home'><li className="navigation-item">HOME</li></Link>
                 </ul>
-                <RouteHandler {...this.props} />
+                <Router {...this.props} history={browserHistory}>
+                    <Routes/>
+                </Router>
             </div>
         );
     }

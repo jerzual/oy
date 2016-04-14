@@ -1,0 +1,23 @@
+[
+  {
+    "name": "blob",
+    "health": 5,
+    "defense": 1,
+    "drops": [
+      {
+        "itemName": "coin-bronze",
+        "dropChance": 0.5
+      },
+      {
+        "itemName": "key-silver",
+        "dropChance": 0.1
+      }
+    ],
+    "sprite": {
+    },
+    "body": {
+      "mass": 1,
+      "velocity": 1
+    }
+  }
+]

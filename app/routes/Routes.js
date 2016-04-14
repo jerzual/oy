@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, DefaultRoute } from 'react-router';
+import { Route, IndexRoute } from 'react-router';
 
 import App from '../App';
 
@@ -9,15 +9,15 @@ var ArchiveScreen = require('../containers/ArchiveScreen');
 var OptionsScreen = require('../containers/OptionsScreen');
 var CreditsScreen = require('../containers/CreditsScreen');
 
-var routes = (
-    <Route name="home" path='/' handler={App}>
-        <DefaultRoute name="homeScreen" handler={HomeScreen} />
+const Routes = (
+    <Route path='/' component={App}>
+        <IndexRoute component={HomeScreen} />
         {/*<Route name="seedDetailPage" path="/seed/:seed" handler={SeedDetailsPage} />*/}
-        <Route name="gameScreen" path="/game/:seed" handler={GameScreen} />
-        <Route name="archiveScreen" path="/archive" handler={ArchiveScreen} />
-        <Route name="optionsScreen" path="/options" handler={OptionsScreen} />
-        <Route name="creditsScreen" path="/credits" handler={CreditsScreen} />
+        <Route path="game/:seed" component={GameScreen} />
+        <Route path="archive" component={ArchiveScreen} />
+        <Route path="options" component={OptionsScreen} />
+        <Route path="credits" component={CreditsScreen} />
     </Route>
 );
 
-module.exports = routes;
+export default Routes;

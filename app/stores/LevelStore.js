@@ -4,7 +4,7 @@ import LevelActions from '../actions/LevelActions'
 class LevelStore {
   constructor() {
     this.bindListeners({
-      enterLevel: LevelActions.enterLevel
+      enterLevel: LevelActions.enter
     });
 
     this.state = {
@@ -12,8 +12,14 @@ class LevelStore {
     };
   }
 
-  updateTodo(level) {
+  addLevel(level) {
     this.setState({ todos: this.state.levels.concat(level) });
+  }
+  enterLevel(level){
+
+  }
+  exitLevel(level){
+
   }
 }
 

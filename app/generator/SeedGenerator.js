@@ -1,17 +1,17 @@
-
 import RNG from 'rng-js';
-var CHARSET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-var MAX_CHARS = 8;
 
-export default class SeedGenerator{
+const CHARSET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+const MAX_CHARS = 8;
+
+class SeedGenerator{
     /**
      * Constructs an 8 character string, made of random alphanumeric characters ([A-Z][0-9]
      * @returns {string} an 8 char alphanumeric string.
      */
     static randomSeed() {
-        var randomSeed = '';
-        for (var i = 0; i < MAX_CHARS; i++) {
-            var randomPoz = Math.floor(Math.random() * CHARSET.length);
+        let randomSeed = '';
+        for (let i = 0; i < MAX_CHARS; i++) {
+            let randomPoz = Math.floor(Math.random() * CHARSET.length);
             randomSeed += CHARSET.substring(randomPoz, randomPoz + 1);
         }
         return randomSeed;
@@ -35,3 +35,5 @@ export default class SeedGenerator{
         return dailySeed;
     }
 }
+
+export default SeedGenerator;
