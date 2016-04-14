@@ -8,7 +8,7 @@ describe('Routes', function() {
     routes = Routes;
   })
     it('redirects to menu on empty hash', function() {
-      expect(routes).to.be.a('function');
+      expect(routes).to.be.an('object');
     });
     it('redirects to menu on #menu', function() {
 

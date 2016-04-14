@@ -2,7 +2,7 @@ import alt from '../Alt'
 import Tile from '../models/Tile'
 
 
-class RoomStore {
+export class RoomStore {
   constructor() {
     this.bindListeners({
 

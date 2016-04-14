@@ -1,7 +1,7 @@
 import alt from '../Alt'
 import LevelActions from '../actions/LevelActions'
 
-class LevelStore {
+export class LevelStore {
   constructor() {
     this.bindListeners({
       enterLevel: LevelActions.enter

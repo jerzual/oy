@@ -1,7 +1,7 @@
 import alt from '../Alt'
 import SeedActions from '../actions/SeedActions'
 
-class SeedStore {
+export class SeedStore {
     constructor() {
         this.bindActions(SeedActions)
         this.seeds = []

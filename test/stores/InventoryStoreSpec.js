@@ -1,5 +1,6 @@
-import InventoryStore from '../../app/stores/InventoryStore';
+import {InventoryStore} from '../../app/stores/InventoryStore';
 import {expect} from 'chai';
+
 describe('InventoryStore', function() {
   let items;
   before(function(){

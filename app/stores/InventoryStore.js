@@ -1,9 +1,9 @@
 import alt from '../Alt';
 import InventoryActions from '../actions/InventoryActions'
 
-class InventoryStore {
+export class InventoryStore {
   constructor() {
-    this.bindListeners({
+    this.bindActions({
       addItem: InventoryActions.pickupItem
     });
 
