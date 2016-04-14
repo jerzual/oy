@@ -1,12 +1,35 @@
-import Backbone from 'backbone';
-import SeedGenerator from './generator/SeedGenerator';
+import React,{ PropTypes } from 'react';
+import ReactDOM from 'react-dom';
+import Routes from './routes/Routes';
+import { RouteHandler, Link } from 'react-router';
 
+var App = React.createClass({
+
+    propTypes: {
+        params: PropTypes.object.isRequired,
+        query: PropTypes.object.isRequired
+    },
+
+    render: function() {
+        return (
+            <div>
+                <h1>Beans of War</h1>
+                <ul className="navigation">
+                    <Link to='home'><li className="navigation-item">HOME</li></Link>
+                </ul>
+                <RouteHandler {...this.props} />
+            </div>
+        );
+    }
+});
+/*
 const App = function(){return{
     // Application Constructor
     initialize: function () {
         this.bindEvents();
         //this.views = new MenuView();
         Backbone.history.start();
+        window.seed = SeedGenerator.randomSeed();
         return this;
     },
     // Bind Event Listeners
@@ -32,8 +55,8 @@ const App = function(){return{
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
-        console.log('Received Event: ' + id);
+        //console.log('Received Event: ' + id);
     }
 }};
-
+*/
 export default App;

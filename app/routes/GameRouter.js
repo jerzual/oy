@@ -1,8 +1,11 @@
+import ReactRouter from 'react-router'
+import Routes from './Routes';
 
-import $ from 'jquery';
-import Backbone from 'backbone';
-
-
+const GameRouter = ReactRouter.create({
+    location : ReactRouter.HashLocation,
+    routes : Routes
+});
+/*
 var GameRouter = Backbone.Router.extend({
     routes: {
         "": "menu",
@@ -33,5 +36,5 @@ var GameRouter = Backbone.Router.extend({
     }
 
 });
-
+*/
 export default GameRouter;
