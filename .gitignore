@@ -53,4 +53,7 @@ platforms
 hooks
 src/js/vendor/
 node_modules
-www/*
+
+#built files
+www/css
+www/bundle.js
