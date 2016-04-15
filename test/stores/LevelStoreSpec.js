@@ -1,13 +1,19 @@
 import LevelStore from '../../app/stores/LevelStore';
 import {expect} from 'chai';
 
-describe('LevelStore', function() {
-  let world;
-  before(function(){
-   world = new LevelStore();
-  })
-    it('is a Collection', function() {
-      expect(world).to.be.ok;
+describe('LevelStore', function () {
+
+    before(function () {
+
+    })
+    it('listens to enter action', function () {
+
+    });
+    it('listens to exit action', function () {
+
+    });
+    it('listens to generate action', function () {
+
     });
 
 });

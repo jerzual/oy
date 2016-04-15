@@ -3,17 +3,18 @@ import InventoryActions from '../actions/InventoryActions'
 
 export class InventoryStore {
   constructor() {
-    this.bindActions({
-      addItem: InventoryActions.pickupItem
-    });
+    this.bindActions( InventoryActions );
 
     this.state = {
-      inventory: []
+      items: []
     };
   }
 
-  addItem(item) {
-    this.setState({ inventory: this.state.inventory.concat(item) });
+  onAdd(item) {
+    this.setState({ items: this.state.items.concat(item) });
+  }
+  static getItems() {
+    return this.getState().items;
   }
 }
 

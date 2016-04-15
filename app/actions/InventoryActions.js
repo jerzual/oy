@@ -1,6 +1,6 @@
 import alt from '../Alt';
 
-class LevelActions {
+class InventoryActions {
     constructor() {
         this.generateActions('dropItem', 'pickupItem');
     }
@@ -12,4 +12,4 @@ class LevelActions {
     }
 }
 
-export default alt.createActions(LevelActions)
+export default alt.createActions(InventoryActions)

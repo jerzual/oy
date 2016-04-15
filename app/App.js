@@ -1,31 +1,46 @@
-import React,{ PropTypes } from 'react';
-import ReactDOM from 'react-dom';
-import Routes from './routes/Routes';
-import { browserHistory, Router, Link } from 'react-router';
+//import alt from './Alt'
+import React, {PropTypes} from 'react'
+import { Link } from 'react-router'
+import HomeScreen from './containers/HomeScreen'
+//import SeedGenerator from './generator/SeedGenerator'
 
-var App = React.createClass({
+class App extends React.Component{
 
-    propTypes: {
-        params: PropTypes.object.isRequired,
-        query: PropTypes.object.isRequired
-    },
+    constructor(props) {
+        super(props);
+    }
+/*
     componentWillMount(){
-        this.state.currentSeed = this.props.currentSeed || SeedGenerator.randomSeed();
-    },
-    render: function() {
+        this.props.currentSeed = this.props.currentSeed || SeedGenerator.randomSeed();
+    }
+*/
+    render() {
         return (
             <div>
-                <h1>Beans of War</h1>
+                <h1>OY</h1>
                 <ul className="navigation">
-                    <Link to='home'><li className="navigation-item">HOME</li></Link>
+                    <li className="navigation-item"><Link to='/'>Home</Link></li>
+                    <li className="navigation-item"><Link to='/archive' href="/archive">Archive</Link></li>
+                    <li className="navigation-item"><Link to='/options'>Options</Link></li>
+                    <li className="navigation-item"><Link to='/credits'>Credits</Link></li>
                 </ul>
-                <Router {...this.props} history={browserHistory}>
-                    <Routes/>
-                </Router>
+                {this.props.children || <HomeScreen/>}
             </div>
         );
     }
-});
+
+}
+App.contextTypes = {
+    router: React.PropTypes.func.isRequired
+}
+App.propTypes = {
+    currentSeed: PropTypes.string,
+    children: PropTypes.array
+    /*
+    params: PropTypes.object.isRequired,
+        query: PropTypes.object.isRequired
+   */
+};
 /*
 const App = function(){return{
     // Application Constructor

@@ -1,22 +1,19 @@
-import Backbone from 'backbone';
-import RNG from 'rng-js';
 import SeedGenerator from '../generator/SeedGenerator';
+import Seed from './Seed'
 
+class Game {
 
-var GameModel = Backbone.Model.extend({
-    seed: '',
-
-    initialize: function() {
-        this.rng = new RNG(this.get('seed'));
-    },
-
-    defaults: {
-        seed: SeedGenerator.randomSeed(),
-        lastPlayDate: new Date(),
-        lastPlayDuration: 0,
-        width: 32,
-        height: 32
+    constructor() {
+        this.seed = new Seed();
     }
-});
 
-export default GameModel;
+}
+
+Game.defaultValues = {
+    seed: SeedGenerator.randomSeed(),
+    lastPlayDate: new Date(),
+    lastPlayDuration: 0,
+    width: 32,
+    height: 32
+};
+export default Game;

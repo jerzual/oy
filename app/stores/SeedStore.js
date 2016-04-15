@@ -14,6 +14,9 @@ export class SeedStore {
             this[key] = data[key];
         }
     }
+    static getSeeds() {
+        return this.getState().seeds;
+    }
 }
 
 export default alt.createStore(SeedStore, 'SeedStore')

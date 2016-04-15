@@ -1,13 +1,20 @@
-import {InventoryStore} from '../../app/stores/InventoryStore';
+// wrappedPetStore is alt store, UnwrappedPetStore is UnwrappedPetStore class
+import inventoryStore, {InventoryStore} from '../../app/stores/InventoryStore';
+import inventoryActions from '../../app/actions/InventoryActions';
 import {expect} from 'chai';
 
-describe('InventoryStore', function() {
-  let items;
-  before(function(){
-   items = new InventoryStore();
-  })
-    it('is a Collection', function() {
-      expect(items).to.be.ok;
+describe('InventoryStore', function () {
+
+    before(function () {
+
+    })
+
+    it('listens to pickup event', function () {
+
+    });
+
+    it('listens to drop event', function () {
+
     });
 
 });

@@ -1,25 +1,27 @@
 import alt from '../Alt'
+import Tile from '../models/Tile'
 import LevelActions from '../actions/LevelActions'
 
 export class LevelStore {
   constructor() {
-    this.bindListeners({
-      enterLevel: LevelActions.enter
-    });
+    this.bindActions(LevelActions);
 
     this.state = {
       levels: []
     };
   }
 
-  addLevel(level) {
+  onEnter(level) {
     this.setState({ todos: this.state.levels.concat(level) });
   }
-  enterLevel(level){
+  onExit(level){
 
   }
-  exitLevel(level){
+  onGenerate(level){
 
+  }
+  static getLevels() {
+    return this.getState().levels;
   }
 }
 

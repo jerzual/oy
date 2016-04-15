@@ -1,22 +1,22 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
-import App from '../App';
+import HomeScreen from '../containers/HomeScreen';
+import GameScreen from '../containers/GameScreen';
+import ArchiveScreen from '../containers/ArchiveScreen';
+import OptionsScreen from '../containers/OptionsScreen';
+import CreditsScreen from '../containers/CreditsScreen';
 
-var HomeScreen = require('../containers/HomeScreen');
-var GameScreen = require('../containers/GameScreen');
-var ArchiveScreen = require('../containers/ArchiveScreen');
-var OptionsScreen = require('../containers/OptionsScreen');
-var CreditsScreen = require('../containers/CreditsScreen');
+import App from '../App';
 
 const Routes = (
     <Route path='/' component={App}>
-        <IndexRoute component={HomeScreen} />
+        <IndexRoute component={HomeScreen}/>
         {/*<Route name="seedDetailPage" path="/seed/:seed" handler={SeedDetailsPage} />*/}
-        <Route path="game/:seed" component={GameScreen} />
-        <Route path="archive" component={ArchiveScreen} />
-        <Route path="options" component={OptionsScreen} />
-        <Route path="credits" component={CreditsScreen} />
+        <Route path="game/:seed" component={GameScreen}/>
+        <Route path="archive" component={ArchiveScreen}/>
+        <Route path="options" component={OptionsScreen}/>
+        <Route path="credits" component={CreditsScreen}/>
     </Route>
 );
 

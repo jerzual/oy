@@ -9,13 +9,12 @@ import sinon from 'sinon';
 describe('PetActions', function() {
     beforeEach(function() {
         // here we use sinon to create a spy on the alt.dispatcher.dispatch function
-        this.dispatcherSpy = sinon.spy(alt.dispatcher, 'dispatch');
+
         this.illegalSpy = sinon.spy(legalActions, 'illegalPet');
     });
 
     afterEach(function() {
         // clean up our sinon spy so we do not affect other tests
-        alt.dispatcher.dispatch.restore();
         legalActions.illegalPet.restore();
     });
 
@@ -27,21 +26,23 @@ describe('PetActions', function() {
                 action = petActions.BUY_EXOTIC_PET;
 
             // fire the action
-            petActions.buyExoticPet({pet, cost});
+             var returnedPet = petActions.buyExoticPet({pet, cost});
             // use our spy to see what payload the dispatcher was called with
             // this lets us ensure that the expected payload (with US dollars) was fired
+           /*
             var dispatcherArgs = this.dispatcherSpy.args[0];
             var firstArg = dispatcherArgs[0];
             assert.equal(firstArg.action, action);
-            assert.deepEqual(firstArg.data, {pet, cost: totalCost});
+            */
+            assert.deepEqual(returnedPet, {pet, cost: totalCost});
         });
 
         it('does not fire illegal action for legal pets', function() {
-            var pet = 'dog',
+            let pet = 'dog',
                 cost = 18.20;
 
             // fire the action
-            petActions.buyExoticPet({pet, cost});
+            var returnedPet = petActions.buyExoticPet({pet, cost});
             // use our spy to ensure that the illegal action was NOT called
             assert.equal(this.illegalSpy.callCount, 0);
         });
@@ -51,7 +52,7 @@ describe('PetActions', function() {
                 cost = 18.20;
 
             // fire the action
-            petActions.buyExoticPet({pet, cost});
+            var returnedPet = petActions.buyExoticPet({pet, cost});
             // use our spy to ensure that the illegal action was called
             assert(this.illegalSpy.calledOnce, 'the illegal action was not fired');
         });

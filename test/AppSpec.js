@@ -6,7 +6,7 @@ describe('App object', function() {
 
     });
 
-    it('should have started the backbone history', function() {
+    it('should have started the history', function() {
 
     });
 

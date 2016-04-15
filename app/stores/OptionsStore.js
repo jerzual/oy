@@ -3,19 +3,24 @@ import OptionsActions from '../actions/OptionsActions'
 
 //named export
 export class OptionsStore {
-  constructor() {
-    this.bindListeners({
-      updateOptions: OptionsActions.updateOptions
-    });
+    constructor() {
+        this.bindActions(OptionsActions);
 
-    this.state = {
-      options: []
-    };
-  }
+        this.state = {
+            options: []
+        };
+    }
 
-  updateOption(option) {
-    this.setState({ options: this.state.options.concat(option) });
-  }
+    onChange(option) {
+        this.setState({options: this.state.options.concat(option)});
+    }
+
+    onClose() {
+
+    }
+    static getOptions() {
+        return this.getState().options;
+    }
 }
 
 //default export
