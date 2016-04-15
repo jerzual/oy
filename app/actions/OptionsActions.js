@@ -1,4 +1,4 @@
-import alt  from '../Alt';
+import alt from '../Alt';
 
 class OptionsActions {
     constructor() {
