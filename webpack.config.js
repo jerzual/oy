@@ -25,6 +25,15 @@ module.exports = {
             {
                 test: /\.json$/,
                 loader: 'json'
+            },
+            {
+                test: /\.scss$/,
+                loaders: ['style', 'css', 'sass'],
+                include: PATHS.style
+            },
+            {
+                test: /\.png$/,
+                loader: 'url'
             }
         ],
         //pixi.js needs some special transform
