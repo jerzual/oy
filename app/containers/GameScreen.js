@@ -1,11 +1,16 @@
 import React from 'react';
+import HeroStatus from '../components/HeroStatus'
+class GameScreen extends React.Component {
+    componentWillMount() {
+        this.getDOMNode();
+    }
 
-class GameScreen extends React.Component{
-  render(){
-    return (<canvas id="game">
-
-    </canvas>);
-  }
+    render() {
+        return (<div>
+            <HeroStatus/>
+            <canvas id="game"/>
+        </div>);
+    }
 }
 
 export default GameScreen;

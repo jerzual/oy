@@ -11,7 +11,7 @@ export class InventoryStore {
   }
 
   onAdd(item) {
-    this.setState({ items: this.state.items.concat(item) });
+    this.setState({ items: this.state.items.push(item) });
   }
   static getItems() {
     return this.getState().items;

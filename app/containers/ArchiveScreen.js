@@ -1,14 +1,22 @@
 import React, {PropTypes} from 'react';
+import connectToStores from 'alt-utils/lib/connectToStores'
+import SeedStore from '../stores/SeedStore'
 
 /**
  * Archive is a list of played games, (just their seed now)
  */
 class ArchiveScreen extends React.Component {
+    static getStores() {
+        return [SeedStore];
+    }
+    static getPropsFromStores() {
+        return SeedStore.getState();
+    }
     render() {
         return (
             <ul className="table-view">
                 {
-                    this.state.seeds.map(
+                    this.props.seeds.map(
                         (seed) =>(
                             <li className="table-view-cell media">
                                 <a className="navigate-right">
@@ -32,4 +40,4 @@ ArchiveScreen.propTypes = {
     seeds: PropTypes.array
 };
 
-export default ArchiveScreen;
+export default connectToStores(ArchiveScreen);

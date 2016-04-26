@@ -28,7 +28,4 @@ window.addEventListener('DOMContentLoaded', function() {
         </Router>,
         document.getElementById('root')
     );
-    //let scene = new PIXI.Scene();
-
-    //Matter.Bodies;
 });

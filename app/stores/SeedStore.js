@@ -1,10 +1,13 @@
 import alt from '../Alt'
 import SeedActions from '../actions/SeedActions'
-
+/**
+ * Store played games with their seed, player death cause and run duration.
+ */
 export class SeedStore {
     constructor() {
         this.bindActions(SeedActions)
         this.seeds = []
+        this.selectedSeed = {};
     }
     onAddSeed(seed){
       return this.seeds = this.seeds.push(seed);

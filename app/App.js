@@ -20,7 +20,7 @@ class App extends React.Component{
                 <h1>OY</h1>
                 <ul className="navigation">
                     <li className="navigation-item"><Link to='/'>Home</Link></li>
-                    <li className="navigation-item"><Link to='/archive' href="/archive">Archive</Link></li>
+                    <li className="navigation-item"><Link to='/archive'>Archive</Link></li>
                     <li className="navigation-item"><Link to='/options'>Options</Link></li>
                     <li className="navigation-item"><Link to='/credits'>Credits</Link></li>
                 </ul>
@@ -31,11 +31,11 @@ class App extends React.Component{
 
 }
 App.contextTypes = {
-    router: React.PropTypes.func.isRequired
+    router: React.PropTypes.object.isRequired
 }
 App.propTypes = {
     currentSeed: PropTypes.string,
-    children: PropTypes.array
+    children: PropTypes.object
     /*
     params: PropTypes.object.isRequired,
         query: PropTypes.object.isRequired

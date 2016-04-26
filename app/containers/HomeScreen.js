@@ -1,35 +1,30 @@
 import React from 'react';
+import SeedInput from '../components/SeedInput'
+import AvatarPreview from '../components/AvatarPreview'
 
-class HomeScreen extends React.Component{
-  componentDidMount(){
+class HomeScreen extends React.Component {
+    componentDidMount() {
 
-  }
-  render(){
-    return (<ul id="menu">
-        <li>
-            <a href="#game" className="btn btn-block" title="Generate a new game with a random seed">New Game</a>
-        </li>
-        <li>
-            <a href="#seed" className="btn btn-block">Enter Seed</a>
-        </li>
-        <li>
-            <a href="#archive" className="btn btn-block">Archive</a>
-        </li>
-        <li>
-            <a href="#exit" className="btn btn-block">Exit</a>
-        </li>
+    }
 
-    </ul>);
-  }
-  onOptionsHandler(){
+    render() {
+        return (<div>
+            <AvatarPreview width={320} height={320} />
+            <SeedInput />
+        </div>);
+    }
 
-  }
-  onSeedRegenerate(){
+    onOptionsHandler() {
 
-  }
-  onPlay(){
+    }
 
-  }
+    onSeedRegenerate() {
+
+    }
+
+    onPlay() {
+
+    }
 }
 
 export default HomeScreen;

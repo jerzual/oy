@@ -1,9 +1,25 @@
 import React from 'react';
 
-class CreditsScreen extends React.Component{
-  render(){
-
-  }
+class CreditsScreen extends React.Component {
+    render() {
+        return (<div>
+            <h2>Credits</h2>
+            <ul>
+                <li>
+                    Code and design by jibhaine
+                </li>
+                <li>
+                    Tiles and character sprites by ellian
+                </li>
+                <li>
+                    Contain code from these open-source projects :
+                    <ul>
+                        <li></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>);
+    }
 }
 
 export default CreditsScreen;

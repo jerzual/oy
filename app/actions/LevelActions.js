@@ -1,6 +1,6 @@
 import alt from '../Alt';
 
-class LevelActions {
+export class LevelActions {
     constructor() {
         this.generateActions('enter', 'exit', 'generate');
     }
