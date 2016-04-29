@@ -1,6 +1,6 @@
 import React,{PropTypes} from 'react'
 import {findDOMNode} from 'react-dom';
-import {RNG} from 'rng-js/rng';
+import RNG from '../generator/RandomNumberGenerator';
 import AvatarPainter from '../generator/AvatarPainter';
 
 class AvatarPreview extends React.Component{
@@ -18,10 +18,10 @@ class AvatarPreview extends React.Component{
     render(){
         return (<canvas width={this.props.width} height={this.props.height}/>);
     }
-    paint(){
+    paint(context){
         const rng = new RNG(this.props.seed);
         let pixels = new AvatarPainter(rng).paint(context, this.props.width, this.props.height);
-        //console.log(pixels);
+        console.log(pixels);
     }
 }
 

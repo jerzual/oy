@@ -1,5 +1,5 @@
-//import Matter from 'matter-js';
-//import PIXI from 'pixi.js';
+import Matter from 'matter-js';
+import PIXI from 'pixi.js';
 
 class Entity{
   constructor(){
@@ -11,6 +11,10 @@ class Entity{
   }
   update(){
     //TODO connect
+  }
+  initObjects(){
+    this.sprite = new PIXI.Sprite();
+    this.body = new Matter.Body();
   }
 }
 

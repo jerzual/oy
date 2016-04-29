@@ -5,9 +5,9 @@ class SeedInput extends React.Component{
     render(){
 
         return (<div>
-            <input type="text"/>
-            <button type="button" value="regenerate"/>
-            <button type="submit" value="OK"/>
+            <input type="text" placeholder="QWERTY42" max={8}/>
+            <button type="button" className="btn  btn-bloc" value="regenerate">regenerate</button>
+            <button type="submit" className="btn btn-positive btn-bloc">Play</button>
         </div>);
     }
 }

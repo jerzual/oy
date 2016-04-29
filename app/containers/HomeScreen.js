@@ -8,10 +8,10 @@ class HomeScreen extends React.Component {
     }
 
     render() {
-        return (<div>
+        return (<form>
             <AvatarPreview width={320} height={320} />
             <SeedInput />
-        </div>);
+        </form>);
     }
 
     onOptionsHandler() {
