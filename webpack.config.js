@@ -2,7 +2,8 @@ const path = require('path');
 
 const PATHS = {
     app: path.join(__dirname, 'app'),
-    build: path.join(__dirname, 'www')
+    build: path.join(__dirname, 'www'),
+    styles: path.join(__dirname, 'app/styles/')
 };
 
 module.exports = {
@@ -28,7 +29,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loaders: ['style', 'css', 'sass'],
+                loaders: ['style', 'css?sourceMap', 'sass?sourceMap'],
                 include: PATHS.style
             },
             {
@@ -43,5 +44,8 @@ module.exports = {
                 loader: 'transform?brfs'
             }
         ]
-    }
+    },
+  sassLoader: {
+    includePaths: [PATHS.styles]
+  }
 };

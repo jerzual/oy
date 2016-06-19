@@ -9,8 +9,8 @@ import ArchiveScreen from './containers/ArchiveScreen';
 import OptionsScreen from './containers/OptionsScreen';
 import CreditsScreen from './containers/CreditsScreen';
 //import Routes from './routes/Routes'
-//import RNG from 'rng-js';
 //import Matter from 'matter-js';
+import styles from '!style!css!sass!./styles/index.scss';
 // The "app" dependency is passed in as "App"
 window.addEventListener('DOMContentLoaded', function() {
 

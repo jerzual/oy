@@ -2,7 +2,8 @@ import React from 'react';
 
 class CreditsScreen extends React.Component {
     render() {
-        return (<div>
+        return (
+          <div id='credits' className='credits-screen'>
             <h2>Credits</h2>
             <ul>
                 <li>

@@ -9,15 +9,14 @@ class App extends React.Component{
     constructor(props) {
         super(props);
     }
-/*
-    componentWillMount(){
-        this.props.currentSeed = this.props.currentSeed || SeedGenerator.randomSeed();
-    }
-*/
+
     render() {
         return (
             <div>
-                <h1>OY</h1>
+              <header className="bar bar-nav">
+  <h1 className="title">OY</h1>
+</header>
+
                 <ul className="navigation">
                     <li className="navigation-item"><Link to='/'>Home</Link></li>
                     <li className="navigation-item"><Link to='/archive'>Archive</Link></li>

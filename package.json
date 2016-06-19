@@ -11,6 +11,7 @@
     "serve": "webpack-dev-server --progress --colors --content-base www/",
     "serve:prod": "webpack-dev-server --progress --colors --content-base www/ --config webpack.config.prod.js",
     "lint": "eslint app",
+    "pretest":"npm run lint",
     "postinstall": "webpack"
   },
   "keywords": [

@@ -4,6 +4,6 @@ import AvatarPreview from '../components/AvatarPreview'
 
 class SeedDetailsScreen extends React.Component {
     render() {
-
+      return '';
     }
 }

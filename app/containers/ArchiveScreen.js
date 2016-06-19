@@ -14,6 +14,7 @@ class ArchiveScreen extends React.Component {
     }
     render() {
         return (
+          <div id='archive' className='archive-screen'>
             <ul className="table-view">
                 {
                     this.props.seeds.map(
@@ -32,6 +33,7 @@ class ArchiveScreen extends React.Component {
                     )
                 }
             </ul>
+          </div>
         );
     }
 }

@@ -3,7 +3,8 @@ const webpack = require('webpack');
 
 const PATHS = {
     app: path.join(__dirname, 'app'),
-    build: path.join(__dirname, 'www')
+    build: path.join(__dirname, 'www'),
+    styles: path.join(__dirname, 'app/styles/')
 };
 
 module.exports = {
@@ -25,11 +26,11 @@ module.exports = {
             },
             {
                 test: /\.json$/,
-                loader: 'json'
+                loader: 'json-loader'
             },
             {
                 test: /\.scss$/,
-                loaders: ['style', 'css', 'sass'],
+                loaders: ['style-loader', 'css-loader', 'sass-loader'],
                 include: PATHS.style
             },
             {
@@ -44,6 +45,9 @@ module.exports = {
                 loader: 'transform?brfs'
             }
         ]
+    },
+    sassLoader: {
+      includePaths: [PATHS.styles]
     },
     plugins: [
         new webpack.DefinePlugin({

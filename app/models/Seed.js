@@ -1,7 +1,7 @@
 import RNG from '../generator/RandomNumberGenerator';
 
 /**
- * Encapsulate rng-js and a human reedable seed string.
+ * Encapsulate a random number generator and a human reedable seed string.
  */
 class Seed {
 

@@ -13,19 +13,25 @@ class LevelBuilder {
     }
 
     generateEmptyLevel(width, height) {
-        this.levels.push(new Level(width, height));
+        this.level = new Level(width, height);
+        return this;
     }
 
-    placeRoomsInLevel() {
+    placeRoomsInLevel(numberOfRooms) {
 
+      return this;
     }
 
     digMaze() {
-
+      return this;
     }
 
     floodFill() {
+      return this;
+    }
 
+    build(){
+      return this.level;
     }
 }
 
