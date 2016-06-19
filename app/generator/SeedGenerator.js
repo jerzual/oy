@@ -1,11 +1,14 @@
-import RNG from 'rng-js';
+import RNG from './RandomNumberGenerator';
 
 const CHARSET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 const MAX_CHARS = 8;
 
+/**
+ * Generates human readable seed.
+ */
 class SeedGenerator{
     /**
-     * Constructs an 8 character string, made of random alphanumeric characters ([A-Z][0-9]
+     * Constructs an 8 character string, made of random alphanumeric characters ([A-Z][0-9]).
      * @returns {string} an 8 char alphanumeric string.
      */
     static randomSeed() {
