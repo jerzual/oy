@@ -1,0 +1,14 @@
+web:
+  image: node:10
+  container_name: 'oy-web'
+  links:
+    - couchdb
+  ports:
+    - '8000:8000'
+  volumes:
+    - ./www:/usr/src/app
+couchdb:
+  image: couchdb
+  container_name: 'oy-db'
+  ports:
+    - '5984:5984'

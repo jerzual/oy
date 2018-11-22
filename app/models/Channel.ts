@@ -1,0 +1,4 @@
+
+export clas Channel {
+  peers: [];
+}
