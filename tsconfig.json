@@ -1,0 +1,16 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "inlineSources": true,
+    "outDir": "www/scripts",
+    "module": "amd",
+    "target": "es5",
+    "esModuleInterop": true,
+    "lib": ["dom", "es2015"]
+  },
+  "exclude": ["platforms", "node_modules", "bower_components"]
+}

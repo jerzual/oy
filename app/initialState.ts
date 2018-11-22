@@ -1,0 +1,5 @@
+export stateFactory = () => {
+    return {
+        games: [],
+    }
+}
