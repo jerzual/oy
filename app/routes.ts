@@ -7,7 +7,7 @@ import HomeScreen from "./containers/HomeScreen";
 import OptionsScreen from "./containers/OptionsScreen";
 import JoinScreen from "./containers/JoinScreen";
 
-const definitions: RouteDefs = {
+export const routes: RouteDefs = {
   "/": HomeScreen,
   "/join": JoinScreen,
   "/game/:seed": GameScreen,
@@ -15,7 +15,10 @@ const definitions: RouteDefs = {
   "/options": OptionsScreen,
   "/credits": CreditsScreen,
 };
-// Set up routing by connecting components to routes
-m.route(document.body, "/", definitions);
 
-export default definitions;
+export function bindRoutes(element: HTMLElement = document.body): void {
+  // Set up routing by connecting components to routes
+  m.route(document.body, "/", routes);
+}
+
+export default routes;

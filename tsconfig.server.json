@@ -6,6 +6,6 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "allowSyntheticDefaultImports": true
-  }, 
+  },
   "files": ["./app/server.ts"]
 }

@@ -1,7 +1,6 @@
 import express from "express";
 import sockjs from "sockjs";
-import mithrilExpress from "mithril-express-middleware";
-import * as browserMock from "mithril/test-utils/browserMock";
+import path from "path";
 
 import routes from "./routes";
 
@@ -9,10 +8,9 @@ import routes from "./routes";
 // browserMock(global);
 
 const app = express();
+app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 app.use("/assets", express.static("assets"));
-
-app.use(mithrilExpress(routes));
 
 app.get("/", (req, res) =>
   res.render("index", { title: "Hey", message: "Hello there!" }),

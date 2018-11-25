@@ -1,11 +1,11 @@
-const path = require("path");
-const webpack = require("webpack");
+import path from "path";
+import webpack from "webpack";
+import autoprefixer from "autoprefixer";
 
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const devMode = process.env.NODE_ENV !== "production";
 
@@ -15,7 +15,7 @@ const PATHS = {
   styles: path.join(__dirname, "app/styles/"),
 };
 
-module.exports = {
+const config: webpack.Configuration = {
   // Entry accepts a path or an object of entries. We'll be using the
   // latter form given it's convenient with more complex configurations.
   entry: {
@@ -44,7 +44,7 @@ module.exports = {
       {
         test: /\.scss$/,
         loaders: [
-          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          devMode ? "style-loader" : MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
             options: {
@@ -78,7 +78,6 @@ module.exports = {
             },
           },
         ],
-        include: PATHS.style,
       },
       {
         test: /\.png$/,
@@ -87,7 +86,7 @@ module.exports = {
     ],
   },
   devServer: {
-    contentBase: "./www",
+    contentBase: "./www/public",
     hot: true,
   },
   plugins: [
@@ -103,3 +102,5 @@ module.exports = {
     new HtmlWebpackPlugin(),
   ],
 };
+
+export default config;
