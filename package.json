@@ -11,7 +11,7 @@
     "test:watch": "jest --watchAll",
     "serve": "webpack-dev-server --progress --hot --colors --mode development",
     "serve:prod": "webpack-dev-server --progress --colors --content-base www/ --mode production",
-    "lint": "tslint --fix --force",
+    "lint": "tslint --force --project .",
     "pretest": "npm run lint",
     "start": "node www/server.js",
     "typedoc": "typedoc --out ./www/doc/ ."
