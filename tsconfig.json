@@ -6,10 +6,11 @@
     "removeComments": true,
     "sourceMap": true,
     "inlineSources": true,
-    "outDir": "www/scripts",
+    "outDir": "www/public",
     "module": "commonjs",
     "target": "es5",
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "lib": ["dom", "es2015"],
     "experimentalDecorators": true,
     "jsx": "react",
@@ -29,7 +30,8 @@
       "sockjs",
       "sockjs-client",
       "supertest",
-      "webpack"
+      "webpack",
+      "webpack-dev-server"
     ]
   },
   "exclude": ["platforms", "bower_components", "node_modules/@types/react*"]

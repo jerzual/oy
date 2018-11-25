@@ -1,17 +1,18 @@
-import PouchDB from "pouchdb";
+import * as PouchDB from "pouchdb";
 import Store from "reactive-state";
-import App from "./app";
+import { App } from "./app";
 import SockJS from "sockjs-client";
+import * as m from "mithril";
+import { routes } from "./routes";
 
-const db = new PouchDB("oy");
-const sockets = new SockJS(`ws:localhost:8080`);
+const db = new PouchDB.default("oy");
+const sockets = new SockJS(`http://0.0.0.0:8081/api`);
 const app = new App();
 
-app.initialize(document);
-
+m.route(document.body, "/", routes);
 // hot reload webpack
 if (module["hot"]) {
-  console.log("HMR enabled");
+  console.info("HMR enabled");
   /*
    module.hot.accept('./print.js', function() {
      console.log('Accepting the updated printMe module!');

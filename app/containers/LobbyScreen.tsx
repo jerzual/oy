@@ -2,16 +2,16 @@ import HeroStatus from "../components/HeroStatus";
 import * as m from "mithril";
 import { MithrilTsxComponent } from "mithril-tsx-component";
 
-import "./ArchiveScreen.scss";
+import "./LobbyScreen.scss";
 
-export interface ArchiveScreenAttrs {
+export interface LobbyScreenAttrs {
   type: string;
 }
 
-type Vnode = m.Vnode<ArchiveScreenAttrs, ArchiveScreen>;
-type VnodeDOM = m.VnodeDOM<ArchiveScreenAttrs, ArchiveScreen>;
+type Vnode = m.Vnode<LobbyScreenAttrs, LobbyScreen>;
+type VnodeDOM = m.VnodeDOM<LobbyScreenAttrs, LobbyScreen>;
 
-export class ArchiveScreen extends MithrilTsxComponent<ArchiveScreenAttrs> {
+export class LobbyScreen extends MithrilTsxComponent<LobbyScreenAttrs> {
   // oninit(v: Vnode) {}
   // onbeforeupdate(v: Vnode, o: VnodeDOM) {}
   // oncreate(v: VnodeDOM) {}
@@ -26,4 +26,4 @@ export class ArchiveScreen extends MithrilTsxComponent<ArchiveScreenAttrs> {
     );
   }
 }
-export default ArchiveScreen;
+export default LobbyScreen;

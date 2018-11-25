@@ -1,5 +1,6 @@
-const path = require("path");
-const webpack = require("webpack");
+import path from "path";
+import webpack from "webpack";
+
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 const PATHS = {
@@ -7,7 +8,7 @@ const PATHS = {
   build: path.join(__dirname, "www"),
 };
 
-module.exports = {
+const webpackServerConfig: webpack.Configuration = {
   // Entry accepts a path or an object of entries. We'll be using the
   // latter form given it's convenient with more complex configurations.
   entry: {
@@ -22,6 +23,7 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
+        include: /app/,
         exclude: /node_modules/,
         loader: "ts-loader",
         options: {
@@ -38,7 +40,7 @@ module.exports = {
       {
         test: /\.scss$/,
         loaders: ["style-loader", "css-loader", "sass-loader"],
-        include: PATHS.style,
+        include: PATHS.app,
       },
       {
         test: /\.png$/,
@@ -55,3 +57,5 @@ module.exports = {
     new ForkTsCheckerWebpackPlugin(),
   ],
 };
+
+export default webpackServerConfig;

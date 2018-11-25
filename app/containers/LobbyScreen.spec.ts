@@ -1,3 +1,3 @@
-describe("ArchiveScreen", () => {
-  test("ArchiveScreen", () => {});
+describe("LobbyScreen", () => {
+  test("LobbyScreen", () => {});
 });
