@@ -1,27 +1,27 @@
 // HeroStatus display heart containers and gold over the main game screen.
 
-import * as m from 'mithril';
-import { MithrilTsxComponent } from 'mithril-tsx-component';
+import * as m from "mithril";
+import { MithrilTsxComponent } from "mithril-tsx-component";
 
-import './HeroStatus.scss';
+import * as styles from "./HeroStatus.scss";
 
-export interface IHeroStatusCompAttrs {
-  gold: number;
-  life: number;
+export interface HeroStatusAttrs {
+  gold?: number;
+  life?: number;
 }
 
-type Vnode = m.Vnode<IHeroStatusCompAttrs, HeroStatus>;
-type VnodeDOM = m.VnodeDOM<IHeroStatusCompAttrs, HeroStatus>;
+type Vnode = m.Vnode<HeroStatusAttrs, HeroStatus>;
+type VnodeDOM = m.VnodeDOM<HeroStatusAttrs, HeroStatus>;
 
-export class HeroStatus extends MithrilTsxComponent<IHeroStatusCompAttrs> {
+export class HeroStatus extends MithrilTsxComponent<HeroStatusAttrs> {
   // oninit(v: Vnode) {}
   // onbeforeupdate(v: Vnode, o: VnodeDOM) {}
-  view(v: Vnode) {
-    return <div />;
-  }
   // oncreate(v: VnodeDOM) {}
   // onupdate(v: VnodeDOM) {}
   // onbeforeremove(v: VnodeDOM) {}
   // onremove(v: VnodeDOM) {}
+  view(v: Vnode) {
+    return <div />;
+  }
 }
 export default HeroStatus;

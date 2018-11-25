@@ -1,21 +1,21 @@
-import m from 'mithril';
+import m, { RouteDefs } from "mithril";
 
-import HomeScreen from './containers/screens/HomeScreen';
-import GameScreen from './containers/screens/GameScreen';
-import ArchiveScreen from './containers/screens/ArchiveScreen';
-import OptionsScreen from './containers/screens/OptionsScreen';
-import CreditsScreen from './containers/screens/CreditsScreen';
-import SeedDetailsScreen from './containers/screens/SeedDetailsScreen';
+import LobbyScreen from "./containers/LobbyScreen";
+import CreditsScreen from "./containers/CreditsScreen";
+import GameScreen from "./containers/GameScreen";
+import HomeScreen from "./containers/HomeScreen";
+import OptionsScreen from "./containers/OptionsScreen";
+import JoinScreen from "./containers/JoinScreen";
 
-const Routes = {
-  '/': HomeScreen,
-  '/seed/:seed': SeedDetailsScreen,
-  '/game/:seed': GameScreen,
-  '/archive': ArchiveScreen,
-  '/options': OptionsScreen,
-  '/credits': CreditsScreen,
+const definitions: RouteDefs = {
+  "/": HomeScreen,
+  "/join": JoinScreen,
+  "/game/:seed": GameScreen,
+  "/archive": LobbyScreen,
+  "/options": OptionsScreen,
+  "/credits": CreditsScreen,
 };
 // Set up routing by connecting components to routes
-m.route(document.body, '/', Routes);
+m.route(document.body, "/", definitions);
 
-export default Routes;
+export default definitions;

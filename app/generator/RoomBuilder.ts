@@ -1,6 +1,3 @@
-
-class RoomBuilder(){
-    constructor(Room room){
-        
-    }
+class RoomBuilder {
+  constructor() {}
 }

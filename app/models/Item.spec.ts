@@ -1,13 +1,11 @@
+import Model from "../../app/models/Item";
 
-import Model from '../../app/models/Item'
-import {expect} from 'chai'
-
-describe('ItemModel', function() {
+describe("ItemModel", () => {
   let item;
-  beforeEach(()=>{
+  beforeEach(() => {
     item = new Model();
   });
-    it('is something', function() {
-      expect(item).to.be.an('object');
-    });
-})
+  it("is something", () => {
+    expect(item).toBeDefined();
+  });
+});

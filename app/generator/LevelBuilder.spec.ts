@@ -1,16 +1,16 @@
-import LevelBuilder from '../../app/generator/LevelBuilder';
-import {expect} from 'chai';
+import LevelBuilder from "../../app/generator/LevelBuilder";
 
-describe('LevelBuilder', function() {
+describe("LevelBuilder", () => {
+  let levelBuilder;
 
-    let dungeonBuilder = new LevelBuilder();
+  beforeAll(() => {
+    levelBuilder = new LevelBuilder();
+  });
+  it("can be instanciated", () => {
+    expect(levelBuilder).toBeDefined();
+  });
 
-    it('can be instanciated', function() {
-        expect(dungeonBuilder).to.be.an('object');
-    });
-
-    it('has a generateEmptyLevel method', function() {
-        expect(dungeonBuilder).to.have.property('generateEmptyLevel');
-    });
-
+  describe("# generateEmptyLevel()", () => {
+    it("", () => {});
+  });
 });

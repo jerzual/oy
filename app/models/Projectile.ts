@@ -1,4 +1,3 @@
-
-export default class Projectile{
-
+export default class Projectile {
+  pos: number;
 }

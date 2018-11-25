@@ -1,40 +1,38 @@
 /* globals:describe,it,before*/
 import SeedGenerator from '../../app/generator/SeedGenerator';
-import {expect} from 'chai';
 
-describe('SeedGenerator', function() {
+describe('SeedGenerator', () => {
+  it('provides a randomSeed method', () => {
+    expect(SeedGenerator.randomSeed).toBeDefined();
+  });
 
-    it('provides a randomSeed method', function() {
-        expect(SeedGenerator.randomSeed).to.be.a('Function');
+  it('provides a dailyChallengeSeed method', () => {
+    expect(SeedGenerator.dailyChallengeSeed).toBeDefined();
+  });
+
+  describe('when randomSeed() is called', () => {
+    var seed = SeedGenerator.randomSeed();
+    it('should return an 8 char string', () => {
+      expect(seed).toMatch(/^(.*){8}$/);
+    });
+    it('should only contains alphanumeric chars', () => {
+      expect(seed).toMatch(/^([A-Z]|[0-9]){8}$/);
+    });
+  });
+  describe('when dailyChallengeSeed() is called without date', () => {
+    var seed = SeedGenerator.dailyChallengeSeed();
+
+    it('should return an 8 char string', () => {
+      expect(seed).toMatch(/^(.*){8}$/);
     });
 
-    it('provides a dailyChallengeSeed method', function() {
-        expect(SeedGenerator.dailyChallengeSeed).to.be.a('Function');
+    it('should only contains alphanumeric chars', () => {
+      expect(seed).toMatch(/^([A-Z]|[0-9]){8}$/);
     });
 
-    describe('when randomSeed() is called', function() {
-        var seed = SeedGenerator.randomSeed();
-        it('should return an 8 char string', function() {
-            expect(seed).to.match(/^(.*){8}$/);
-        });
-        it('should only contains alphanumeric chars', function() {
-            expect(seed).to.match(/^([A-Z]|[0-9]){8}$/);
-        });
+    it('should return the same string as if given the date of the day.', () => {
+      var date = new Date();
+      expect(seed).toEqual(SeedGenerator.dailyChallengeSeed(date));
     });
-    describe('when dailyChallengeSeed() is called without date', function() {
-        var seed = SeedGenerator.dailyChallengeSeed();
-
-        it('should return an 8 char string', function() {
-            expect(seed).to.match(/^(.*){8}$/);
-        });
-
-        it('should only contains alphanumeric chars', function() {
-            expect(seed).to.match(/^([A-Z]|[0-9]){8}$/);
-        });
-
-        it('should return the same string as if given the date of the day.', function() {
-            var date = new Date();
-            expect(seed).to.equal(SeedGenerator.dailyChallengeSeed(date));
-        });
-    });
+  });
 });
