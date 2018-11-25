@@ -14,7 +14,7 @@
     "lint": "tslint --fix --force",
     "pretest": "npm run lint",
     "start": "node www/server.js",
-    "start:watch": ""
+    "typedoc": "typedoc --out ./www/doc/ ."
   },
   "keywords": [
     "platformer",
@@ -74,6 +74,7 @@
     "html-webpack-plugin": "^3.2.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
+    "jest-html-reporter": "^2.4.2",
     "json-loader": "^0.5.7",
     "log4js": "^3.0.6",
     "node-sass": "^4.10.0",
@@ -86,6 +87,7 @@
     "ts-loader": "^5.3.0",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.16.0",
+    "typedoc": "^0.13.0",
     "typescript": "^3.1.6",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "url-loader": "^1.1.2",
@@ -113,6 +115,7 @@
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(scss|css)$": "identity-obj-proxy"
-    }
+    },
+    "testResultsProcessor": "./node_modules/jest-html-reporter"
   }
 }

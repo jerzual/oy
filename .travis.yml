@@ -1,12 +1,10 @@
 language: nodejs
 
 before_script:
-  - npm run build:client
-  - npm run build:server
+  - npm install
 
 script:
   - npm run test
 
 after_success:
   - npm run typedoc
-  - npm pack
