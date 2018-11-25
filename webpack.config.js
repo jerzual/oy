@@ -1,6 +1,13 @@
 const path = require("path");
 const webpack = require("webpack");
+
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+const devMode = process.env.NODE_ENV !== "production";
 
 const PATHS = {
   app: path.join(__dirname, "app"),
@@ -37,7 +44,7 @@ module.exports = {
       {
         test: /\.scss$/,
         loaders: [
-          "style-loader",
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
             options: {
@@ -84,8 +91,15 @@ module.exports = {
     hot: true,
   },
   plugins: [
-    new ForkTsCheckerWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.WatchIgnorePlugin([/\.js$/, /\.d\.ts$/]),
+    new ForkTsCheckerWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: devMode ? "[name].css" : "[name].[hash].css",
+      chunkFilename: devMode ? "[id].css" : "[id].[hash].css",
+    }),
+    new HtmlWebpackPlugin(),
   ],
 };

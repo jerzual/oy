@@ -3,14 +3,10 @@ import server from "./server";
 
 describe("express server", () => {
   let response: supertest.Response;
-  beforeEach(async () => {
-    await supertest(server)
-      .get("/")
-      .then(res => {
-        response = res;
-      });
+  beforeAll(async () => {
+    response = await supertest(server).get("/");
   });
-  afterEach(() => {
+  afterAll(() => {
     server.close();
   });
   describe("should respond to request '/'", () => {

@@ -1,7 +1,5 @@
 const path = require("path");
 const webpack = require("webpack");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 const PATHS = {
@@ -54,7 +52,6 @@ module.exports = {
         NODE_ENV: JSON.stringify("production"),
       },
     }),
-    new HtmlWebpackPlugin(),
     new ForkTsCheckerWebpackPlugin(),
   ],
 };
