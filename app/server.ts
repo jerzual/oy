@@ -1,28 +1,35 @@
-import express from 'express';
-import pug from 'pug';
+import express from "express";
+import sockjs from "sockjs";
 import mithrilExpress from "mithril-express-middleware";
-
 import * as browserMock from "mithril/test-utils/browserMock";
+
+import routes from "./routes";
 
 // use a mock DOM so we can run mithril on the server
 browserMock(global);
 
-import app from "./app";
-import routes from "./routes";
+const app = express();
+app.set("view engine", "pug");
+app.use("/assets", express.static("assets"));
 
 app.use(mithrilExpress(routes));
 
-const server = express();
-server.set('view engine', 'pug');
-server.use('/assets', express.static('assets'));
+app.get("/", (req, res) =>
+  res.render("index", { title: "Hey", message: "Hello there!" }),
+);
 
-server.get('/', (req, res) => {
-  const appString = renderToString(<App />);
-
-  res.send(pug({
-    body: appString,
-    title: 'OY'
-  }));
+const server = app.listen(8081, "0.0.0.0", () => {
+  console.log(" [*] Listening on 0.0.0.0:8081");
 });
 
-server.listen(8080);
+const sockjsEndpoint = sockjs.createServer({
+  prefix: "/api",
+});
+
+sockjsEndpoint.on("connection", conn => {
+  conn.on("data", msg => conn.write(msg));
+});
+
+sockjsEndpoint.installHandlers(server, { prefix: "/api" });
+
+export default server;

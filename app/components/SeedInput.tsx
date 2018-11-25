@@ -1,22 +1,24 @@
-import * as m from 'mithril';
+import * as m from "mithril";
 
-import { MithrilTsxComponent } from 'mithril-tsx-component';
+import { MithrilTsxComponent } from "mithril-tsx-component";
 
 import "./SeedInput.scss";
 
-export interface ISeedInputCompAttrs {
+export interface SeedInputAttributes {
   seed: string;
-  onRegenerate: () => void;
-  onChange: () => void;
-  onSubmit: () => void;
+  onChange: (seed: string) => void;
 }
 
-type Vnode = m.Vnode<ISeedInputCompAttrs, SeedInput>;
-type VnodeDOM = m.VnodeDOM<ISeedInputCompAttrs, SeedInput>;
+type Vnode = m.Vnode<SeedInputAttributes, SeedInput>;
+type VnodeDOM = m.VnodeDOM<SeedInputAttributes, SeedInput>;
 
-export class SeedInput extends MithrilTsxComponent<ISeedInputCompAttrs> {
+export class SeedInput extends MithrilTsxComponent<SeedInputAttributes> {
   // oninit(v: Vnode) {}
   // onbeforeupdate(v: Vnode, o: VnodeDOM) {}
+  // oncreate(v: VnodeDOM) {}
+  // onupdate(v: VnodeDOM) {}
+  // onbeforeremove(v: VnodeDOM) {}
+  // onremove(v: VnodeDOM) {}
   view(v: Vnode) {
     return (
       <div>
@@ -30,9 +32,5 @@ export class SeedInput extends MithrilTsxComponent<ISeedInputCompAttrs> {
       </div>
     );
   }
-  // oncreate(v: VnodeDOM) {}
-  // onupdate(v: VnodeDOM) {}
-  // onbeforeremove(v: VnodeDOM) {}
-  // onremove(v: VnodeDOM) {}
 }
 export default SeedInput;

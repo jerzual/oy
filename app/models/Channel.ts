@@ -1,4 +1,3 @@
-
-export clas Channel {
+export default class Channel {
   peers: [];
 }

@@ -1,34 +1,26 @@
-import React,{PropTypes} from 'react'
-import {findDOMNode} from 'react-dom';
-import RNG from '../generator/RandomNumberGenerator';
-import AvatarPainter from '../generator/AvatarPainter';
+// AvatarPreview display heart containers and gold over the main game screen.
 
-class AvatarPreview extends React.Component{
+import * as m from "mithril";
+import { MithrilTsxComponent } from "mithril-tsx-component";
 
-    componentDidMount(){
-        const context = findDOMNode(this).getContext('2d');
-        this.paint(context);
-    }
-    componentDidUpdate() {
-        const context = findDOMNode(this).getContext('2d');
-        context.clearRect(0, 0, this.props.width, this.props.height);
-        this.paint(context);
-    }
+import * as styles from "./AvatarPreview.scss";
 
-    render(){
-        return (<canvas width={this.props.width} height={this.props.height}/>);
-    }
-    paint(context){
-        const rng = new RNG(this.props.seed);
-        let pixels = new AvatarPainter(rng).paint(context, this.props.width, this.props.height);
-        console.log(pixels);
-    }
+export interface AvatarPreviewAttrs {
+  seed: string;
 }
 
-AvatarPreview.propTypes = {
-    seed: PropTypes.string,
-    width:PropTypes.number,
-    height:PropTypes.number
-}
+type Vnode = m.Vnode<AvatarPreviewAttrs, AvatarPreview>;
+type VnodeDOM = m.VnodeDOM<AvatarPreviewAttrs, AvatarPreview>;
 
+export class AvatarPreview extends MithrilTsxComponent<AvatarPreviewAttrs> {
+  // oninit(v: Vnode) {}
+  // onbeforeupdate(v: Vnode, o: VnodeDOM) {}
+  view(v: Vnode) {
+    return <div className={styles.avatarPreview} />;
+  }
+  // oncreate(v: VnodeDOM) {}
+  // onupdate(v: VnodeDOM) {}
+  // onbeforeremove(v: VnodeDOM) {}
+  // onremove(v: VnodeDOM) {}
+}
 export default AvatarPreview;

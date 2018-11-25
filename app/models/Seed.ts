@@ -1,18 +1,20 @@
-import RNG from '../generator/RandomNumberGenerator';
-
+import * as seedrandom from "seedrandom";
 /**
  * Encapsulate a random number generator and a human reedable seed string.
  */
 class Seed {
-
-    constructor(seed) {
-        this.seedString = seed;
-        this.rng = new RNG(this.seedString);
-        //this.creationDate = moment().now();
-    }
-    random(){
-        return this.rng.random();
-    }
+  rng: seedrandom.prng;
+  seedString: string;
+  constructor(seed: string, global = false) {
+    this.seedString = seed;
+    this.rng = seedrandom.default(this.seedString, { global }, () => {
+      console.log("seed generated");
+    });
+    //this.creationDate = moment().now();
+  }
+  random() {
+    return this.rng.double();
+  }
 }
 
 export default Seed;

@@ -1,7 +1,11 @@
-import SeedInput from './SeedInput';
+import SeedInput from "./SeedInput";
 
-describe('', () => {
-  it('test stuff', () => {
-    expect(true).toBe(true);
+describe("SeedInput", () => {
+  let seedInput: SeedInput;
+  beforeEach(() => {
+    seedInput = new SeedInput();
+  });
+  test("seed input is defined", () => {
+    expect(seedInput).toBeDefined();
   });
 });

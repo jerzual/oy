@@ -7,10 +7,35 @@
     "sourceMap": true,
     "inlineSources": true,
     "outDir": "www/scripts",
-    "module": "amd",
+    "module": "commonjs",
     "target": "es5",
     "esModuleInterop": true,
-    "lib": ["dom", "es2015"]
+    "lib": ["dom", "es2015"],
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "jsxFactory": "m",
+    "moduleResolution": "node",
+    "types": [
+      "chance",
+      "express",
+      "jest",
+      "matter-js",
+      "mithril",
+      "node",
+      "pixi.js",
+      "pouchdb",
+      "pug",
+      "seedrandom",
+      "sockjs",
+      "sockjs-client",
+      "supertest",
+      "webpack"
+    ]
   },
-  "exclude": ["platforms", "node_modules", "bower_components"]
+  "exclude": [
+    "platforms",
+    "node_modules",
+    "bower_components",
+    "node_modules/@types/react*"
+  ]
 }

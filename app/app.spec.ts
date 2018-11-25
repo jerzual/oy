@@ -1,7 +1,7 @@
 import App from './app';
 
-describe('App object', function() {
-  it('has a initialize method', function() {});
+describe('App object', () => {
+  it('has a initialize method', () => {});
 
-  it('should have started the history', function() {});
+  it('should have started the history', () => {});
 });

@@ -1,20 +1,16 @@
-import Matter from 'matter-js';
-import PIXI from 'pixi.js';
+import { Body } from "matter-js";
+import { Sprite } from "pixi.js";
 
-class Entity{
-  constructor(){
-    //mater.js Physics object
-    this.body = {};
-    //PIXI.js sprite
-    this.sprite = {};
-    this.textureName = 'default';
+class Entity {
+  private sprite: Sprite;
+  private body: Body;
+  private textureName: string;
+  constructor() {
+    this.textureName = "default";
   }
-  update(){
-    //TODO connect
-  }
-  initObjects(){
-    this.sprite = new PIXI.Sprite();
-    this.body = new Matter.Body();
+  initObjects() {
+    this.sprite = new Sprite();
+    this.body = new Body();
   }
 }
 

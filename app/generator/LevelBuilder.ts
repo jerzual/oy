@@ -1,38 +1,35 @@
-import Seed from '../models/Seed';
+import Seed from "../models/Seed";
 //import Tile from '../models/Tile';
 //import Item from '../models/Item';
 //import Room from '../collections/Room';
-import LevelStore from '../stores/LevelStore';
-import Level from '../models/Level';
+import Level from "../models/Level";
 
+/**
+ * Builds a level from a seed using the Level/Room/Tile models.
+ */
 class LevelBuilder {
+  private level: Level;
+  private currentSeed: Seed;
+  constructor(private seed?: string, private width = 16, private height = 16) {
+    this.currentSeed = new Seed(seed);
+    this.level = new Level(width, height);
+  }
 
-    constructor(seed) {
-        this.currentSeed = new Seed(seed);
-        this.levelStore = LevelStore;
-    }
+  placeRoomsInLevel(numberOfRooms) {
+    return this;
+  }
 
-    generateEmptyLevel(width, height) {
-        this.level = new Level(width, height);
-        return this;
-    }
+  digMaze() {
+    return this;
+  }
 
-    placeRoomsInLevel(numberOfRooms) {
+  floodFill() {
+    return this;
+  }
 
-      return this;
-    }
-
-    digMaze() {
-      return this;
-    }
-
-    floodFill() {
-      return this;
-    }
-
-    build(){
-      return this.level;
-    }
+  build() {
+    return this.level;
+  }
 }
 
 export default LevelBuilder;
