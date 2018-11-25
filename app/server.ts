@@ -6,7 +6,7 @@ import * as browserMock from "mithril/test-utils/browserMock";
 import routes from "./routes";
 
 // use a mock DOM so we can run mithril on the server
-browserMock(global);
+// browserMock(global);
 
 const app = express();
 app.set("view engine", "pug");

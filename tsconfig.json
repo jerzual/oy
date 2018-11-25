@@ -32,10 +32,5 @@
       "webpack"
     ]
   },
-  "exclude": [
-    "platforms",
-    "node_modules",
-    "bower_components",
-    "node_modules/@types/react*"
-  ]
+  "exclude": ["platforms", "bower_components", "node_modules/@types/react*"]
 }

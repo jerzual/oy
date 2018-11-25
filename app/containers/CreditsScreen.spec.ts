@@ -1,3 +1,13 @@
-import CreditsScreen from "../../app/containers/CreditsScreen";
+import CreditsScreen from "./CreditsScreen";
 
-describe("CreditsScreen", function() {});
+describe("CreditsScreen", () => {
+  describe("Component", () => {
+    let creditsScreen: CreditsScreen;
+    beforeEach(() => {
+      creditsScreen = new CreditsScreen();
+    });
+    test("view()", () => {
+      expect(creditsScreen).toBeDefined();
+    });
+  });
+});
