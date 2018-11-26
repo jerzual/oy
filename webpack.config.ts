@@ -21,6 +21,8 @@ const config: webpack.Configuration = {
   entry: {
     app: PATHS.app + "/main.ts",
   },
+  mode: devMode ? "development" : "production",
+  devtool: devMode ? "inline-source-map" : "source-map",
   output: {
     path: PATHS.build,
     filename: "bundle.js",
@@ -49,7 +51,7 @@ const config: webpack.Configuration = {
             loader: "css-loader",
             options: {
               modules: true,
-              sourceMap: true,
+              sourceMap: devMode,
               localIdentName: "[local]__[hash:base64:5]",
               minimize: true,
             },
@@ -58,7 +60,7 @@ const config: webpack.Configuration = {
             loader: "postcss-loader",
             options: {
               ident: "postcss",
-              sourceMap: true,
+              sourceMap: devMode,
               plugins: () => [
                 autoprefixer({
                   browsers: [
@@ -74,7 +76,7 @@ const config: webpack.Configuration = {
           {
             loader: "sass-loader",
             options: {
-              sourceMap: true,
+              sourceMap: devMode,
             },
           },
         ],

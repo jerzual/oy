@@ -54,7 +54,10 @@ const webpackServerConfig: webpack.Configuration = {
         NODE_ENV: JSON.stringify("production"),
       },
     }),
-    new ForkTsCheckerWebpackPlugin(),
+    new ForkTsCheckerWebpackPlugin({
+      tsconfig: path.join(__dirname, "tsconfig.server.json"),
+      tslint: true,
+    }),
   ],
 };
 

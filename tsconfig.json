@@ -10,9 +10,9 @@
     "module": "commonjs",
     "target": "es5",
     "esModuleInterop": true,
+    "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "lib": ["dom", "es2015"],
-    "experimentalDecorators": true,
     "jsx": "react",
     "jsxFactory": "m",
     "moduleResolution": "node",
@@ -34,5 +34,5 @@
       "webpack-dev-server"
     ]
   },
-  "exclude": ["platforms", "bower_components", "node_modules/@types/react*"]
+  "exclude": ["platforms", "node_modules"]
 }
