@@ -5,6 +5,7 @@ class Entity {
   private sprite: Sprite;
   private body: Body;
   private textureName: string;
+
   constructor() {
     this.textureName = "default";
   }

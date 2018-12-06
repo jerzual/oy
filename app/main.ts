@@ -3,7 +3,7 @@ import Store from "reactive-state";
 import { App } from "./app";
 import SockJS from "sockjs-client";
 import * as m from "mithril";
-import { routes } from "./routes";
+import routes from "./routes";
 import { merge, fromEvent, Observable } from "rxjs";
 
 const db = new PouchDB.default("oy");
@@ -17,8 +17,8 @@ const open$: Observable<Event> = fromEvent(sockets, "open");
 const error$: Observable<Event> = fromEvent(sockets, "error");
 const message$: Observable<Event> = fromEvent(sockets, "message");
 
-merge(close$, open$, error$, message$).subscribe((value) => {
-console.log(value);
+merge(close$, open$, error$, message$).subscribe(value => {
+  console.log(value);
 });
 
 // hot reload webpack

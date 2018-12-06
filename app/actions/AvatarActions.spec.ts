@@ -1,3 +1,0 @@
-describe('AvatarActions', () => {
-  describe('#create', () => {});
-});

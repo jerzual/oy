@@ -4,6 +4,8 @@
   "description": "a rogue platformer",
   "main": "www/server.js",
   "scripts": {
+    "compile:client": "tsc",
+    "compile:server": "tsc -p tsconfig.server.json",
     "build": "npm run build:client && npm run build:server",
     "build:client": "webpack",
     "build:server": "webpack --config webpack.server.config.ts",
@@ -50,6 +52,7 @@
     "reactive-state": "^3.2.1",
     "rot-js": "^2.0.0",
     "rxjs": "^6.3.3",
+    "schemapack": "^1.4.2",
     "seedrandom": "^2.4.4",
     "sockjs": "^0.3.19",
     "sockjs-client": "^1.3.0",
@@ -126,7 +129,7 @@
       }
     },
     "testMatch": [
-      "**/*.spec.+(ts|tsx|js)"
+      "**/*.spec.(ts|tsx|js)"
     ],
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",

@@ -7,4 +7,4 @@ export interface JumpPayload {
 
 export const jumpAction = new Subject<JumpPayload>();
 export const moveAction = new Subject<JumpPayload>();
-export const stop = new Subject<JumpPayload>();
+export const stopAction = new Subject<JumpPayload>();
