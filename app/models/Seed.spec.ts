@@ -1,13 +1,13 @@
-import Seed from '../../app/models/Seed';
+import Seed from "../../app/models/Seed";
 
-describe('Seed', () => {
-  describe('is instanciable', () => {
-    let seed = new Seed('OY');
+describe("Seed", () => {
+  describe("is instanciable", () => {
+    let seed = new Seed("OY");
     expect(seed).toBeDefined();
   });
-  it('takes a string as an argument', () => {});
-  it('a string as an argument', () => {});
-
+  it("takes a string as an argument", () => {});
+  it("a string as an argument", () => {});
+  /*
   describe('when initialized with a seed ABCDEFG', () => {
     let threeFirstResults = [],
       seed = null;
@@ -30,4 +30,5 @@ describe('Seed', () => {
       expect(newFirstResults[2]).toEqual(threeFirstResults[2]);
     });
   });
+  */
 });
