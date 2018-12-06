@@ -6,7 +6,7 @@
     "removeComments": true,
     "sourceMap": true,
     "inlineSources": true,
-    "outDir": "www/public",
+    "outDir": "dist/",
     "module": "commonjs",
     "target": "es5",
     "esModuleInterop": true,
@@ -34,5 +34,6 @@
       "webpack-dev-server"
     ]
   },
+  "include": ["app/main.ts", "typings/**/*", "app/**/*"],
   "exclude": ["platforms", "node_modules"]
 }

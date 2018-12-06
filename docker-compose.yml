@@ -9,8 +9,17 @@ services:
       - "8081:8081"
     volumes:
       - ./www:/usr/src/app
+    command: node server.js
   couchdb:
     image: couchdb
     container_name: "oy-db"
     ports:
       - "5984:5984"
+  e2e:
+    image: node:10
+    container_name: "oy-tests"
+    links:
+      - web
+    ports:
+      - 8082:8082
+    command: npm run e2e

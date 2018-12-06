@@ -51,10 +51,10 @@ bower_components
 plugins
 platforms
 hooks
-src/js/vendor/
 node_modules
 yarn-error.log
 
 #built files
 www/css
 www/bundle.js
+dist/

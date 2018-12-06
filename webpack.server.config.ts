@@ -14,6 +14,7 @@ const webpackServerConfig: webpack.Configuration = {
   entry: {
     app: PATHS.app + "/server.ts",
   },
+  mode: "production",
   target: "node",
   output: {
     path: PATHS.build,
@@ -28,7 +29,7 @@ const webpackServerConfig: webpack.Configuration = {
         loader: "ts-loader",
         options: {
           // disable type checker - we will use it in fork plugin
-          transpileOnly: true,
+          // transpileOnly: true,
           configFile: "./tsconfig.server.json",
         },
       },
@@ -54,10 +55,10 @@ const webpackServerConfig: webpack.Configuration = {
         NODE_ENV: JSON.stringify("production"),
       },
     }),
-    new ForkTsCheckerWebpackPlugin({
-      tsconfig: path.join(__dirname, "tsconfig.server.json"),
-      tslint: true,
-    }),
+    //new ForkTsCheckerWebpackPlugin({
+    //  tsconfig: path.join(__dirname, "tsconfig.server.json"),
+    // tslint: true,
+    //}),
   ],
 };
 

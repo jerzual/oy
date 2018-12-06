@@ -27,6 +27,10 @@ const config: webpack.Configuration = {
     path: PATHS.build,
     filename: "bundle.js",
   },
+  resolve: {
+    extensions: [".js", ".tsx", ".ts", ".json", ".scss"],
+    modules: [path.join(__dirname, "app"), path.resolve("node_modules")],
+  },
   module: {
     rules: [
       {

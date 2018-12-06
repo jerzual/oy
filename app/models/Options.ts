@@ -4,11 +4,12 @@ export interface Options {
     resolution: { width: number; height: number };
   };
   gameplay?: {
-    fogOfWar: boolean;
+    debug: boolean;
+    effects: boolean;
     fieldOfView: boolean;
   };
   controls: {
-    type: 'keyboard' | 'gamepad';
+    type: "keyboard" | "gamepad";
     mapping?: {};
   };
 }
@@ -23,7 +24,7 @@ export function defaultOptions(): Options {
       },
     },
     controls: {
-      type: 'keyboard',
+      type: "keyboard",
     },
   };
 }

@@ -2,7 +2,7 @@ import express from "express";
 import sockjs from "sockjs";
 import path from "path";
 
-import routes from "./routes";
+// import routes from "./routes";
 
 // use a mock DOM so we can run mithril on the server
 // browserMock(global);
