@@ -1,4 +1,5 @@
 {
+  "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "dist/",
     "module": "commonjs",
@@ -18,5 +19,5 @@
       "mithril"
     ]
   },
-  "files": ["app/server.ts"]
+  "include": ["app/server.ts", "typings/**/*", "app/**/*"]
 }
