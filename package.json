@@ -21,8 +21,8 @@
     "webdriver-start": "webdriver-manager start &",
     "webdriver-update": "webdriver-manager update",
     "protractor": "protractor",
-    "e2e": "protractor",
-    "e2e:ci": "protractor --capabilities.chromeOptions.args=--headless --capabilities.chromeOptions.args=--no-sandbox protractor.config.ts"
+    "e2e": "tsc protractor.conf.ts --outDir . --module CommonJS && protractor",
+    "e2e:ci": "tsc protractor.conf.ts --outDir . protractor --capabilities.chromeOptions.args=--headless --capabilities.chromeOptions.args=--no-sandbox protractor.conf.js"
   },
   "keywords": [
     "platformer",

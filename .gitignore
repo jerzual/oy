@@ -58,3 +58,6 @@ yarn-error.log
 www/css
 www/bundle.js
 dist/
+protractor.conf.js
+coverage/
+test-report.html
