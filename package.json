@@ -22,7 +22,7 @@
     "webdriver-update": "webdriver-manager update",
     "protractor": "protractor",
     "e2e": "protractor",
-    "e2e:ci": "protractor --capabilities.chromeOptions.args=--headless --capabilities.chromeOptions.args=--no-sandbox protractor.conf.ts"
+    "e2e:ci": "protractor --capabilities.chromeOptions.args=--headless --capabilities.chromeOptions.args=--no-sandbox protractor.config.ts"
   },
   "keywords": [
     "platformer",
