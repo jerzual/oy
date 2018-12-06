@@ -1,9 +1,25 @@
-describe('LevelActions', () => {
-  describe('#jump', () => {});
+describe("LevelActions", () => {
+  describe("#jump", () => {
+    it("", () => {
+      expect(true).toBe(true);
+    });
+  });
 
-  describe('#shoot', () => {});
+  describe("#shoot", () => {
+    it("", () => {
+      expect(true).toBe(true);
+    });
+  });
 
-  describe('#move', () => {});
+  describe("#move", () => {
+    it("", () => {
+      expect(true).toBe(true);
+    });
+  });
 
-  describe('#pause', () => {});
+  describe("#pause", () => {
+    it("", () => {
+      expect(true).toBe(true);
+    });
+  });
 });
