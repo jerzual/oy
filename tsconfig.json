@@ -34,6 +34,6 @@
       "webpack-dev-server"
     ]
   },
-  "include": ["app/main.ts", "typings/**/*", "app/**/*"],
+  "include": ["app/main.ts", "typings/**/*", "app/**/*", "protractor.conf.ts"],
   "exclude": ["platforms", "node_modules"]
 }

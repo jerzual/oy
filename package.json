@@ -17,7 +17,7 @@
     "watch:server": "nodemon -x 'ts-node app/server.ts'",
     "lint": "tslint --force --project .",
     "start": "node www/server.js",
-    "typedoc": "typedoc --out ./www/doc/ --verbose --exclude \"**/*.{spec.ts,scss}\" --includeDeclarations typings/ ./app/main.ts ",
+    "typedoc": "typedoc --out ./reports/documentation/ --verbose --exclude \"**/*.{spec.ts,scss}\" --includeDeclarations typings/ ./app/main.ts ",
     "webdriver-start": "webdriver-manager start &",
     "webdriver-update": "webdriver-manager update",
     "protractor": "protractor",
