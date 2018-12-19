@@ -5,7 +5,7 @@ const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 const PATHS = {
   app: path.join(__dirname, "app"),
-  build: path.join(__dirname, "www"),
+  build: path.join(__dirname, "."),
 };
 
 const webpackServerConfig: webpack.Configuration = {

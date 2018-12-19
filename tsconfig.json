@@ -16,6 +16,7 @@
     "jsx": "react",
     "jsxFactory": "m",
     "moduleResolution": "node",
+    "typeRoots": ["node_modules/@types/"],
     "types": [
       "chance",
       "express",
@@ -24,16 +25,21 @@
       "mithril",
       "node",
       "pixi.js",
-      "pouchdb",
       "pug",
       "seedrandom",
-      "sockjs",
-      "sockjs-client",
+      "socket.io",
+      "socket.io-client",
       "supertest",
       "webpack",
       "webpack-dev-server"
     ]
   },
-  "include": ["app/main.ts", "typings/**/*", "app/**/*", "protractor.conf.ts"],
+  "include": [
+    "app/main.ts",
+    "typings/**/*",
+    "app/**/*",
+    "protractor.conf.ts",
+    "watcher.tsr.ts"
+  ],
   "exclude": ["platforms", "node_modules"]
 }

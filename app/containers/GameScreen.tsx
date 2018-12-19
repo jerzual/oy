@@ -1,11 +1,11 @@
 import HeroStatus from "../components/HeroStatus";
-import * as m from "mithril";
+import m from "mithril";
 import { MithrilTsxComponent } from "mithril-tsx-component";
 
 import * as styles from "./GameScreen.scss";
 
 export interface GameScreenAttrs {
-  type: string;
+  type?: string;
 }
 
 type Vnode = m.Vnode<GameScreenAttrs, GameScreen>;

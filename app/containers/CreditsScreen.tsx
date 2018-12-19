@@ -1,10 +1,10 @@
-import * as m from "mithril";
+import m from "mithril";
 import { MithrilTsxComponent } from "mithril-tsx-component";
 
 import * as styles from "./CreditsScreen.scss";
 
 export interface CreditsScreenAttrs {
-  type: string;
+  type?: string;
 }
 
 type Vnode = m.Vnode<CreditsScreenAttrs, CreditsScreen>;

@@ -16,7 +16,11 @@ export class App {
   private store: Store<AppState>;
   constructor() {
     this.store = Store.create(getInitialState());
-    this.store.watch(state => state.game).subscribe(() => {});
+    this.store
+      .watch(state => state.game)
+      .subscribe(() => {
+        console.log("game state change");
+      });
     this.pixiApp = new Application();
   }
 
