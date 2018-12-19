@@ -34,9 +34,7 @@ class AvatarPainter {
   withSeed(seed: string) {
     this.rng = seedrandom(seed);
   }
-  drawPants() {
-    //TODO
-  }
+  drawPants() {}
   drawBody() {
     //TODO draw body
   }

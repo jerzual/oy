@@ -4,10 +4,16 @@ import Seed from "../models/Seed";
 //import Room from '../collections/Room';
 import Level from "../models/Level";
 
+export enum LevelType {
+  Maze,
+  Cellular,
+  Dungeon,
+  Spelunky,
+}
 /**
  * Builds a level from a seed using the Level/Room/Tile models.
  */
-class LevelBuilder {
+class LevelBuilder<LevelType = any> {
   private level: Level;
   private currentSeed: Seed;
   constructor(private seed?: string, private width = 16, private height = 16) {
@@ -27,7 +33,7 @@ class LevelBuilder {
     return this;
   }
 
-  build() {
+  build(): Level {
     return this.level;
   }
 }
