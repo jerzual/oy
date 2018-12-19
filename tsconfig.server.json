@@ -9,15 +9,10 @@
     "target": "es2017",
     "allowSyntheticDefaultImports": true,
     "lib": ["es2017", "dom"],
-    "types": [
-      "node",
-      "express",
-      "supertest",
-      "jest",
-      "sockjs",
-      "sockjs-client",
-      "mithril"
-    ]
+    "jsx": "react",
+    "jsxFactory": "m",
+    "typeRoots": ["node_modules/@types/"],
+    "types": ["node", "express", "supertest", "jest", "socket.io", "mithril"]
   },
   "include": ["app/server.ts", "typings/**/*", "app/**/*"]
 }

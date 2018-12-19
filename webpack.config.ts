@@ -6,12 +6,15 @@ const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 const devMode = process.env.NODE_ENV !== "production";
 
+console.log(`devMode: ${devMode}`);
+
 const PATHS = {
   app: path.join(__dirname, "app"),
-  build: path.join(__dirname, "www"),
+  build: path.join(__dirname, "dist/www"),
   styles: path.join(__dirname, "app/styles/"),
 };
 
@@ -26,11 +29,13 @@ const config: webpack.Configuration = {
   output: {
     path: PATHS.build,
     filename: "bundle.js",
+    publicPath: "/",
   },
   resolve: {
     extensions: [".js", ".tsx", ".ts", ".json", ".scss"],
     modules: [path.join(__dirname, "app"), path.resolve("node_modules")],
   },
+  target: "web",
   module: {
     rules: [
       {
@@ -92,10 +97,11 @@ const config: webpack.Configuration = {
     ],
   },
   devServer: {
-    contentBase: "./www/public",
+    contentBase: "./dist/",
     hot: true,
   },
   plugins: [
+    new CleanWebpackPlugin(["dist"]),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.WatchIgnorePlugin([/\.js$/, /\.d\.ts$/]),
     new ForkTsCheckerWebpackPlugin(),
@@ -105,8 +111,11 @@ const config: webpack.Configuration = {
       filename: devMode ? "[name].css" : "[name].[hash].css",
       chunkFilename: devMode ? "[id].css" : "[id].[hash].css",
     }),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: "0Y",
+    }),
   ],
-};
+  node: { Buffer: false },
+} as any;
 
 export default config;

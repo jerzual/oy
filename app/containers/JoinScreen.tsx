@@ -1,4 +1,4 @@
-import * as m from "mithril";
+import m from "mithril";
 import { MithrilTsxComponent } from "mithril-tsx-component";
 
 import SeedInput from "../components/SeedInput";
@@ -7,7 +7,7 @@ import AvatarPreview from "../components/AvatarPreview";
 import * as styles from "./JoinScreen.scss";
 
 export interface JoinAttributes {
-  seed: string;
+  seed?: string;
 }
 
 type Vnode = m.Vnode<JoinAttributes, JoinScreen>;

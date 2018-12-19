@@ -1,6 +1,6 @@
 import * as schemapack from "schemapack";
 
-export type SchemaValue = "unit8" | "int16" | "boolean" | "varuint";
+export type SchemaValue = "uint8" | "int16" | "boolean" | "varuint";
 
 export interface Schema {
   timestamp?: number;
@@ -11,12 +11,7 @@ export interface Schema {
 
 const instance: Schema = {
   timestamp: Date.now(),
-  payload: { "452-025-1": "unit8" },
+  payload: { id: "uint8",px: "uint8", py: "uint8", vx:"uint8",vy: "uint8" },
 };
 
-export function createSchema(schema: Schema): any {
-  return schemapack.build({
-    timestamp: Date.now(),
-    ...schema,
-  });
-}
+export default schemapack.build(instance) as Schema;

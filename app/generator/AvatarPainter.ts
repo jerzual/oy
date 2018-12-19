@@ -1,12 +1,25 @@
-const AVATAR_SIZE = 16,
-  HAIR_COLORS = [0x333333],
-  EYE_COLORS = [0x333333];
+import seedrandom from "seedrandom";
 
+const AVATAR_SIZE = 16,
+  HAIR_COLORS = [0x333333, 0xe58c00, 0x856d4e],
+  EYE_COLORS = [0x333333, 0x000000, 0x2d4353],
+  SKIN_COLORS = [0xffc39f, 0xffd640, 0xb8b8b8],
+  BODY_COLORS = [0xbf6f12, 0x776286, 0x963127, 0x268d11, 0x5f7b97, 0x6e5a3d],
+  PANT_COLORS = [0x343434, 0x3d4856];
+
+function randomFrom(rng, array: number[]) {
+  const i = Math.floor(rng.random() * array.length);
+  return array[i];
+}
+/**
+ * Draw the avatar sprite on a 16x16 canvas.
+ */
 class AvatarPainter {
   private pixels: Array<Array<number>> = [];
   private rng: seedrandom.prng;
-  constructor({ rng }) {
-    this.rng = rng;
+  private ctx: CanvasRenderingContext2D;
+  constructor(canvas: HTMLCanvasElement) {
+    this.ctx = canvas.getContext("2d");
     //pixel is a bi-dimensional array of hex colors.
     this.pixels = [];
     //init with black
@@ -17,6 +30,9 @@ class AvatarPainter {
       }
     }
     this.drawPants();
+  }
+  withSeed(seed: string) {
+    this.rng = seedrandom(seed);
   }
   drawPants() {
     //TODO

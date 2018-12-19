@@ -10,11 +10,6 @@ services:
     volumes:
       - ./www:/usr/src/app
     command: node server.js
-  couchdb:
-    image: couchdb
-    container_name: "oy-db"
-    ports:
-      - "5984:5984"
   e2e:
     image: node:10
     container_name: "oy-tests"

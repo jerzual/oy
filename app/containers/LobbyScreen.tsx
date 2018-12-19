@@ -1,11 +1,11 @@
 import HeroStatus from "../components/HeroStatus";
-import * as m from "mithril";
+import m from "mithril";
 import { MithrilTsxComponent } from "mithril-tsx-component";
 
 import "./LobbyScreen.scss";
 
 export interface LobbyScreenAttrs {
-  type: string;
+  type?: string;
 }
 
 type Vnode = m.Vnode<LobbyScreenAttrs, LobbyScreen>;

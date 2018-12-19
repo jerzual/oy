@@ -1,6 +1,6 @@
 // HeroStatus display heart containers and gold over the main game screen.
 
-import * as m from "mithril";
+import m from "mithril";
 import { MithrilTsxComponent } from "mithril-tsx-component";
 
 import * as styles from "./HeroStatus.scss";
@@ -8,6 +8,7 @@ import * as styles from "./HeroStatus.scss";
 export interface HeroStatusAttrs {
   gold?: number;
   life?: number;
+  score?: number;
 }
 
 type Vnode = m.Vnode<HeroStatusAttrs, HeroStatus>;
