@@ -1,19 +1,21 @@
 import SeedGenerator from "../generator/SeedGenerator";
 import Seed from "./Seed";
 import Level from "./Level";
+import { GameMode } from "./GameMode.enum";
 
 /**
- * a world is managed by a server or a client.
+ * a world is managed by a server or a client;
+ * t cntains a suiite of levels, a game mode.
  */
 class World {
   seed: Seed;
   createdAt: Date;
-  isPlaying?: boolean;
+  gameMode: GameMode;
   levels: Level[] = [];
   constructor() {
     this.seed = new Seed(SeedGenerator.randomSeed());
     this.createdAt = new Date();
-    this.isPlaying = true;
+    this.gameMode = GameMode.FreeRoam;
   }
   /**
    * pause game loop

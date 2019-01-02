@@ -12,7 +12,8 @@
     "jsx": "react",
     "jsxFactory": "m",
     "typeRoots": ["node_modules/@types/"],
-    "types": ["node", "express", "supertest", "jest", "socket.io", "mithril"]
+    "types": ["node", "express", "supertest", "jest", "sockjs", "mithril"]
   },
-  "include": ["app/server.ts", "typings/**/*", "app/**/*"]
+  "files": ["app/server.ts"],
+  "include": ["typings/**/*"]
 }

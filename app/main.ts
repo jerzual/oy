@@ -12,18 +12,26 @@ const app = new App();
 // init
 m.route.prefix("");
 m.route(document.body, "/", routes);
-// instead of sockets.addEventListener :
+// instead of addEventListener :
 const close$: Observable<Event> = fromEvent(sockets, "close");
 const open$: Observable<Event> = fromEvent(sockets, "open");
 const error$: Observable<Event> = fromEvent(sockets, "error");
-const message$: Observable<Event> = fromEvent(sockets, "message");
-// dom events
-const keydown$: Observable<Event> = fromEvent(document, "keydown");
-const gamepad$: Observable<Event> = fromEvent(document, "keydown");
-const mousemove$: Observable<Event> = fromEvent(document, "keydown");
+const data$: Observable<Event> = fromEvent(sockets, "data");
+const socket$ = merge(close$, open$, error$, data$);
+// document events
+const keyDown$: Observable<Event> = fromEvent(document, "keydown");
+const gamepad$: Observable<Event> = fromEvent(document, "gamepadconnected");
+const mouseMove$: Observable<Event> = fromEvent(document, "mousemove");
+const document$ = merge(keyDown$, gamepad$, mouseMove$);
 
-merge(close$, open$, error$, message$).subscribe(value => {
-  console.log(value);
+// window events
+const beforeUnload$: Observable<Event> = fromEvent(document, "beforeunload");
+const resize$: Observable<Event> = fromEvent(document, "resize");
+const scroll$: Observable<Event> = fromEvent(document, "scroll");
+const window$ = merge(beforeUnload$, resize$, scroll$);
+
+merge(socket$, document$, window$).subscribe(value => {
+  console.log(`[EVT:${value.type}]`);
 });
 
 // hot reload webpack

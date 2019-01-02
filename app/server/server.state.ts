@@ -5,9 +5,9 @@ export const clientConnectAction = new Subject<any>();
 
 export interface ClientState {
   //
-  ipAdress: string;
+  ipAdress?: string;
   // date timestamp
-  lastSeen: number;
+  lastSeen?: number;
 }
 export interface LevelState {
   gameMode: "freeroam" | "special";
