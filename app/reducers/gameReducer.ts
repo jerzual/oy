@@ -1,7 +1,7 @@
 import { Reducer } from "reactive-state";
 import { AppState } from "../initialState";
 
-const routeReducer: Reducer<AppState, string> = (
+export const gameReducer: Reducer<AppState, string> = (
   state: AppState,
   payload: string,
 ) => {

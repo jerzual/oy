@@ -13,7 +13,7 @@ type Vnode = m.Vnode<OptionsScreenAttrs, OptionsScreen>;
 type VnodeDOM = m.VnodeDOM<OptionsScreenAttrs, OptionsScreen>;
 
 export class OptionsScreen extends MithrilTsxComponent<OptionsScreenAttrs> {
-  inputs: string[] = ["keyboard", "gamepad"];
+  inputs: string[] = ["keyboard", "gamepad", "touch"];
 
   // oninit(v: Vnode) {}
   // onbeforeupdate(v: Vnode, o: VnodeDOM) {}

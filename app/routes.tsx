@@ -24,17 +24,24 @@ export const routes: RouteDefs = {
       </Layout>
     ),
   },
-  "/game/:seed": {
+  "/lobby": {
+    render: () => (
+      <Layout title="lobby">
+        <LobbyScreen />
+      </Layout>
+    ),
+  },
+  "/world/:seed": {
     render: () => (
       <Layout title="{0}">
         <GameScreen />
       </Layout>
     ),
   },
-  "/lobby": {
+  "/world/:worldSeed/level/:levelSeed": {
     render: () => (
-      <Layout title="lobby">
-        <LobbyScreen />
+      <Layout title="{0}">
+        <GameScreen />
       </Layout>
     ),
   },
@@ -53,10 +60,5 @@ export const routes: RouteDefs = {
     ),
   },
 };
-
-export function bindRoutes(element: HTMLElement = document.body): void {
-  // Set up routing by connecting components to routes
-  m.route(document.body, "/", routes);
-}
 
 export default routes;

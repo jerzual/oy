@@ -27,8 +27,8 @@
       "pixi.js",
       "pug",
       "seedrandom",
-      "socket.io",
-      "socket.io-client",
+      "sockjs",
+      "sockjs-client",
       "supertest",
       "webpack",
       "webpack-dev-server"

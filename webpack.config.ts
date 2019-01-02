@@ -25,7 +25,7 @@ const config: webpack.Configuration = {
     app: PATHS.app + "/main.ts",
   },
   mode: devMode ? "development" : "production",
-  devtool: devMode ? "inline-source-map" : "source-map",
+  devtool: devMode ? "cheap-module-eval-source-map" : "source-map",
   output: {
     path: PATHS.build,
     filename: "bundle.js",
