@@ -1,20 +1,18 @@
 version: "3"
 services:
   web:
-    image: node:10
+    build: .
     container_name: "oy-web"
-    links:
-      - couchdb
     ports:
-      - "8081:8081"
+      - "3000:3000"
     volumes:
       - ./www:/usr/src/app
     command: node server.js
   e2e:
-    image: node:10
-    container_name: "oy-tests"
+    build: .
+    container_name: "oy-e2e"
     links:
       - web
     ports:
-      - 8082:8082
+      - 4000:4000
     command: npm run e2e

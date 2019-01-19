@@ -61,3 +61,4 @@ dist/
 protractor.conf.js
 coverage/
 test-report.html
+**/__generated__/*

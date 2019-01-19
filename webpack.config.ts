@@ -99,6 +99,10 @@ const config: webpack.Configuration = {
   devServer: {
     contentBase: "./dist/",
     hot: true,
+    port: 3000,
+    proxy: {
+      "/api": "http://localhost:4000",
+    },
   },
   plugins: [
     new CleanWebpackPlugin(["dist"]),
