@@ -7,7 +7,7 @@ import { merge, fromEvent, Observable } from "rxjs";
 import "./main.scss";
 import routes from "./routes";
 
-const sockets = new SockJS(`http://127.0.0.1:8081/api`);
+const sockets = new SockJS(`http://127.0.0.1:4000/api`);
 const app = new App();
 // init
 m.route.prefix("");

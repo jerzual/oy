@@ -21,3 +21,7 @@ export enum Colors {
   Yellow = 0xdad45e,
   White = 0xdeeed6,
 }
+
+export function toString(color:Colors) {
+  return color.toString(16);//.padStart(6, "0");
+}

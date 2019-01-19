@@ -1,2 +1,2 @@
 export * from "./HeroActions";
-export * from "./avatarActions";
+export * from "./EventActions";

@@ -25,16 +25,16 @@ routes.forEach(route => {
   );
 });
 */
-const server = app.listen(8081, "0.0.0.0", () => {
-  console.log(" [*] Listening on 0.0.0.0:8081");
+const server = app.listen(4000, "0.0.0.0", () => {
+  console.log(" [*] Listening on 0.0.0.0:4000");
 });
 
 const sockjsEndpoint = sockjs.createServer({
   prefix: "/api",
 });
 
-sockjsEndpoint.on("connection", conn => {
-  console.log(`connection from ${conn.remoteAddress}`);
+sockjsEndpoint.on("connection", (conn: sockjs.Connection) => {
+  console.log(`connection from ${conn.remoteAddress}: ${conn.remotePort}`);
   conn.on("data", msg => {
     console.log(`data ${msg}`);
     conn.write(msg);

@@ -53,9 +53,7 @@ store
 // use a RxJS Subjects as an action
 export interface SockAction {}
 // connection
-const enterAction: Subject<SockAction> = new Subject<any>().pipe(
-  map(evt => {}),
-);
+const enterAction: Subject<SockAction> = new Subject<SockAction>();
 // join lobby with seed filled.
 const joinAction = new Subject<ServerState>();
 // disconnection
