@@ -27,7 +27,7 @@ export class HomeScreen extends MithrilTsxComponent<HomeScreenAttrs> {
       <nav className={styles.mainMenu}>
         <ul className={styles.menuList}>
           {this.menu.map(entry => (
-            <li>
+            <li className={styles.menuEntry}>
               <a href={entry.path} oncreate={m.route.link} tabindex={0}>
                 {entry.title}
               </a>

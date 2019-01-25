@@ -3,6 +3,7 @@ import m from "mithril";
 import { MithrilTsxComponent } from "mithril-tsx-component";
 
 import "./SeedInput.scss";
+import { Input, Button } from "../elements";
 
 export interface SeedInputAttributes {
   seed: string;
@@ -21,14 +22,14 @@ export class SeedInput extends MithrilTsxComponent<SeedInputAttributes> {
   // onremove(v: VnodeDOM) {}
   view(v: Vnode) {
     return (
-      <div>
-        <input type="text" placeholder="QWERTY42" max={8} />
-        <button type="button" className="btn  btn-bloc" value="regenerate">
+      <div className="formGroup">
+        <Input key="seed" type="text" placeholder="QWERTY42" max={8} />
+        <Button type="button">
           regenerate
-        </button>
-        <button type="submit" className="btn btn-positive btn-bloc">
+        </Button>
+        <Button type="submit">
           Play
-        </button>
+        </Button>
       </div>
     );
   }
