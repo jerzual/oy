@@ -1,21 +1,13 @@
 // ControllerSelect display heart containers and gold over the main game screen.
 
-import m from "mithril";
-import { MithrilTsxComponent } from "mithril-tsx-component";
+import { Component } from "inferno";
 
 import * as styles from "./ControllerSelect.scss";
 
 export interface ControllerSelectAttrs {}
 
-type Vnode = m.Vnode<ControllerSelectAttrs, ControllerSelect>;
-type VnodeDOM = m.VnodeDOM<ControllerSelectAttrs, ControllerSelect>;
-
-export class ControllerSelect extends MithrilTsxComponent<
-  ControllerSelectAttrs
-> {
-  // oninit(v: Vnode) {}
-  // onbeforeupdate(v: Vnode, o: VnodeDOM) {}
-  view(v: Vnode) {
+export class ControllerSelect extends Component<ControllerSelectAttrs, any> {
+  public render(props: any) {
     return (
       <form>
         <label>
@@ -26,9 +18,5 @@ export class ControllerSelect extends MithrilTsxComponent<
       </form>
     );
   }
-  // oncreate(v: VnodeDOM) {}
-  // onupdate(v: VnodeDOM) {}
-  // onbeforeremove(v: VnodeDOM) {}
-  // onremove(v: VnodeDOM) {}
 }
 export default ControllerSelect;

@@ -21,9 +21,7 @@ const PATHS = {
 const config: webpack.Configuration = {
   // Entry accepts a path or an object of entries. We'll be using the
   // latter form given it's convenient with more complex configurations.
-  entry: {
-    app: PATHS.app + "/main.ts",
-  },
+  entry: [PATHS.app + "/main.ts" /*, "webpack-hot-middleware/client"*/],
   mode: devMode ? "development" : "production",
   devtool: devMode ? "cheap-module-eval-source-map" : "source-map",
   output: {
@@ -36,6 +34,26 @@ const config: webpack.Configuration = {
     modules: [path.join(__dirname, "app"), path.resolve("node_modules")],
   },
   target: "web",
+  optimization: {
+    minimize: true,
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          chunks: "initial",
+          minChunks: 2,
+          maxInitialRequests: 5, // The default limit is too small to showcase the effect
+          minSize: 0, // This is example is too small to create commons chunks
+        },
+        vendor: {
+          test: /node_modules/,
+          chunks: "initial",
+          name: "vendor",
+          priority: 10,
+          enforce: true,
+        },
+      },
+    },
+  },
   module: {
     rules: [
       {
@@ -102,10 +120,11 @@ const config: webpack.Configuration = {
     port: 3000,
     proxy: {
       "/api": "http://localhost:4000",
+      "/socket.io": "http://localhost:4000",
     },
   },
   plugins: [
-    new CleanWebpackPlugin(["dist"]),
+    // new CleanWebpackPlugin(["dist"]),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.WatchIgnorePlugin([/\.js$/, /\.d\.ts$/]),
     new ForkTsCheckerWebpackPlugin(),
@@ -116,10 +135,10 @@ const config: webpack.Configuration = {
       chunkFilename: devMode ? "[id].css" : "[id].[hash].css",
     }),
     new HtmlWebpackPlugin({
-      title: "0Y",
+      title: "U0Y",
     }),
   ],
   node: { Buffer: false },
-} as any;
+};
 
 export default config;

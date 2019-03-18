@@ -35,12 +35,14 @@ interface ServerState {
   worlds?: { [id: string]: WorldState };
 }
 
-const initialState: ServerState = {
-  clients: {},
-  worlds: {},
+const initialState = (): ServerState => {
+  return {
+    clients: {},
+    worlds: {},
+  };
 };
 
-const store = Store.create(initialState);
+export const store = Store.create(initialState());
 
 // The .select() function returns an Observable that emits every state change, so we can subscribe to it
 store
@@ -51,13 +53,15 @@ store
 // [CONSOLE.LOG]: STATE: {"counter":0}
 
 // use a RxJS Subjects as an action
-export interface SockAction {}
+export interface SockAction {
+  id: string;
+}
 // connection
-const enterAction: Subject<SockAction> = new Subject<SockAction>();
+export const enterAction: Subject<SockAction> = new Subject<SockAction>();
 // join lobby with seed filled.
-const joinAction = new Subject<ServerState>();
+export const joinAction = new Subject<ServerState>();
 // disconnection
-const leaveAction = new Subject<ServerState>();
+export const leaveAction = new Subject<ServerState>();
 
 // A reducer is a function that takes a state and an optional payload, and returns a new state
 function clientsReducer(state, payload) {
@@ -65,7 +69,7 @@ function clientsReducer(state, payload) {
 }
 
 store.addReducer(enterAction, (state, payload) => {
-  return { ...state };
+  return { ...state, clients: {...state.clients, [payload.id]: payload } };
 });
 store.addReducer(joinAction, (state, payload) => {
   return { ...state };

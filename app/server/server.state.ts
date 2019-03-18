@@ -1,14 +1,15 @@
 import { Store } from "reactive-state";
 import { Subject } from "rxjs";
-
-export const clientConnectAction = new Subject<any>();
+import io from "socket.io";
 
 export interface ClientState {
+  ioClient: io.Client;
   //
   ipAdress?: string;
   // date timestamp
   lastSeen?: number;
 }
+
 export interface LevelState {
   gameMode: "freeroam" | "special";
   size: { w: number; h: number };
@@ -17,10 +18,10 @@ export interface LevelState {
 }
 export interface ServerState {
   clients: { [id: string]: ClientState };
-  worlds: { [id: string]: LevelState };
+  worlds?: { [id: string]: LevelState };
 }
 
-export const getInitialServerState = () => {
+export const getInitialServerState = (): ServerState => {
     return {
         clients: {},
     }

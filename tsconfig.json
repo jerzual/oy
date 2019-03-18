@@ -13,8 +13,7 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "lib": ["dom", "es2015"],
-    "jsx": "react",
-    "jsxFactory": "m",
+    "jsx": "preserve",
     "moduleResolution": "node",
     "typeRoots": ["node_modules/@types/"],
     "types": [
@@ -22,13 +21,13 @@
       "express",
       "jest",
       "matter-js",
-      "mithril",
+      "inferno",
       "node",
       "pixi.js",
       "pug",
       "seedrandom",
-      "sockjs",
-      "sockjs-client",
+      "socket.io",
+      "socket.io-client",
       "supertest",
       "webpack",
       "webpack-dev-server"
@@ -36,10 +35,10 @@
   },
   "include": [
     "app/main.ts",
-    "typings/**/*",
+    "app/main.tsx*",
     "app/**/*",
     "protractor.conf.ts",
-    "watcher.tsr.ts"
+    "watcher.ts"
   ],
   "exclude": ["platforms", "node_modules"]
 }

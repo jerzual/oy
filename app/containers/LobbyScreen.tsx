@@ -1,6 +1,5 @@
 import HeroStatus from "../components/HeroStatus";
-import m from "mithril";
-import { MithrilTsxComponent } from "mithril-tsx-component";
+import { Component } from "inferno";
 
 import "./LobbyScreen.scss";
 
@@ -8,17 +7,8 @@ export interface LobbyScreenAttrs {
   type?: string;
 }
 
-type Vnode = m.Vnode<LobbyScreenAttrs, LobbyScreen>;
-type VnodeDOM = m.VnodeDOM<LobbyScreenAttrs, LobbyScreen>;
-
-export class LobbyScreen extends MithrilTsxComponent<LobbyScreenAttrs> {
-  // oninit(v: Vnode) {}
-  // onbeforeupdate(v: Vnode, o: VnodeDOM) {}
-  // oncreate(v: VnodeDOM) {}
-  // onupdate(v: VnodeDOM) {}
-  // onbeforeremove(v: VnodeDOM) {}
-  // onremove(v: VnodeDOM) {}
-  view(v: Vnode) {
+export class LobbyScreen extends Component<LobbyScreenAttrs, any> {
+  public render(props: any) {
     return (
       <div>
         <h1>Archive</h1>

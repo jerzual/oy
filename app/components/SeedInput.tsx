@@ -1,6 +1,4 @@
-import m from "mithril";
-
-import { MithrilTsxComponent } from "mithril-tsx-component";
+import { Component } from "inferno";
 
 import "./SeedInput.scss";
 import { Input, Button } from "../elements";
@@ -10,28 +8,24 @@ export interface SeedInputAttributes {
   onChange: (seed: string) => void;
 }
 
-type Vnode = m.Vnode<SeedInputAttributes, SeedInput>;
-type VnodeDOM = m.VnodeDOM<SeedInputAttributes, SeedInput>;
-
-export class SeedInput extends MithrilTsxComponent<SeedInputAttributes> {
-  // oninit(v: Vnode) {}
-  // onbeforeupdate(v: Vnode, o: VnodeDOM) {}
-  // oncreate(v: VnodeDOM) {}
-  // onupdate(v: VnodeDOM) {}
-  // onbeforeremove(v: VnodeDOM) {}
-  // onremove(v: VnodeDOM) {}
-  view(v: Vnode) {
+export class SeedInput extends Component<SeedInputAttributes, any> {
+  public render(props: any) {
     return (
       <div className="formGroup">
-        <Input key="seed" type="text" placeholder="QWERTY42" max={8} />
-        <Button type="button">
-          regenerate
-        </Button>
-        <Button type="submit">
-          Play
-        </Button>
+        <Input
+          key="seed"
+          type="text"
+          placeholder="QWERTY42"
+          max={8}
+          onChange={this.applyChange}
+        />
+        <Button type="button">regenerate</Button>
+        <Button type="submit">Play</Button>
       </div>
     );
+  }
+  applyChange(e) {
+    console.error(e);
   }
 }
 export default SeedInput;

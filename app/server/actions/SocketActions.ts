@@ -1,10 +1,10 @@
-import sockjs from "sockjs";
+import io from "socket.io";
 import { Observable } from "rxjs";
 
 import { fromEvent } from "rxjs";
 
-export default (sockjs: sockjs.Connection) => {
-  fromEvent(sockjs, "connection");
-  fromEvent(sockjs, "data");
-  fromEvent(sockjs, "disconnect");
+export default (socket: io.Socket) => {
+  fromEvent(socket, "connection");
+  fromEvent(socket, "data");
+  fromEvent(socket, "disconnect");
 };

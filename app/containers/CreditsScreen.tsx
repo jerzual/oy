@@ -1,5 +1,4 @@
-import m from "mithril";
-import { MithrilTsxComponent } from "mithril-tsx-component";
+import { Component } from "inferno";
 
 import * as styles from "./CreditsScreen.scss";
 
@@ -7,17 +6,8 @@ export interface CreditsScreenAttrs {
   type?: string;
 }
 
-type Vnode = m.Vnode<CreditsScreenAttrs, CreditsScreen>;
-type VnodeDOM = m.VnodeDOM<CreditsScreenAttrs, CreditsScreen>;
-
-export class CreditsScreen extends MithrilTsxComponent<CreditsScreenAttrs> {
-  // oninit(v: Vnode) {}
-  // onbeforeupdate(v: Vnode, o: VnodeDOM) {}
-  // oncreate(v: VnodeDOM) {}
-  // onupdate(v: VnodeDOM) {}
-  // onbeforeremove(v: VnodeDOM) {}
-  // onremove(v: VnodeDOM) {}
-  view(v: Vnode) {
+export class CreditsScreen extends Component<CreditsScreenAttrs, any> {
+  public render(props: any) {
     return (
       <div id="credits" className={styles.creditsScreen}>
         <h2>Credits</h2>

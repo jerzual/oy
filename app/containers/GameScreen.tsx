@@ -1,6 +1,5 @@
 import HeroStatus from "../components/HeroStatus";
-import m from "mithril";
-import { MithrilTsxComponent } from "mithril-tsx-component";
+import { Component } from "inferno";
 
 import * as styles from "./GameScreen.scss";
 
@@ -8,17 +7,8 @@ export interface GameScreenAttrs {
   type?: string;
 }
 
-type Vnode = m.Vnode<GameScreenAttrs, GameScreen>;
-type VnodeDOM = m.VnodeDOM<GameScreenAttrs, GameScreen>;
-
-export class GameScreen extends MithrilTsxComponent<GameScreenAttrs> {
-  // oninit(v: Vnode) {}
-  // onbeforeupdate(v: Vnode, o: VnodeDOM) {}
-  // oncreate(v: VnodeDOM) {}
-  // onupdate(v: VnodeDOM) {}
-  // onbeforeremove(v: VnodeDOM) {}
-  // onremove(v: VnodeDOM) {}
-  view(v: Vnode) {
+export class GameScreen extends Component<GameScreenAttrs, any> {
+  public render(props: any) {
     return (
       <div className={styles.gameScreen}>
         <canvas id="game" />
