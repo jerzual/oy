@@ -29,15 +29,23 @@ class AvatarPainter {
         this.pixels[x][y] = 0x000000;
       }
     }
-    this.drawPants();
   }
   withSeed(seed: string) {
     this.rng = seedrandom(seed);
+  }
+  draw() {
+    this.drawPants();
+    this.drawBody();
+    this.drawHead();
+    this.drawArms();
+    this.drawEyes();
+    this.drawHair();
   }
   drawPants() {}
   drawBody() {
     //TODO draw body
   }
+  drawArms() {}
   drawHead() {
     //TODO draw head
   }

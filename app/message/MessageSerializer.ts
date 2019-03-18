@@ -1,4 +1,5 @@
-abstract class MessageSerializer<I, O> {
-  write() {}
-  read() {}
+export interface Serializer {
+  [key: string]: any;
+  encode?: (input: Object) => Buffer;
+  decode?: (buffer: Buffer) => Object;
 }

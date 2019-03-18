@@ -1,36 +1,28 @@
-import m from "mithril";
-import { MithrilTsxComponent } from "mithril-tsx-component";
+import { Component } from "inferno";
 
 import * as styles from "./HomeScreen.scss";
+import { Link } from "inferno-router";
 
 export interface HomeScreenAttrs {}
 
-type Vnode = m.Vnode<HomeScreenAttrs, HomeScreen>;
-type VnodeDOM = m.VnodeDOM<HomeScreenAttrs, HomeScreen>;
-
-export class HomeScreen extends MithrilTsxComponent<HomeScreenAttrs> {
+export class HomeScreen extends Component<HomeScreenAttrs, any> {
   private menu: any[];
-  oninit(v: Vnode) {
+  public componentWillMount() {
     this.menu = [
       { path: "/join", title: "Play" },
       { path: "/options", title: "Options" },
       { path: "/credits", title: "About" },
     ];
   }
-  // onbeforeupdate(v: Vnode, o: VnodeDOM) {}
-  // oncreate(v: VnodeDOM) {}
-  // onupdate(v: VnodeDOM) {}
-  // onbeforeremove(v: VnodeDOM) {}
-  // onremove(v: VnodeDOM) {}
-  view(v: Vnode) {
+  public render(props: any) {
     return (
       <nav className={styles.mainMenu}>
         <ul className={styles.menuList}>
           {this.menu.map(entry => (
             <li className={styles.menuEntry}>
-              <a href={entry.path} oncreate={m.route.link} tabindex={0}>
+              <Link href={entry.path} oncreate={m.route.link} tabindex={0}>
                 {entry.title}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

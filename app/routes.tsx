@@ -1,5 +1,5 @@
-import m, { RouteDefs } from "mithril";
-
+import { render } from "inferno";
+import { BrowserRouter, Route, Switch, Link } from "inferno-router";
 import Layout from "./components/Layout";
 
 import LobbyScreen from "./containers/LobbyScreen";
@@ -9,56 +9,18 @@ import HomeScreen from "./containers/HomeScreen";
 import OptionsScreen from "./containers/OptionsScreen";
 import JoinScreen from "./containers/JoinScreen";
 
-export const routes: RouteDefs = {
-  "/": {
-    render: () => (
-      <Layout title="">
-        <HomeScreen />
-      </Layout>
-    ),
-  },
-  "/join": {
-    render: () => (
-      <Layout title="join">
-        <JoinScreen />
-      </Layout>
-    ),
-  },
-  "/lobby": {
-    render: () => (
-      <Layout title="lobby">
-        <LobbyScreen />
-      </Layout>
-    ),
-  },
-  "/world/:seed": {
-    render: () => (
-      <Layout title="{0}">
-        <GameScreen />
-      </Layout>
-    ),
-  },
-  "/world/:worldSeed/level/:levelSeed": {
-    render: () => (
-      <Layout title="{0}">
-        <GameScreen />
-      </Layout>
-    ),
-  },
-  "/options": {
-    render: () => (
-      <Layout title="options">
-        <OptionsScreen />
-      </Layout>
-    ),
-  },
-  "/credits": {
-    render: () => (
-      <Layout title="credits">
-        <CreditsScreen />
-      </Layout>
-    ),
-  },
-};
+const Routes = () => (
+  <BrowserRouter>
+    <Layout>
+      <Route path="/" component={HomeScreen} />
+      <Route path="/join" component={JoinScreen} />
+      <Route path="/lobby" component={LobbyScreen} />
+      <Route path="/world/:seed" component={GameScreen} />
+      <Route path="/world/:worldSeed/level/:levelSeed" component={GameScreen} />
+      <Route path="/options" component={OptionsScreen} />
+      <Route path="/credits" component={CreditsScreen} />
+    </Layout>
+  </BrowserRouter>
+);
 
-export default routes;
+export default Routes;

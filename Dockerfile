@@ -1,16 +1,8 @@
-FROM node:10
+FROM node:11
 
 WORKDIR /usr/src/app
 
-COPY package.json .
-
 COPY . .
 
-RUN npm ci
+RUN npm i -g typescript@^3.2.0 nodemon ts-node
 
-RUN npm run build
-
-EXPOSE 3000
-EXPOSE 4000
-
-CMD [ "npm", "start" ]

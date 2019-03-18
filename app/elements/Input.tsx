@@ -1,5 +1,4 @@
-import m from "mithril";
-import { MithrilTsxComponent } from "mithril-tsx-component";
+import { Component } from "inferno";
 
 import * as styles from "./Input.scss";
 
@@ -7,27 +6,20 @@ export interface InputAttrs {
   key: string;
   type: string;
   placeholder?: string;
-  max?: number
+  max?: number;
   onChange?: (value) => void;
 }
 
-type Vnode = m.Vnode<InputAttrs, Input>;
-type VnodeDOM = m.VnodeDOM<InputAttrs, Input>;
-
-export class Input extends MithrilTsxComponent<InputAttrs> {
-  // oninit(v: Vnode) {}
-  // onbeforeupdate(v: Vnode, o: VnodeDOM) {}
-  view(v: Vnode) {
+export class Input extends Component<InputAttrs, any> {
+  public render(props: any) {
     return (
-      <label for={v.attrs.key}>
-        <input className={styles.textField} 
-        oninput={(e) => v.attrs.onChange(e.target.value)} />
+      <label for={props.key}>
+        <input
+          className={styles.textField}
+          onchange={e => props.onChange(e.target.value)}
+        />
       </label>
     );
   }
-  // oncreate(v: VnodeDOM) {}
-  // onupdate(v: VnodeDOM) {}
-  // onbeforeremove(v: VnodeDOM) {}
-  // onremove(v: VnodeDOM) {}
 }
 export default Input;
