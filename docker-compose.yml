@@ -6,7 +6,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./www:/usr/src/app
+      - .:/usr/src/app
     command: node server.js
   e2e:
     build: .
@@ -15,4 +15,7 @@ services:
       - web
     ports:
       - 4000:4000
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
     command: npm run e2e

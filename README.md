@@ -43,7 +43,7 @@ a multiplayer Spelunky, Worms, platformer ?
 - rxjs: reactive stuff.
 - reactive-state: used to manage server state and client state.
 - express: web server
-- mithril with tsx for ui / site rendering
+- inferno with tsx for ui / site rendering
 - css-modules
 
 **Development tools**

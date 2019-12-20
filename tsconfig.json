@@ -1,45 +1,30 @@
 {
-  "compileOnSave": true,
-  "compilerOptions": {
-    "noImplicitAny": false,
-    "noEmitOnError": true,
-    "removeComments": true,
-    "sourceMap": true,
-    "inlineSources": true,
-    "outDir": "dist/",
-    "module": "commonjs",
-    "target": "es5",
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "lib": ["dom", "es2015"],
-    "jsx": "react",
-    "jsxFactory": "m",
-    "moduleResolution": "node",
-    "typeRoots": ["node_modules/@types/"],
-    "types": [
-      "chance",
-      "express",
-      "jest",
-      "matter-js",
-      "mithril",
-      "node",
-      "pixi.js",
-      "pug",
-      "seedrandom",
-      "sockjs",
-      "sockjs-client",
-      "supertest",
-      "webpack",
-      "webpack-dev-server"
-    ]
-  },
-  "include": [
-    "app/main.ts",
-    "typings/**/*",
-    "app/**/*",
-    "protractor.conf.ts",
-    "watcher.tsr.ts"
-  ],
-  "exclude": ["platforms", "node_modules"]
+   "compilerOptions": {
+      "lib": [
+         "dom",
+         "es5",
+         "es6"
+      ],
+      "jsx": "react",
+      "jsxFactory": "React.createElement",
+      "target": "es5",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "outDir": "./build",
+      "importHelpers": true,
+      "noEmitHelpers": true,
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "esModuleInterop": true,
+      "allowJs": true,
+      "allowSyntheticDefaultImports": true,
+      "sourceMap": true,
+      "preserveConstEnums": true
+   },
+	"include": [
+		"src/**/*"
+	],
+	"exclude": [
+		"node_modules"
+	]
 }

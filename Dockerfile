@@ -1,16 +1,12 @@
-FROM node:10
+FROM node:12
 
 WORKDIR /usr/src/app
 
-COPY package.json .
-
 COPY . .
 
-RUN npm ci
-
-RUN npm run build
+RUN npm i -g typescript nodemon ts-node typeorm
 
 EXPOSE 3000
-EXPOSE 4000
+EXPOSE 7878
 
-CMD [ "npm", "start" ]
+CMD npm run dev

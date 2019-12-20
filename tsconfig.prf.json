@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "prf/",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "target": "es2017",
+    "allowSyntheticDefaultImports": true,
+    "lib": ["es2017", "dom"],
+    "typeRoots": ["node_modules/@types/"],
+    "types": ["node", "express", "supertest", "jest", "socket.io", "preact"]
+  },
+  "files": ["prf/functions.ts"],
+  "include": ["typings/**/*"]
+}

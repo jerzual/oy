@@ -18,6 +18,7 @@
       "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
       "program": "${workspaceFolder}/app/server.ts",
       "sourceMaps": true,
+      "outFiles": ["${workspaceRoot}/dist/"],
       "cwd": "${workspaceRoot}",
       "env": {
         "TS_NODE_PROJECT": "tsconfig.server.json",

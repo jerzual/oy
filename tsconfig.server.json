@@ -10,10 +10,12 @@
     "allowSyntheticDefaultImports": true,
     "lib": ["es2017", "dom"],
     "jsx": "react",
-    "jsxFactory": "m",
-    "typeRoots": ["node_modules/@types/"],
-    "types": ["node", "express", "supertest", "jest", "sockjs", "mithril"]
+    "jsxFactory": "React.createElement",
+    "typeRoots": ["node_modules/@types/"]
   },
-  "files": ["app/server.ts"],
-  "include": ["typings/**/*"]
+  "files": ["src/server.tsx"],
+  "include": ["src/**/*"],
+	"exclude": [
+		"node_modules"
+	]
 }
