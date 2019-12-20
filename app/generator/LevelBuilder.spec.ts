@@ -11,6 +11,8 @@ describe("LevelBuilder", () => {
   });
 
   describe("# generateEmptyLevel()", () => {
-    it("", () => {});
+    it("", () => {
+      levelBuilder.generateEmptyLevel();
+    });
   });
 });

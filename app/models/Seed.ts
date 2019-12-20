@@ -8,9 +8,8 @@ class Seed {
   seedString: string;
   constructor(seed: string, global = false) {
     this.seedString = seed;
-    this.rng = seedrandom.default(this.seedString, { global }, () => {
-      console.log("seed generated");
-    });
+    this.rng = seedrandom.quick(this.seedString, { global });
+
     //this.creationDate = moment().now();
   }
   random() {

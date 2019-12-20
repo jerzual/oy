@@ -1,5 +1,5 @@
-import { Store } from "reactive-state";
-import { Subject } from "rxjs";
+import { Store as ReactiveStore } from "reactive-state";
+import { Subject, Observable } from "rxjs";
 import { take, map } from "rxjs/operators";
 
 export const serverAction = new Subject();
@@ -42,7 +42,7 @@ const initialState = (): ServerState => {
   };
 };
 
-export const store = Store.create(initialState());
+export const store = ReactiveStore.create(initialState());
 
 // The .select() function returns an Observable that emits every state change, so we can subscribe to it
 store

@@ -34,6 +34,7 @@ const gamepadDisconnected$: Observable<Event> = fromEvent(
 );
 const gamepad$ = merge(gamepadConnected$, gamepadDisconnected$);
 
+// mouse events
 const mouseMove$: Observable<Event> = fromEvent(document, "mousemove");
 const mouseEnter$: Observable<Event> = fromEvent(document, "mouseenter");
 const mouseLeave$: Observable<Event> = fromEvent(document, "mouseleave");

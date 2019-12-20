@@ -17,7 +17,7 @@ app.set("view engine", "pug");
 app.use("/*.*", express.static(path.join(process.cwd(), "dist", "www")));
 
 // webpack dev mode
-/*
+
 if (process.env.NODE_ENV !== "production") {
   var webpack = require("webpack");
   var webpackConfig = require("../webpack.config");
@@ -31,7 +31,7 @@ if (process.env.NODE_ENV !== "production") {
   );
   app.use(require("webpack-hot-middleware"));
 }
-*/
+
 
 // server side rendering
 /*

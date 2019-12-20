@@ -5,7 +5,7 @@ const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 const PATHS = {
   app: path.join(__dirname, "app"),
-  build: path.join(__dirname, "."),
+  build: path.join(__dirname, "dist"),
 };
 
 const webpackServerConfig: webpack.Configuration = {
@@ -25,14 +25,22 @@ const webpackServerConfig: webpack.Configuration = {
       {
         test: /\.tsx?$/,
         include: /app/,
-        exclude: /node_modules/,
-        loader: "ts-loader",
+        //exclude: /node_modules/,
+        loaders:  [
+          {loader: "ts-loader",
         options: {
           // disable type checker - we will use it in fork plugin
           transpileOnly: true,
           configFile: "./tsconfig.server.json",
-        },
+        },}],
       },
+        {
+    test: /\.jsx?$/,                          // all js and jsx files will be processed by
+    loader: 'babel-loader',                   // babel-loader
+    exclude: /node_modules/   ,               // ignore node_modules
+    options: {
+    }}
+    ,
       {
         test: /\.json$/,
         exclude: /node_modules/,

@@ -13,8 +13,8 @@ export interface InputAttrs {
 export class Input extends Component<InputAttrs, any> {
   public render(props: any) {
     return (
-      <label for={props.key}>
-        <input
+      <label>
+        <input id={props.key}
           className={styles.textField}
           onchange={e => props.onChange(e.target.value)}
         />

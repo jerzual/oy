@@ -8,9 +8,6 @@ export interface OptionsScreenAttrs {
   type?: string;
 }
 
-type Vnode = m.Vnode<OptionsScreenAttrs, OptionsScreen>;
-type VnodeDOM = m.VnodeDOM<OptionsScreenAttrs, OptionsScreen>;
-
 export class OptionsScreen extends Component<OptionsScreenAttrs, any> {
   inputs: string[] = ["keyboard", "gamepad", "touch"];
 
@@ -19,7 +16,7 @@ export class OptionsScreen extends Component<OptionsScreenAttrs, any> {
       <form name="options">
         <select>
           {this.inputs.map(input => (
-            <option name={input} />
+            <option  value={input} />
           ))}
         </select>
       </form>
