@@ -9,9 +9,6 @@ export interface ButtonAttrs {
   onClick?: (value) => void;
 }
 
-type Vnode = m.Vnode<ButtonAttrs, Button>;
-type VnodeDOM = m.VnodeDOM<ButtonAttrs, Button>;
-
 export class Button extends Component<ButtonAttrs, any> {
   public render(props: any) {
     return (
@@ -20,10 +17,9 @@ export class Button extends Component<ButtonAttrs, any> {
         type={props.type}
         onClick={props.onClick}
       >
-        {v.children}
+        {props.children}
       </button>
     );
   }
-  oncreate(v: VnodeDOM) {}
 }
 export default Button;

@@ -21,7 +21,7 @@ const PATHS = {
 const config: webpack.Configuration = {
   // Entry accepts a path or an object of entries. We'll be using the
   // latter form given it's convenient with more complex configurations.
-  entry: [PATHS.app + "/main.ts" /*, "webpack-hot-middleware/client"*/],
+  entry: [PATHS.app + "/main.tsx" /*, "webpack-hot-middleware/client"*/],
   mode: devMode ? "development" : "production",
   devtool: devMode ? "cheap-module-eval-source-map" : "source-map",
   output: {
@@ -59,11 +59,28 @@ const config: webpack.Configuration = {
       {
         test: /\.tsx?$/,
         exclude: /node_modules/,
-        loader: "ts-loader",
+        loaders: [
+          
+          { 
+            loader: "babel-loader",
+            options: {
+              
+            }
+          },
+          { 
+            loader: "ts-loader",
+            options: {
+              // disable type checker - we will use it in fork plugin
+              transpileOnly: true,
+            }
+          },        ],
+      }, {
+				test: /\.jsx?$/,                          // all js and jsx files will be processed by
+				loader: 'babel-loader',                   // babel-loader
+        exclude: /node_modules/   ,               // ignore node_modules
         options: {
-          // disable type checker - we will use it in fork plugin
-          transpileOnly: true,
-        },
+        }
+        
       },
       {
         test: /\.json$/,
@@ -78,9 +95,7 @@ const config: webpack.Configuration = {
             loader: "css-loader",
             options: {
               modules: true,
-              sourceMap: devMode,
-              localIdentName: "[local]__[hash:base64:5]",
-              minimize: true,
+              sourceMap: devMode,            
             },
           },
           {
@@ -89,14 +104,7 @@ const config: webpack.Configuration = {
               ident: "postcss",
               sourceMap: devMode,
               plugins: () => [
-                autoprefixer({
-                  browsers: [
-                    ">1%",
-                    "last 4 versions",
-                    "Firefox ESR",
-                    "not ie < 9",
-                  ],
-                }),
+                autoprefixer(),
               ],
             },
           },

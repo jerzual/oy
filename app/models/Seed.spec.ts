@@ -7,7 +7,7 @@ describe("Seed", () => {
   });
   it("takes a string as an argument", () => {});
   it("a string as an argument", () => {});
-  /*
+  
   describe('when initialized with a seed ABCDEFG', () => {
     let threeFirstResults = [],
       seed = null;
@@ -30,5 +30,4 @@ describe("Seed", () => {
       expect(newFirstResults[2]).toEqual(threeFirstResults[2]);
     });
   });
-  */
 });

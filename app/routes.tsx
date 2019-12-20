@@ -11,7 +11,7 @@ import JoinScreen from "./containers/JoinScreen";
 
 const Routes = () => (
   <BrowserRouter>
-    <Layout>
+    <Layout title="test">
       <Route path="/" component={HomeScreen} />
       <Route path="/join" component={JoinScreen} />
       <Route path="/lobby" component={LobbyScreen} />
