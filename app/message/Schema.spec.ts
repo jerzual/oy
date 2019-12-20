@@ -2,38 +2,42 @@ import { Schema } from "./Schema";
 import { Serializer } from "./MessageSerializer";
 
 @Schema({ key: "string", idx: "uint8" })
-class SerializableTestObject implements Serializer {
-  constructor(public key: string, public idx: number) {}
+class SerializableTestObject implements Serializer<SerializableTestObject> {
+  public key: string;
+  public idx: number;
+  constructor(clone: Partial<SerializableTestObject>) {
+    Object.assign (this, clone);
+  }
 }
 
 describe("Schema decorator", () => {
   let testObject;
   beforeEach(() => {
-    testObject = new SerializableTestObject("text", 42);
+    testObject = new SerializableTestObject({key: "text", idx: 42});
   });
-  describe("encode()", () => {
+  describe("should add encodeSchema() function", () => {
     it("is defined", () => {
-      expect(testObject.encode).toBeDefined();
+      expect(testObject.encodeSchema).toBeDefined();
     });
     it("should transform object to buffer", () => {
       testObject.key = "text";
 
-      const result: Buffer = testObject.encode(testObject);
+      const result: Buffer = testObject.encodeSchema(testObject);
       expect(result).toBeDefined();
       expect(Buffer.isBuffer(result)).toBe(true);
       console.log(`result: ${result}`);
     });
   });
-  describe("decode()", () => {
+  describe("should add decodeSchema() function", () => {
     it("is defined", () => {
-      expect(testObject.decode).toBeDefined();
+      expect(testObject.decodeSchema).toBeDefined();
     });
-    xit("should transform buffer to Object", () => {
-      const input: Buffer = testObject.encode(testObject);
-        expect(input).toBeDefined();
-        console.log(`input: ${input}`);
+    it("should transform buffer to Object", () => {
+      const input: Buffer = testObject.encodeSchema(testObject);
+      expect(input).toBeDefined();
+      console.log(`input: ${input}`);
       // execute
-      const result: SerializableTestObject = testObject.decode(input.buffer);
+      const result: any = testObject.decodeSchema(input);
       expect(result).toBeDefined();
       expect(result.key).toBe("text");
       expect(result.idx).toBe(42);
