@@ -8,7 +8,7 @@ class Seed {
   seedString: string;
   constructor(seed: string, global = false) {
     this.seedString = seed;
-    this.rng = seedrandom.quick(this.seedString, { global });
+    this.rng = seedrandom.default(this.seedString, { global });
 
     //this.creationDate = moment().now();
   }
