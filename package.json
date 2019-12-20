@@ -157,5 +157,16 @@
       "\\.(scss|css)$": "identity-obj-proxy"
     },
     "testResultsProcessor": "./node_modules/jest-html-reporter"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }

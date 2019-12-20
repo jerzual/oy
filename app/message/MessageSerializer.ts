@@ -1,5 +1,4 @@
-export interface Serializer {
-  [key: string]: any;
-  encode?: (input: Object) => Buffer;
-  decode?: (buffer: Buffer) => Object;
+export interface Serializer<T> {
+  encodeSchema?: (input: T) => Buffer;
+  decodeSchema?: (buffer: Buffer | object) => T;
 }
