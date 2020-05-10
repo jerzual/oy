@@ -1,6 +1,8 @@
 import express from "express";
 import io from "socket.io";
 import path from "path";
+import "reflect-metadata";
+import { ReflectiveInjector } from "injection-js";
 
 import routes from "./routes";
 import { Observable, fromEvent, merge } from "rxjs";
@@ -17,7 +19,7 @@ app.set("view engine", "pug");
 app.use("/*.*", express.static(path.join(process.cwd(), "dist", "www")));
 
 // webpack dev mode
-
+/*
 if (process.env.NODE_ENV !== "production") {
   var webpack = require("webpack");
   var webpackConfig = require("../webpack.config");
@@ -31,8 +33,7 @@ if (process.env.NODE_ENV !== "production") {
   );
   app.use(require("webpack-hot-middleware"));
 }
-
-
+*/
 // server side rendering
 /*
 routes.forEach(route => {

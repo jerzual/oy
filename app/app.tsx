@@ -3,7 +3,7 @@ import { getInitialState, AppState } from "./initialState";
 import { Application } from "pixi.js";
 import { World } from "matter-js";
 import { Component } from "inferno";
-import Layout from "./components/Layout";
+import Routes from "./routes";
 /**
  * front-end / client application
  */
@@ -26,7 +26,7 @@ export class App extends Component<any, any> {
   initialize(document: Document) {}
 
   render(props: any) {
-    return <Layout title="UOY"/>;
+    return <Routes></Routes>;
   }
 }
 

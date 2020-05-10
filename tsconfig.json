@@ -32,6 +32,7 @@
       "webpack-dev-server"
     ]
   },
+  "files": ["app/server.ts"],
   "include": [
     "typings/declarations.d.ts",
     "app/main.tsx*",

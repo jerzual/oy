@@ -20,7 +20,7 @@ export class HomeScreen extends Component<HomeScreenAttrs, any> {
         <ul className={styles.menuList}>
           {this.menu.map(entry => (
             <li className={styles.menuEntry}>
-              <Link href={entry.path} tabIndex={0}>
+              <Link to={entry.path} tabIndex={0}>
                 {entry.title}
               </Link>
             </li>
