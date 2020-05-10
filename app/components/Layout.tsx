@@ -12,9 +12,11 @@ export class Layout extends Component<LayoutAttributes, any> {
   }
   public render(props: any) {
     return (
-      <main>
-        <h1>0Y</h1>
-        <canvas className={styles.mainZone} width="320" height="240" />
+      <main className={styles.mainZone}>
+        <nav className={styles.menuItems}>
+          <h1>0Y</h1>
+        </nav>
+        <canvas className={styles.gameView} width="320" height="240" />
         <section className={styles.routeOutlet}>{props.children}</section>
       </main>
     );

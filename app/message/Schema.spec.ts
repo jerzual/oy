@@ -1,19 +1,21 @@
 import { Schema } from "./Schema";
-import { Serializer } from "./MessageSerializer";
+import { Serializer, AbstractSerializer } from "./MessageSerializer";
 
 @Schema({ key: "string", idx: "uint8" })
-class SerializableTestObject implements Serializer<SerializableTestObject> {
+class SerializableTestObject extends AbstractSerializer<SerializableTestObject>
+  implements Serializer<any> {
   public key: string;
   public idx: number;
   constructor(clone: Partial<SerializableTestObject>) {
-    Object.assign (this, clone);
+    super();
+    Object.assign(this, clone);
   }
 }
 
 describe("Schema decorator", () => {
   let testObject;
   beforeEach(() => {
-    testObject = new SerializableTestObject({key: "text", idx: 42});
+    testObject = new SerializableTestObject({ key: "text", idx: 42 });
   });
   describe("should add encodeSchema() function", () => {
     it("is defined", () => {
