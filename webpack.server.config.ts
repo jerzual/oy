@@ -1,11 +1,13 @@
 import path from "path";
 import webpack from "webpack";
+import StartServerWebpackPlugin from "start-server-webpack-plugin";
+import nodeExternals  from "webpack-node-externals";
 
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 const PATHS = {
   app: path.join(__dirname, "app"),
-  build: path.join(__dirname, "dist"),
+  build: path.join(__dirname, "dist/ssr"),
 };
 
 const webpackServerConfig: webpack.Configuration = {
@@ -26,21 +28,24 @@ const webpackServerConfig: webpack.Configuration = {
         test: /\.tsx?$/,
         include: /app/,
         //exclude: /node_modules/,
-        loaders:  [
-          {loader: "ts-loader",
-        options: {
-          // disable type checker - we will use it in fork plugin
-          transpileOnly: true,
-          configFile: "./tsconfig.server.json",
-        },}],
+        loaders: [
+          {
+            loader: "ts-loader",
+            options: {
+              // disable type checker - we will use it in fork plugin
+              transpileOnly: true,
+              configFile: "tsconfig.server.json",
+            },
+          }],
       },
-        {
-    test: /\.jsx?$/,                          // all js and jsx files will be processed by
-    loader: 'babel-loader',                   // babel-loader
-    exclude: /node_modules/   ,               // ignore node_modules
-    options: {
-    }}
-    ,
+      {
+        test: /\.jsx?$/,                          // all js and jsx files will be processed by
+        loader: 'babel-loader',                   // babel-loader
+        exclude: /node_modules/,               // ignore node_modules
+        options: {
+        }
+      }
+      ,
       {
         test: /\.json$/,
         exclude: /node_modules/,
@@ -67,6 +72,10 @@ const webpackServerConfig: webpack.Configuration = {
       tsconfig: path.join(process.cwd(), "tsconfig.server.json"),
       tslint: true,
     }),
+    new StartServerWebpackPlugin({
+      name: "server.js",
+      signal: true,
+    })
   ],
 };
 

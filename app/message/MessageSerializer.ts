@@ -10,4 +10,4 @@ export abstract class AbstractSerializer<T> implements Serializer<T> {
   decodeSchema: (buffer: Buffer | object) => T = () => {
     return {} as T;
   };
-
+}
