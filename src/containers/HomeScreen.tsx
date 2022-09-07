@@ -7,7 +7,7 @@ import { Link } from "preact-router";
 export interface HomeScreenAttrs {}
 
 export class HomeScreen extends Component<HomeScreenAttrs, any> {
-  private menu: any[];
+  private menu!: any[];
   public componentWillMount() {
     this.menu = [
       { path: "/join", title: "Play" },
@@ -21,7 +21,7 @@ export class HomeScreen extends Component<HomeScreenAttrs, any> {
         <ul class="menuList">
           {this.menu.map(entry => (
             <li class="menuEntry">
-              <Link to={entry.path} tabIndex={0}>
+              <Link href={entry.path} tabIndex={0}>
                 {entry.title}
               </Link>
             </li>

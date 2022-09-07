@@ -4,7 +4,6 @@ import path from "path";
 import "reflect-metadata";
 import { ReflectiveInjector } from "injection-js";
 
-import routes from "./routes";
 import { Observable, fromEvent, merge } from "rxjs";
 
 // use a mock DOM so we can run mithril on the server
@@ -75,4 +74,3 @@ sockets.on("connection", (socket: io.Socket) => {
   });
 });
 
-export default server;

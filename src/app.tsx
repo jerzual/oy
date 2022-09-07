@@ -7,6 +7,8 @@ import { useContext } from "preact/hooks";
 import * as React from "preact";
 import { Routes } from "./routes";
 import "./events";
+import { Layout } from "./components/Layout";
+
 /**
  * front-end / client application
  */
@@ -17,15 +19,17 @@ store
 	.subscribe((state) => {
 		console.log("game state change", state);
 	});
-const pixiApp = new Application();
-const matterWorld = World.create({});
+// const pixiApp = new Application();
+// const matterWorld = World.create({});
 
 const State = createContext<Store<AppState>>(store);
 
 export const App = () => {
 	return (
 		<State.Provider value={store}>
-			<Routes></Routes>
+			<Layout>
+				<Routes></Routes>
+			</Layout>
 		</State.Provider>
 	);
 };

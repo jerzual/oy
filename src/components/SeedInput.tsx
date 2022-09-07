@@ -25,7 +25,7 @@ export class SeedInput extends Component<SeedInputAttributes, any> {
       </div>
     );
   }
-  applyChange(e) {
-    console.error(e);
+  applyChange(value: string) {
+    console.error(value);
   }
 }

@@ -5,6 +5,7 @@ import "./Layout.scss";
 
 export interface LayoutAttributes {
   title: string;
+  children: React.ComponentChildren
 }
 
 export class Layout extends Component<LayoutAttributes, any> {

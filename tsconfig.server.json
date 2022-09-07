@@ -2,17 +2,16 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "dist/",
-    "module": "commonjs",
+    "module": "Node16",
     "moduleResolution": "node",
     "sourceMap": true,
     "esModuleInterop": true,
-    "target": "es2017",
+    "target": "ES2020",
     "allowSyntheticDefaultImports": true,
-    "lib": ["es2017", "dom"],
+    "lib": ["ES2020", "dom"],
     "jsx": "preserve",
     "typeRoots": ["node_modules/@types/"],
     "types": ["node", "express", "supertest", "socket.io", "preact"]
   },
-  "files": ["src/server.ts"],
-  "include": ["typings/**/*"]
+  "files": ["src/server.ts"]
 }

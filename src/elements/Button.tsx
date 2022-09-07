@@ -7,7 +7,7 @@ import "./Button.scss";
 
 export interface ButtonAttrs {
   type: string;
-  onClick?: (value) => void;
+  onClick?: (value: MouseEvent | KeyboardEvent) => void;
 }
 
 export class Button extends Component<ButtonAttrs, any> {
