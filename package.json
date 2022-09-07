@@ -18,7 +18,7 @@
     "lint": "eslint --ext=ts,tsx .",
     "lint:force": "eslint --cache --fix .",
     "start": "webpack-dev-server",
-    "typedoc": "typedoc --out ./reports/documentation/ --verbose --exclude \"**/*.{spec.ts,scss}\" --includeDeclarations typings/ ./app/main.ts ",
+    "typedoc": "typedoc --out ./reports/documentation/ --verbose --exclude \"**/*.{spec.ts,scss}\" --includeDeclarations typings/ ./src/main.ts ",
     "webdriver-start": "webdriver-manager start &",
     "webdriver-update": "webdriver-manager update",
     "protractor": "protractor",

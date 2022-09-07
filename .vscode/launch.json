@@ -16,7 +16,7 @@
       "request": "launch",
       "name": "server (ts-node)",
       "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
-      "program": "${workspaceFolder}/app/server.ts",
+      "program": "${workspaceFolder}/src/server.ts",
       "sourceMaps": true,
       "cwd": "${workspaceRoot}",
       "env": {
