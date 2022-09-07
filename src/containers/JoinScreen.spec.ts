@@ -1,4 +1,5 @@
-import JoinScreen from "./JoinScreen";
+import { describe, beforeEach, test, expect } from "vitest";
+import { JoinScreen } from "./JoinScreen";
 
 describe("JoinScreen", () => {
   describe("Component", () => {

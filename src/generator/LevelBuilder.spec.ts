@@ -1,10 +1,12 @@
-import LevelBuilder from "../../app/generator/LevelBuilder";
+import {describe, beforeAll, it, expect} from "vitest";
+
+import { LevelBuilder } from "./LevelBuilder";
 
 describe("LevelBuilder", () => {
-  let levelBuilder;
+  let levelBuilder: LevelBuilder;
 
   beforeAll(() => {
-    levelBuilder = new LevelBuilder();
+    levelBuilder = new LevelBuilder("1234");
   });
   it("can be instanciated", () => {
     expect(levelBuilder).toBeDefined();

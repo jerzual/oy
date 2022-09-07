@@ -1,4 +1,6 @@
-import Model from "./Item";
+import { describe, beforeEach, it, expect } from "vitest";
+
+import { Item } from "./Item";
 
 describe("ItemModel", () => {
   let item;

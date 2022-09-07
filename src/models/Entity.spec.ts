@@ -1,6 +1,13 @@
-import GameModel from "./World";
+import { describe, beforeEach, it, expect } from "vitest";
 
-describe("GameModel", () => {
-  beforeEach(() => {});
-  it("is something", () => {});
+import { Entity } from "./Entity";
+
+describe("Entity", () => {
+  let entity: Entity;
+  beforeEach(() => {
+    entity = new Entity();
+  });
+  it("is something", () => {
+    expect(entity).toBeDefined();
+  });
 });

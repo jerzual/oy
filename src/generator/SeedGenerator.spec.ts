@@ -1,5 +1,6 @@
-/* globals:describe,it,before*/
-import SeedGenerator from './SeedGenerator';
+import { describe,it,expect } from "vitest";
+
+import { SeedGenerator } from './SeedGenerator';
 
 describe('SeedGenerator', () => {
   it('provides a randomSeed method', () => {
@@ -11,7 +12,7 @@ describe('SeedGenerator', () => {
   });
 
   describe('when randomSeed() is called', () => {
-    var seed = SeedGenerator.randomSeed();
+    const seed = SeedGenerator.randomSeed();
     it('should return an 8 char string', () => {
       expect(seed).toMatch(/^(.*){8}$/);
     });

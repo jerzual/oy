@@ -3,7 +3,7 @@ import * as seedrandom from "seedrandom";
  * Encapsulate a random number generator and a human reedable seed string.
  * @see https://github.com/davidbau/seedrandom
  * */
-class Seed {
+export class Seed {
   rng: seedrandom.prng;
   seedString: string;
   constructor(seed: string, global = false) {
@@ -17,4 +17,3 @@ class Seed {
   }
 }
 
-export default Seed;

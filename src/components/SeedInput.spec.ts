@@ -1,4 +1,5 @@
-import SeedInput from "./SeedInput";
+import { SeedInput } from "./SeedInput";
+import {describe, beforeEach, test, expect } from "vitest";
 
 describe("SeedInput", () => {
   let seedInput: SeedInput;

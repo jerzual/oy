@@ -7,7 +7,7 @@ export enum LevelType {
   SpelunkyLike,
 }
 
-class Level {
+export class Level {
   /** seed used to generate this level */
   seed: string;
   /**
@@ -24,4 +24,3 @@ class Level {
   }
 }
 
-export default Level;

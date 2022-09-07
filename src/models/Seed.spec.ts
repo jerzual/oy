@@ -1,15 +1,17 @@
-import Seed from "./Seed";
+import {describe, expect, it, beforeEach} from "vitest";
+
+import { Seed } from "./Seed";
 
 describe("Seed", () => {
   describe("is instanciable", () => {
-    let seed = new Seed("OY");
-    expect(seed).toBeDefined();
+    it("takes a string as an argument", () => {
+      let seed = new Seed("OY");
+      expect(seed).toBeDefined();
+    });
+    
   });
-  it("takes a string as an argument", () => {});
-  it("a string as an argument", () => {});
-  
   describe('when initialized with a seed ABCDEFG', () => {
-    let threeFirstResults = [],
+    let threeFirstResults: number[] = [],
       seed = null;
     beforeEach(function() {
       seed = new Seed('ABCDEFG');

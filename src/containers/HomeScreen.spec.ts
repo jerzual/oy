@@ -1,5 +1,13 @@
-import HomeScreen from "./HomeScreen";
+import { describe, test, expect, beforeEach } from "vitest";
+
+import {HomeScreen} from "./HomeScreen";
 
 describe("HomeScreen", () => {
-  test("", () => {});
+  let homeScreen: HomeScreen;
+  beforeEach(() => {
+    homeScreen = new HomeScreen();
+  })
+  test("should be defined", () => {
+    expect(homeScreen).toBeDefined()
+  });
 });

@@ -17,4 +17,3 @@ export class LobbyScreen extends Component<LobbyScreenAttrs, any> {
     );
   }
 }
-export default LobbyScreen;

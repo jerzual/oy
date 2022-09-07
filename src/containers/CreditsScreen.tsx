@@ -1,7 +1,7 @@
 import { Component, h } from "preact";
 import * as React from "preact";
 
-import * as styles from "./CreditsScreen.scss";
+import "./CreditsScreen.scss";
 
 export interface CreditsScreenAttrs {
   type?: string;
@@ -10,7 +10,7 @@ export interface CreditsScreenAttrs {
 export class CreditsScreen extends Component<CreditsScreenAttrs, any> {
   public render(props: any) {
     return (
-      <div id="credits" className={styles.creditsScreen}>
+      <div id="credits" class="creditsScreen">
         <h2>Credits</h2>
         <ul>
           <li>Code and design by jibhaine</li>
@@ -26,4 +26,3 @@ export class CreditsScreen extends Component<CreditsScreenAttrs, any> {
     );
   }
 }
-export default CreditsScreen;

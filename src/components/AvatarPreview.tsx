@@ -14,4 +14,3 @@ export class AvatarPreview extends Component<AvatarPreviewAttrs, any> {
 		return <div class="avatarPreview" />;
 	}
 }
-export default AvatarPreview;

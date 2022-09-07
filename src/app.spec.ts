@@ -1,7 +1,8 @@
-import App from './app';
+import {App} from './app';
+import { describe, beforeAll, afterAll, test, expect } from "vitest";
 
 describe('App object', () => {
-  it('has a initialize method', () => {});
+  test('has a initialize method', () => {});
 
-  it('should have started the history', () => {});
+  test('should have started the history', () => {});
 });

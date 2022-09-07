@@ -7,7 +7,7 @@ import { Sprite } from "pixi.js";
  * something that as a texture and a physics body
  *
  */
-class Entity {
+export class Entity {
   private sprite: Sprite;
   private body: Body;
   private textureName: string;
@@ -21,4 +21,3 @@ class Entity {
   }
 }
 
-export default Entity;

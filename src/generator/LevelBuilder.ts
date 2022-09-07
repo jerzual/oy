@@ -1,8 +1,8 @@
-import Seed from "../models/Seed";
+import {Seed} from "../models/Seed";
 //import Tile from '../models/Tile';
 //import Item from '../models/Item';
 //import Room from '../collections/Room';
-import Level from "../models/Level";
+import {Level} from "../models/Level";
 
 export enum LevelType {
   Maze,
@@ -13,15 +13,15 @@ export enum LevelType {
 /**
  * Builds a level from a seed using the Level/Room/Tile models.
  */
-class LevelBuilder<LevelType = any> {
+export class LevelBuilder<LevelType = any> {
   private level: Level;
   private currentSeed: Seed;
-  constructor(private seed?: string, private width = 16, private height = 16) {
+  constructor(private seed: string, private width = 16, private height = 16) {
     this.currentSeed = new Seed(seed);
     this.level = new Level(width, height);
   }
 
-  placeRoomsInLevel(numberOfRooms) {
+  placeRoomsInLevel(numberOfRooms: number) {
     return this;
   }
 
@@ -38,4 +38,3 @@ class LevelBuilder<LevelType = any> {
   }
 }
 
-export default LevelBuilder;

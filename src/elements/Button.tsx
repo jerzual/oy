@@ -3,7 +3,7 @@
 import { Component, h } from "preact";
 import * as React from "preact";
 
-import * as styles from "./Button.scss";
+import "./Button.scss";
 
 export interface ButtonAttrs {
   type: string;
@@ -14,7 +14,7 @@ export class Button extends Component<ButtonAttrs, any> {
   public render(props: any) {
     return (
       <button
-        className={styles.button}
+        class="button"
         type={props.type}
         onClick={props.onClick}
       >
@@ -23,4 +23,3 @@ export class Button extends Component<ButtonAttrs, any> {
     );
   }
 }
-export default Button;

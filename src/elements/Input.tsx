@@ -1,7 +1,7 @@
 import { Component, h } from "preact";
 import * as React from "preact";
 
-import * as styles from "./Input.scss";
+import "./Input.scss";
 
 export interface InputAttrs {
   key: string;
@@ -16,11 +16,10 @@ export class Input extends Component<InputAttrs, any> {
     return (
       <label>
         <input id={props.key}
-          className={styles.textField}
-          onchange={e => props.onChange(e.target.value)}
+          class="textField"
+          onChange={e => props.onChange(e.target.value)}
         />
       </label>
     );
   }
 }
-export default Input;

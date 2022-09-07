@@ -12,7 +12,7 @@ import { Observable, fromEvent, merge } from "rxjs";
 
 export const app = express();
 
-app.set("views", path.join(process.cwd(), "app/server/views"));
+app.set("views", path.join(process.cwd(), "src/server/views"));
 app.set("view engine", "pug");
 
 // static files
