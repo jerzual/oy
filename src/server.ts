@@ -1,58 +1,34 @@
 import express from "express";
-import io from "socket.io";
-import path from "path";
+import { Server , Socket } from "socket.io";
+import path from "node:path";
 import "reflect-metadata";
-import { ReflectiveInjector } from "injection-js";
+
+import { createServer as createViteServer } from 'vite'
 
 import { Observable, fromEvent, merge } from "rxjs";
 
-// use a mock DOM so we can run mithril on the server
-// browserMock(global);
-
 export const app = express();
 
-app.set("views", path.join(process.cwd(), "src/server/views"));
-app.set("view engine", "pug");
-
+// use vite as a middleware
+const vite = await createViteServer({
+  server: { middlewareMode: true },
+  appType: 'custom'
+})
+// use vite's connect instance as middleware
+// if you use your own express router (express.Router()), you should use router.use
+app.use(vite.middlewares)
 // static files
 app.use("/*.*", express.static(path.join(process.cwd(), "dist", "www")));
 
-// webpack dev mode
-/*
-if (process.env.NODE_ENV !== "production") {
-  var webpack = require("webpack");
-  var webpackConfig = require("../webpack.config");
-  var compiler = webpack(webpackConfig);
-
-  app.use(
-    require("webpack-dev-middleware")(compiler, {
-      noInfo: true,
-      publicPath: webpackConfig.output.publicPath,
-    }),
-  );
-  app.use(require("webpack-hot-middleware"));
-}
-*/
-// server side rendering
-/*
-routes.forEach(route => {
-  app.get("/", (req, res) =>
-    res.render("index", { 
-      title: "Hey", 
-      message: "Hello there!" 
-    }),
-  );
-});
-*/
 // start express server.
-const server = app.listen(4000, "0.0.0.0", () => {
+export const server = app.listen(4000, "0.0.0.0", () => {
   console.log(" [*] Listening on 0.0.0.0:4000");
 });
 // start websocket endpoint.
-const sockets = io(server, { path: "/api", serveClient: false });
+const sockets = new Server(server, { path: "/api", serveClient: false });
 
-const connections$ = Observable.create(observer => {
-  sockets.on("connection", (socket: io.Socket) => observer.emit(socket));
+const connections$ = new Observable(observer => {
+  sockets.on("connection", (socket: Socket) => {observer.next(socket)});
 });
 /*
 const close$: Observable<Event> = fromEvent(sockets, "connection");
@@ -63,7 +39,7 @@ const sockets$ = merge(close$, open$, error$, data$);
 */
 connections$.subscribe(console.log);
 
-sockets.on("connection", (socket: io.Socket) => {
+sockets.on("connection", (socket: Socket) => {
   console.log(`connection from ${socket.client}`);
   socket.emit("welcome", { worlds: [] });
   socket.on("data", msg => {
