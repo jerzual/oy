@@ -4,7 +4,6 @@ import * as React from "preact";
 import "./Layout.scss";
 
 export interface LayoutAttributes {
-  title: string;
   children: React.ComponentChildren
 }
 
