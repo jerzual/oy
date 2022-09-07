@@ -1,8 +1,9 @@
 // HeroStatus display heart containers and gold over the main game screen.
 
-import { Component } from "inferno";
+import { Component, h } from "preact";
+import * as React from "preact";
 
-import * as styles from "./HeroStatus.scss";
+import "./HeroStatus.scss";
 
 export interface HeroStatusAttrs {
   gold?: number;

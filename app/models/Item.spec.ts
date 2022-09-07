@@ -1,4 +1,4 @@
-import Model from "../../app/models/Item";
+import Model from "./Item";
 
 describe("ItemModel", () => {
   let item;

@@ -1,7 +1,0 @@
-{
-  "extends": ["tslint", "tslint-config-prettier"],
-  "rules": {
-    "interface-name": [true, "never-prefix"],
-    "no-console": false
-  }
-}

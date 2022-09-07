@@ -1,4 +1,5 @@
-import { Component } from "inferno";
+import { Component, h } from "preact";
+import * as React from "preact";
 
 import SeedInput from "../components/SeedInput";
 import AvatarPreview from "../components/AvatarPreview";
@@ -24,4 +25,3 @@ export class JoinScreen extends Component<JoinAttributes, any> {
     );
   }
 }
-export default JoinScreen;

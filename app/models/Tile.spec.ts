@@ -1,4 +1,4 @@
-import Tile from "../../app/models/Tile";
+import {Tile} from "./Tile";
 
 describe("Tile", function() {
   let tile;

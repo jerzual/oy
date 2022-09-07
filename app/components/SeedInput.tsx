@@ -1,4 +1,5 @@
-import { Component } from "inferno";
+import { Component, h } from "preact";
+import * as React from "preact";
 
 import "./SeedInput.scss";
 import { Input, Button } from "../elements";

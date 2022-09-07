@@ -1,5 +1,6 @@
 import supertest from "supertest";
 import server from "./server";
+import { describe, beforeAll, afterAll, test, expect } from "vitest";
 
 describe("express server", () => {
   let response: supertest.Response;

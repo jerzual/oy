@@ -1,4 +1,4 @@
-import HomeScreen from "../../app/containers/HomeScreen";
+import HomeScreen from "./HomeScreen";
 
 describe("HomeScreen", () => {
   test("", () => {});

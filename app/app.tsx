@@ -2,32 +2,30 @@ import { Store } from "reactive-state";
 import { getInitialState, AppState } from "./initialState";
 import { Application } from "pixi.js";
 import { World } from "matter-js";
-import { Component } from "inferno";
+import { Component, h, createContext } from "preact";
+import { useContext } from "preact/hooks";
+import * as React from "preact";
 import Routes from "./routes";
+import "./events";
 /**
  * front-end / client application
  */
-export class App extends Component<any, any> {
-  private pixiApp: Application;
-  private matterWorld: World;
-  private store: Store<AppState>;
-  constructor() {
-    super();
-    this.store = Store.create(getInitialState());
-    this.store
-      .watch(state => state.game)
-      .subscribe(state => {
-        console.log("game state change", state);
-      });
-    this.pixiApp = new Application();
-    this.matterWorld = World.create({});
-  }
 
-  initialize(document: Document) {}
+const store: Store<AppState> = Store.create(getInitialState());
+store
+	.watch((state) => state.game)
+	.subscribe((state) => {
+		console.log("game state change", state);
+	});
+const pixiApp = new Application();
+const matterWorld = World.create({});
 
-  render(props: any) {
-    return <Routes></Routes>;
-  }
-}
+const State = createContext<Store<AppState>>(store);
 
-export default App;
+export const App = () => {
+	return (
+		<State.Provider value={store}>
+			<Routes></Routes>
+		</State.Provider>
+	);
+};

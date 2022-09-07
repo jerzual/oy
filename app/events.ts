@@ -1,16 +1,8 @@
-import Store from "reactive-state";
-import { App } from "./app";
-import * as io from "socket.io-client";
 import { merge, fromEvent, Observable } from "rxjs";
-
-import "./main.scss";
-import routes from "./routes";
-import { render } from "inferno";
+import * as io from "socket.io-client";
 
 const sockets = io.connect(`http://localhost:3000/api`);
 
-// init
-render(<App />, document.body);
 // instead of addEventListener :
 const close$: Observable<Event> = fromEvent(sockets, "close");
 const open$: Observable<Event> = fromEvent(sockets, "open");
@@ -50,11 +42,3 @@ const window$ = merge(beforeUnload$, resize$, scroll$);
 merge(socket$, mouse$, window$, gamepad$, keyboard$).subscribe(event => {
   console.log(`[EVT:${event.type}]`, event);
 });
-
-// hot reload webpack
-if (module["hot"]) {
-  console.info("HMR enabled");
-  module["hot"].accept(function() {
-    console.log("Accepting the updated module!");
-  });
-}
