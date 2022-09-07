@@ -2,14 +2,14 @@ import { Body } from "matter-js";
 import { Sprite } from "pixi.js";
 
 /**
- * an entitiy is an aggregation fo two game sconcepts:
- * something that can be placed ina level
+ * an entity is an aggregation fo two game concepts:
+ * something that can be placed in a level
  * something that as a texture and a physics body
  *
  */
 export class Entity {
-  private sprite: Sprite;
-  private body: Body;
+  private sprite!: Sprite;
+  private body!: Body;
   private textureName: string;
 
   constructor() {

@@ -1,4 +1,4 @@
-import Tile from "./Tile";
+import { Tile } from "./Tile";
 
 export enum LevelType {
   TestChamber,
@@ -9,7 +9,7 @@ export enum LevelType {
 
 export class Level {
   /** seed used to generate this level */
-  seed: string;
+  seed!: string;
   /**
    * tiles/decor.
    */

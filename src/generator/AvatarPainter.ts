@@ -7,8 +7,8 @@ const AVATAR_SIZE = 16,
   BODY_COLORS = [0xbf6f12, 0x776286, 0x963127, 0x268d11, 0x5f7b97, 0x6e5a3d],
   PANT_COLORS = [0x343434, 0x3d4856];
 
-function randomFrom(rng, array: number[]) {
-  const i = Math.floor(rng.random() * array.length);
+function randomFrom(rng: seedrandom.prng, array: number[]) {
+  const i = Math.floor(rng.quick() * array.length);
   return array[i];
 }
 /**
@@ -16,8 +16,8 @@ function randomFrom(rng, array: number[]) {
  */
 export class AvatarPainter {
   private pixels: Array<Array<number>> = [];
-  private rng: seedrandom.prng;
-  private ctx: CanvasRenderingContext2D;
+  private rng?: seedrandom.prng;
+  private ctx: CanvasRenderingContext2D | null;
   constructor(canvas: HTMLCanvasElement) {
     this.ctx = canvas.getContext("2d");
     //pixel is a bi-dimensional array of hex colors.
@@ -55,7 +55,7 @@ export class AvatarPainter {
   drawHair() {
     //TODO draw hair
   }
-  paint(context, width, height) {
+  paint(context: CanvasRenderingContext2D, width: number, height: number) {
     const pixelWidth = width / AVATAR_SIZE,
       pixelHeight = height / AVATAR_SIZE;
 

@@ -1,4 +1,4 @@
-import HeroStatus from "../components/HeroStatus";
+import { HeroStatus } from "../components/HeroStatus";
 import { Component, h } from "preact";
 import * as React from "preact";
 

@@ -18,5 +18,6 @@
 		"jsxFactory": "h",
 		"jsxFragmentFactory": "Fragment"
 	},
-	"include": ["src", "app"]
+	"include": ["src"],
+	"exclude": ["src/server"]
 }

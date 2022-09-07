@@ -1,4 +1,4 @@
-import * as seedrandom from "seedrandom";
+import seedrandom from "seedrandom";
 
 const CHARSET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 const MAX_CHARS = 8;
@@ -27,11 +27,11 @@ export class SeedGenerator {
    * @returns {string} an 8 char alphanumeric string.
    */
   static dailyChallengeSeed(date = new Date()) {
-    //takes the 10 first char of an iso date : 2015-09-22T09:19:23.111Z becomes 2015-09-22
-    var dailySeed = "";
-    var rng = seedrandom.default(date.toISOString().substr(0, 10));
-    for (var i = 0; i < MAX_CHARS; i++) {
-      var randomPoz = Math.floor(rng.double() * CHARSET.length);
+    // takes the 10 first char of an iso date : 2015-09-22T09:19:23.111Z becomes 2015-09-22
+    let dailySeed = "";
+    const rng = seedrandom(date.toISOString().slice(0, 10));
+    for (let i = 0; i < MAX_CHARS; i++) {
+      const randomPoz = Math.floor(rng.double() * CHARSET.length);
       dailySeed += CHARSET.substring(randomPoz, randomPoz + 1);
     }
     return dailySeed;
