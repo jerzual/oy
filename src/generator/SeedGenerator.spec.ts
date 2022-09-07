@@ -1,5 +1,5 @@
 /* globals:describe,it,before*/
-import SeedGenerator from '../../app/generator/SeedGenerator';
+import SeedGenerator from './SeedGenerator';
 
 describe('SeedGenerator', () => {
   it('provides a randomSeed method', () => {
