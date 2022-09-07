@@ -1,16 +1,17 @@
 // AvatarPreview display heart containers and gold over the main game screen.
 
-import { Component } from "inferno";
+import { Component, h } from "preact";
+import * as React from "preact";
 
-import * as styles from "./AvatarPreview.scss";
+import "./AvatarPreview.scss";
 
 export interface AvatarPreviewAttrs {
-  seed: string;
+	seed: string;
 }
 
 export class AvatarPreview extends Component<AvatarPreviewAttrs, any> {
-  public render(props: any) {
-    return <div className={styles.avatarPreview} />;
-  }
+	public render(props: any) {
+		return <div class="avatarPreview" />;
+	}
 }
 export default AvatarPreview;

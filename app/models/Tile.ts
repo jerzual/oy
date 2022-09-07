@@ -1,4 +1,4 @@
-class Tile {
+export class Tile {
   constructor(private x: number, private y: number, private color?: string) {}
 }
 
@@ -12,4 +12,3 @@ export function defaultTile() {
   };
 }
 
-export default Tile;

@@ -1,4 +1,5 @@
-import OptionsScreen from "../../app/containers/OptionsScreen";
+import {OptionsScreen} from "./OptionsScreen";
+import { describe, test, expect } from "vitest";
 
 describe("OptionsScreen", () => {
   test("should do something", () => {

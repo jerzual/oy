@@ -1,5 +1,6 @@
 import HeroStatus from "../components/HeroStatus";
-import { Component } from "inferno";
+import { Component, h } from "preact";
+import * as React from "preact";
 
 import * as styles from "./GameScreen.scss";
 

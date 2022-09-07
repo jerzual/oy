@@ -1,6 +1,7 @@
 // OptionsScreen display heart containers and gold over the main game screen.
 
-import { Component } from "inferno";
+import { Component, h } from "preact";
+import * as React from "preact";
 
 import "./OptionsScreen.scss";
 
@@ -23,4 +24,3 @@ export class OptionsScreen extends Component<OptionsScreenAttrs, any> {
     );
   }
 }
-export default OptionsScreen;

@@ -1,5 +1,7 @@
-import { render } from "inferno";
-import { BrowserRouter, Route, Switch, Link } from "inferno-router";
+import * as React from "preact"
+import { Router, Route} from "preact-router";
+import { default as AsyncRoute } from "preact-async-route";
+
 import Layout from "./components/Layout";
 
 import LobbyScreen from "./containers/LobbyScreen";
@@ -10,7 +12,7 @@ import OptionsScreen from "./containers/OptionsScreen";
 import JoinScreen from "./containers/JoinScreen";
 
 const Routes = () => (
-  <BrowserRouter>
+  <Router>
     <Layout title="test">
       <Route path="/" component={HomeScreen} />
       <Route path="/join" component={JoinScreen} />
@@ -20,7 +22,7 @@ const Routes = () => (
       <Route path="/options" component={OptionsScreen} />
       <Route path="/credits" component={CreditsScreen} />
     </Layout>
-  </BrowserRouter>
+  </Router>
 );
 
 export default Routes;

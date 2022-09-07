@@ -1,5 +1,5 @@
 import { createCanvas } from "canvas";
-import fs from "fs";
+import fs from "node:fs";
 import AvatarPainter from "./AvatarPainter";
 
 describe("AvatarPainter", () => {

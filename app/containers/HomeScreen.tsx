@@ -1,4 +1,5 @@
-import { Component } from "inferno";
+import { Component, h } from "preact";
+import * as React from "preact";
 
 import * as styles from "./HomeScreen.scss";
 import { Link } from "inferno-router";

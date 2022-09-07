@@ -1,4 +1,4 @@
-import Seed from "../../app/models/Seed";
+import Seed from "./Seed";
 
 describe("Seed", () => {
   describe("is instanciable", () => {
