@@ -1,3 +1,5 @@
+import { describe, beforeEach, it, expect } from "vitest";
+
 describe("LevelActions", () => {
   describe("#jump", () => {
     it("", () => {

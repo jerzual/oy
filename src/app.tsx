@@ -5,7 +5,7 @@ import { World } from "matter-js";
 import { Component, h, createContext } from "preact";
 import { useContext } from "preact/hooks";
 import * as React from "preact";
-import Routes from "./routes";
+import { Routes } from "./routes";
 import "./events";
 /**
  * front-end / client application

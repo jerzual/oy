@@ -2,16 +2,16 @@ import * as React from "preact"
 import { Router, Route} from "preact-router";
 import { default as AsyncRoute } from "preact-async-route";
 
-import Layout from "./components/Layout";
+import {Layout} from "./components/Layout";
 
-import LobbyScreen from "./containers/LobbyScreen";
-import CreditsScreen from "./containers/CreditsScreen";
-import GameScreen from "./containers/GameScreen";
-import HomeScreen from "./containers/HomeScreen";
-import OptionsScreen from "./containers/OptionsScreen";
-import JoinScreen from "./containers/JoinScreen";
+import {LobbyScreen} from "./containers/LobbyScreen";
+import {CreditsScreen} from "./containers/CreditsScreen";
+import {GameScreen} from "./containers/GameScreen";
+import {HomeScreen} from "./containers/HomeScreen";
+import {OptionsScreen} from "./containers/OptionsScreen";
+import {JoinScreen} from "./containers/JoinScreen";
 
-const Routes = () => (
+export const Routes = () => (
   <Router>
     <Layout title="test">
       <Route path="/" component={HomeScreen} />
@@ -25,4 +25,3 @@ const Routes = () => (
   </Router>
 );
 
-export default Routes;

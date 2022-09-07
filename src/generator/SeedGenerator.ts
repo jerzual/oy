@@ -6,7 +6,7 @@ const MAX_CHARS = 8;
 /**
  * Generates human readable seed.
  */
-class SeedGenerator {
+export class SeedGenerator {
   /**
    * Constructs an 8 character string, made of random alphanumeric characters ([A-Z][0-9]).
    * @returns {string} an 8 char alphanumeric string.
@@ -38,4 +38,3 @@ class SeedGenerator {
   }
 }
 
-export default SeedGenerator;

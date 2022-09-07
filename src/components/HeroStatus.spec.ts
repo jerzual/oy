@@ -1,4 +1,6 @@
-import HeroStatus from "./HeroStatus";
+import { describe, beforeEach, test, expect } from "vitest";
+
+import { HeroStatus } from "./HeroStatus";
 
 describe("HeroStatus", () => {
   let heroStatus: HeroStatus;

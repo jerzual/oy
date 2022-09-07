@@ -1,4 +1,6 @@
-import CreditsScreen from "./CreditsScreen";
+import { describe, beforeEach, test, expect } from "vitest";
+
+import { CreditsScreen } from "./CreditsScreen";
 
 describe("CreditsScreen", () => {
   describe("Component", () => {

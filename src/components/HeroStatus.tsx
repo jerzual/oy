@@ -16,4 +16,3 @@ export class HeroStatus extends Component<HeroStatusAttrs, any> {
     return <div />;
   }
 }
-export default HeroStatus;

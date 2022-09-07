@@ -1,8 +1,8 @@
 import { Component, h } from "preact";
 import * as React from "preact";
 
-import * as styles from "./HomeScreen.scss";
-import { Link } from "inferno-router";
+import "./HomeScreen.scss";
+import { Link } from "preact-router";
 
 export interface HomeScreenAttrs {}
 
@@ -17,10 +17,10 @@ export class HomeScreen extends Component<HomeScreenAttrs, any> {
   }
   public render(props: any) {
     return (
-      <nav className={styles.mainMenu}>
-        <ul className={styles.menuList}>
+      <nav class="mainMenu">
+        <ul class="menuList">
           {this.menu.map(entry => (
-            <li className={styles.menuEntry}>
+            <li class="menuEntry">
               <Link to={entry.path} tabIndex={0}>
                 {entry.title}
               </Link>
@@ -31,4 +31,3 @@ export class HomeScreen extends Component<HomeScreenAttrs, any> {
     );
   }
 }
-export default HomeScreen;

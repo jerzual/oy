@@ -1,7 +1,8 @@
-import Routes from "./routes";
+import { Routes } from "./routes";
+import { describe, beforeAll, afterAll, it, expect } from "vitest";
 
 describe("Routes", () => {
-  let routes;
+  let routes: Routes;
   beforeAll(() => {
     routes = Routes;
   });

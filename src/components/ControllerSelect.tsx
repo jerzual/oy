@@ -20,4 +20,3 @@ export class ControllerSelect extends Component<ControllerSelectAttrs, any> {
     );
   }
 }
-export default ControllerSelect;

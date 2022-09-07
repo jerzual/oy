@@ -1,8 +1,8 @@
-import HeroStatus from "../components/HeroStatus";
+import {HeroStatus} from "../components/HeroStatus";
 import { Component, h } from "preact";
 import * as React from "preact";
 
-import * as styles from "./GameScreen.scss";
+import "./GameScreen.scss";
 
 export interface GameScreenAttrs {
   type?: string;
@@ -11,10 +11,9 @@ export interface GameScreenAttrs {
 export class GameScreen extends Component<GameScreenAttrs, any> {
   public render(props: any) {
     return (
-      <div className={styles.gameScreen}>
+      <div class="gameScreen">
         <canvas id="game" />
       </div>
     );
   }
 }
-export default GameScreen;

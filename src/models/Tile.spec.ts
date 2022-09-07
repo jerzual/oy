@@ -1,7 +1,9 @@
-import {Tile} from "./Tile";
+import { describe, beforeEach, it, expect } from "vitest";
+
+import { Tile } from "./Tile";
 
 describe("Tile", function() {
-  let tile;
+  let tile: Tile;
   beforeEach(() => {
     tile = new Tile(0, 0);
   });

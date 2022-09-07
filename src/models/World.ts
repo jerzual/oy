@@ -1,13 +1,13 @@
-import SeedGenerator from "../generator/SeedGenerator";
-import Seed from "./Seed";
-import Level from "./Level";
+import { SeedGenerator } from "../generator/SeedGenerator";
+import { Seed } from "./Seed";
+import { Level } from "./Level";
 import { GameMode } from "./GameMode.enum";
 
 /**
  * a world is managed by a server or a client;
  * t cntains a suiite of levels, a game mode.
  */
-class World {
+export class World {
   seed: Seed;
   createdAt: Date;
   gameMode: GameMode;
@@ -31,4 +31,3 @@ class World {
   save() {}
 }
 
-export default World;

@@ -14,7 +14,7 @@ function randomFrom(rng, array: number[]) {
 /**
  * Draw the avatar sprite on a 16x16 canvas.
  */
-class AvatarPainter {
+export class AvatarPainter {
   private pixels: Array<Array<number>> = [];
   private rng: seedrandom.prng;
   private ctx: CanvasRenderingContext2D;
@@ -72,4 +72,3 @@ class AvatarPainter {
   }
 }
 
-export default AvatarPainter;

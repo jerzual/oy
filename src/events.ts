@@ -1,7 +1,7 @@
 import { merge, fromEvent, Observable } from "rxjs";
 import * as io from "socket.io-client";
 
-const sockets = io.connect(`http://localhost:3000/api`);
+const sockets = io.connect(`/api`);
 
 // instead of addEventListener :
 const close$: Observable<Event> = fromEvent(sockets, "close");

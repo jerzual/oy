@@ -29,4 +29,3 @@ export class SeedInput extends Component<SeedInputAttributes, any> {
     console.error(e);
   }
 }
-export default SeedInput;
