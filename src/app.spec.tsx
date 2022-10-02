@@ -8,5 +8,4 @@ describe("App object", () => {
 		const { container } = render(<App />, {});
 		expect(container).toBeDefined();
 	});
-
 });

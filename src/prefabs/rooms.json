@@ -1,68 +1,66 @@
 [
-  {
-    "legend": {
-      " ": "empty space",
-      "W": "non movable wall",
-      "D": "death trap",
-      "w": "destructible wall"
-    },
-    "rooms": {
-      "TRDL": [
-        {
-          "map": [
-            "WWWWWW     WWWWW",
-            "W              W",
-            "    WWW         ",
-            "W        WWW   W",
-            "WW            WW",
-            "WWWWWWWWWWWWWWWW"
-          ]
-        },
-        {
-          "map": [
-            "                ",
-            "               W",
-            "    WWW         ",
-            "  W      WWW   W",
-            "              WW",
-            "WWWWWWWWWWWWWWWW"
-          ]
-        }
-      ],
-      "TRD": [
-      ],
-      "TDL": [
-      ],
-      "RL": [
-        {
-          "map": [
-            "WWWWWWWWWWWWWWWW",
-            "W              W",
-            "                ",
-            "W W W W W W W WW",
-            "WDWDWDWDWDWDWDWW",
-            "WWWWWWWWWWWWWWWW"
-          ],
-          "platforms": [
-            {
-              "path": [
-                {
-                  "x": 0,
-                  "y": 0
-                }
-              ],
-              "speed": 0.5
-            }
-          ],
-          "monsters": [
-            {
-              "type": "blob",
-              "x": 0,
-              "y": 0
-            }
-          ]
-        }
-      ]
-    }
-  }
+	{
+		"legend": {
+			" ": "empty space",
+			"W": "non movable wall",
+			"D": "death trap",
+			"w": "destructible wall"
+		},
+		"rooms": {
+			"TRDL": [
+				{
+					"map": [
+						"WWWWWW     WWWWW",
+						"W              W",
+						"    WWW         ",
+						"W        WWW   W",
+						"WW            WW",
+						"WWWWWWWWWWWWWWWW"
+					]
+				},
+				{
+					"map": [
+						"                ",
+						"               W",
+						"    WWW         ",
+						"  W      WWW   W",
+						"              WW",
+						"WWWWWWWWWWWWWWWW"
+					]
+				}
+			],
+			"TRD": [],
+			"TDL": [],
+			"RL": [
+				{
+					"map": [
+						"WWWWWWWWWWWWWWWW",
+						"W              W",
+						"                ",
+						"W W W W W W W WW",
+						"WDWDWDWDWDWDWDWW",
+						"WWWWWWWWWWWWWWWW"
+					],
+					"platforms": [
+						{
+							"path": [
+								{
+									"x": 0,
+									"y": 0
+								}
+							],
+							"speed": 0.5
+						}
+					],
+					"monsters": [
+						{
+							"type": "blob",
+							"x": 0,
+							"y": 0
+						}
+					]
+				}
+			]
+		}
+	}
 ]

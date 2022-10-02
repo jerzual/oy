@@ -8,16 +8,15 @@ import { Sprite } from "pixi.js";
  *
  */
 export class Entity {
-  private sprite!: Sprite;
-  private body!: Body;
-  private textureName: string;
+	private sprite!: Sprite;
+	private body!: Body;
+	private textureName: string;
 
-  constructor() {
-    this.textureName = "default";
-  }
-  initObjects() {
-    this.sprite = new Sprite();
-    this.body = new Body();
-  }
+	constructor() {
+		this.textureName = "default";
+	}
+	initObjects() {
+		this.sprite = new Sprite();
+		this.body = new Body();
+	}
 }
-

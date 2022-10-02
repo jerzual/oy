@@ -6,21 +6,21 @@ import * as React from "preact";
 import "./OptionsScreen.scss";
 
 export interface OptionsScreenAttrs {
-  type?: string;
+	type?: string;
 }
 
 export class OptionsScreen extends Component<OptionsScreenAttrs, any> {
-  inputs: string[] = ["keyboard", "gamepad", "touch"];
+	inputs: string[] = ["keyboard", "gamepad", "touch"];
 
-  public render(props: any) {
-    return (
-      <form name="options">
-        <select>
-          {this.inputs.map(input => (
-            <option  value={input} />
-          ))}
-        </select>
-      </form>
-    );
-  }
+	public render(props: any) {
+		return (
+			<form name="options">
+				<select>
+					{this.inputs.map((input) => (
+						<option value={input} />
+					))}
+				</select>
+			</form>
+		);
+	}
 }

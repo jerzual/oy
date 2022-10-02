@@ -1,15 +1,15 @@
 {
-  "name": "OY",
-  "description": "a Rogue-like platformer",
-  "launch_path": "/index.html",
-  "icons": {
-    "64": "/img/icon-64.png",
-    "128": "/img/icon-128.png"
-  },
-  "developer": {
-    "name": "Benjamin Legrand",
-    "url": "http://jerzual.github.io"
-  },
-  "default_locale": "en",
-  "chrome": { "navigation": false }
+	"name": "OY",
+	"description": "a Rogue-like platformer",
+	"launch_path": "/index.html",
+	"icons": {
+		"64": "/img/icon-64.png",
+		"128": "/img/icon-128.png"
+	},
+	"developer": {
+		"name": "Benjamin Legrand",
+		"url": "http://jerzual.github.io"
+	},
+	"default_locale": "en",
+	"chrome": { "navigation": false }
 }

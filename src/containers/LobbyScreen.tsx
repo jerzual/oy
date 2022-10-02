@@ -5,15 +5,15 @@ import * as React from "preact";
 import "./LobbyScreen.scss";
 
 export interface LobbyScreenAttrs {
-  type?: string;
+	type?: string;
 }
 
 export class LobbyScreen extends Component<LobbyScreenAttrs, any> {
-  public render(props: any) {
-    return (
-      <div>
-        <h1>Archive</h1>
-      </div>
-    );
-  }
+	public render(props: any) {
+		return (
+			<div>
+				<h1>Archive</h1>
+			</div>
+		);
+	}
 }

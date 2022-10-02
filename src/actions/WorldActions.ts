@@ -1,4 +1,1 @@
-
-export class WorldActions{
-    
-}
+export class WorldActions {}
