@@ -4,14 +4,13 @@ import seedrandom from "seedrandom";
  * @see https://github.com/davidbau/seedrandom
  * */
 export class Seed {
-  rng: seedrandom.prng;
-  seedString: string;
-  constructor(seed: string, global = false) {
-    this.seedString = seed;
-    this.rng = seedrandom(this.seedString, { global });
-  }
-  random() {
-    return this.rng.double();
-  }
+	rng: seedrandom.prng;
+	seedString: string;
+	constructor(seed: string, global = false) {
+		this.seedString = seed;
+		this.rng = seedrandom(this.seedString, { global });
+	}
+	random() {
+		return this.rng.double();
+	}
 }
-

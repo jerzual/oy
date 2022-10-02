@@ -17,12 +17,12 @@ const keyPress$: Observable<Event> = fromEvent(document, "keypress");
 const keyboard$ = merge(keyDown$, keyUp$, keyPress$);
 
 const gamepadConnected$: Observable<Event> = fromEvent(
-  window,
-  "gamepadconnected",
+	window,
+	"gamepadconnected",
 );
 const gamepadDisconnected$: Observable<Event> = fromEvent(
-  document,
-  "gamepaddisconnected",
+	document,
+	"gamepaddisconnected",
 );
 const gamepad$ = merge(gamepadConnected$, gamepadDisconnected$);
 
@@ -39,6 +39,6 @@ const scroll$: Observable<Event> = fromEvent(document, "scroll");
 const window$ = merge(beforeUnload$, resize$, scroll$);
 
 // log all the events !
-merge(socket$, mouse$, window$, gamepad$, keyboard$).subscribe(event => {
-  console.log(`[EVT:${event.type}]`, event);
+merge(socket$, mouse$, window$, gamepad$, keyboard$).subscribe((event) => {
+	console.log(`[EVT:${event.type}]`, event);
 });

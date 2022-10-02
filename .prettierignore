@@ -1,0 +1,4 @@
+src/generator/__generated__
+src/assets/
+node_modules/
+e2e/features/

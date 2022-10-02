@@ -8,15 +8,15 @@ import "./ControllerSelect.scss";
 export interface ControllerSelectAttrs {}
 
 export class ControllerSelect extends Component<ControllerSelectAttrs, any> {
-  public render(props: any) {
-    return (
-      <form>
-        <label>
-          <select>
-            <option />
-          </select>
-        </label>
-      </form>
-    );
-  }
+	public render(props: any) {
+		return (
+			<form>
+				<label>
+					<select>
+						<option />
+					</select>
+				</label>
+			</form>
+		);
+	}
 }

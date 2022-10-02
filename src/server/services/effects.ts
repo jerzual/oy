@@ -5,9 +5,10 @@ import { Action } from "../../actions";
 
 @Injectable()
 export class ServerEffects {
-  connectionEffect$ = this.actions$.pipe(
-    //filter(action => action.type === "Connect"),
-  );
+	connectionEffect$ = this.actions$
+		.pipe
+		//filter(action => action.type === "Connect"),
+		();
 
-  constructor(private actions$: Observable<Action>) {}
+	constructor(private actions$: Observable<Action>) {}
 }
