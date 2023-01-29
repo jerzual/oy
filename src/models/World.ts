@@ -5,7 +5,7 @@ import { GameMode } from "./GameMode.enum";
 
 /**
  * a world is managed by a server or a client;
- * t cntains a suiite of levels, a game mode.
+ * it contains a suite of levels, a game mode.
  */
 export class World {
 	seed: Seed;

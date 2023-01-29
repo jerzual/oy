@@ -1,5 +1,4 @@
 import { render } from "preact";
-import * as React from "preact";
 import { App } from "./app";
 import "./main.scss";
 
