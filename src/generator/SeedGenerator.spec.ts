@@ -21,7 +21,7 @@ describe("SeedGenerator", () => {
 		});
 	});
 	describe("when dailyChallengeSeed() is called without date", () => {
-		var seed = SeedGenerator.dailyChallengeSeed();
+		const seed = SeedGenerator.dailyChallengeSeed();
 
 		it("should return an 8 char string", () => {
 			expect(seed).toMatch(/^(.*){8}$/);
@@ -32,7 +32,7 @@ describe("SeedGenerator", () => {
 		});
 
 		it("should return the same string as if given the date of the day.", () => {
-			var date = new Date();
+			const date = new Date();
 			expect(seed).toEqual(SeedGenerator.dailyChallengeSeed(date));
 		});
 	});

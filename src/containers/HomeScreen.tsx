@@ -19,8 +19,8 @@ export class HomeScreen extends Component<HomeScreenAttrs, any> {
 		return (
 			<nav class="mainMenu">
 				<ul class="menuList">
-					{this.menu.map((entry) => (
-						<li class="menuEntry">
+					{this.menu.map((entry, index) => (
+						<li class="menuEntry" key={entry.path}>
 							<Link href={entry.path} tabIndex={0}>
 								{entry.title}
 							</Link>

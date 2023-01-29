@@ -1,20 +1,28 @@
-import { createCanvas } from "canvas";
+import { Canvas, createCanvas } from "canvas";
 import fs from "node:fs";
 import { AvatarPainter } from "./AvatarPainter";
 import { describe, beforeEach, test, afterEach, expect } from "vitest";
 
 describe("AvatarPainter", () => {
-	let canvas: any;
+	let canvas: Canvas;
 	let avatarPainter: AvatarPainter;
 	beforeEach(() => {
 		canvas = createCanvas(16, 16);
-		avatarPainter = new AvatarPainter(canvas);
+		const context = canvas.getContext("2d");
+		avatarPainter = new AvatarPainter(context);
 	});
-	["ABCDEFGH", "TITITATA"].forEach((seed) => {
-		test(`generate for seed ${seed}`, () => {
-			avatarPainter.withSeed(seed);
+	new Array<string>(26)
+		.fill("", 0, 25)
+		.map((val, index) => {
+			return String.fromCharCode(96 + index);
+		})
+		.forEach((seed) => {
+			test(`generate for seed ${seed}`, () => {
+				avatarPainter.withSeed(seed);
+				avatarPainter.draw();
+				expect(avatarPainter.choices).toBeDefined();
+			});
 		});
-	});
 	afterEach(
 		() =>
 			new Promise((resolve) => {
