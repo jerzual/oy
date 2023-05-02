@@ -21,7 +21,7 @@ const enum EyeType {
  * @param array values to choose from
  * @returns
  */
-function fromRandom<T>(rng: seedrandom.prng, array: T[]): T {
+function fromRandom<T>(rng: seedrandom.PRNG, array: T[]): T {
 	const i = Math.floor(rng.quick() * array.length);
 	return array[i];
 }
@@ -41,7 +41,7 @@ function getColor(hexInt: number): string {
 export class AvatarPainter {
 	private pixels: Array<Array<number>> = [];
 
-	private rng!: seedrandom.prng;
+	private rng!: seedrandom.PRNG;
 
 	private context: CanvasRenderingContext2D;
 
