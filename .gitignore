@@ -62,3 +62,6 @@ protractor.conf.js
 coverage/
 test-report.html
 **/__generated__/*
+/test-results/
+/playwright-report/
+/playwright/.cache/
