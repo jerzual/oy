@@ -4,7 +4,7 @@ import seedrandom from "seedrandom";
  * @see https://github.com/davidbau/seedrandom
  * */
 export class Seed {
-	rng: seedrandom.prng;
+	rng: seedrandom.PRNG;
 	seedString: string;
 	constructor(seed: string, global = false) {
 		this.seedString = seed;
