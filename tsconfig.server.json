@@ -2,13 +2,13 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "dist/",
-    "module": "Node16",
+    "module": "ESNext",
     "moduleResolution": "node",
     "sourceMap": true,
     "esModuleInterop": true,
-    "target": "ES2020",
+    "target": "ESNext",
     "allowSyntheticDefaultImports": true,
-    "lib": ["ES2020", "dom"],
+    "lib": ["ES2023", "dom"],
     "jsx": "preserve",
     "typeRoots": ["node_modules/@types/"],
     "types": ["node", "express", "supertest", "socket.io", "preact"]
