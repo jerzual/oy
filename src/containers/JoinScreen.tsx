@@ -1,27 +1,22 @@
-import { Component, h } from "preact";
+import { FunctionComponent, h } from "preact";
 import * as React from "preact";
 
 import { SeedInput } from "../components/SeedInput";
 import { AvatarPreview } from "../components/AvatarPreview";
 
 import "./JoinScreen.scss";
+import { useState } from "preact/hooks";
 
-export interface JoinAttributes {
-	seed?: string;
-}
-
-export class JoinScreen extends Component<JoinAttributes, any> {
-	private seed!: string;
-	public render(props: any) {
-		this.seed = props.seed;
+export const JoinScreen: FunctionComponent = () => {
+		const [seed, setSeed] = useState("");
 		return (
 			<div class="joinScreen">
-				<AvatarPreview seed={props.seed} />
+				<AvatarPreview seed={seed} />
 				<SeedInput
-					seed={props.seed}
-					onChange={(value: string) => (this.seed = value)}
+					seed={seed}
+					onChange={setSeed}
+					onSubmit={() => {}}
 				/>
 			</div>
 		);
-	}
 }

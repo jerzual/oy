@@ -9,7 +9,7 @@ describe("AvatarPainter", () => {
 	beforeEach(() => {
 		canvas = createCanvas(16, 16);
 		const context = canvas.getContext("2d");
-		avatarPainter = new AvatarPainter(context);
+		avatarPainter = new AvatarPainter(context as unknown as CanvasRenderingContext2D);
 	});
 	new Array<string>(26)
 		.fill("", 0, 25)
