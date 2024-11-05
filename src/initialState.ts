@@ -1,5 +1,4 @@
 import { Point } from "pixi.js";
-import { Chance } from "chance";
 import { nanoid } from "nanoid";
 
 export interface GameState {
@@ -53,7 +52,7 @@ export function getInitialState(): AppState {
 		hero: {
 			status: "offline",
 			uuid: nanoid(),
-			name: new Chance().name(),
+			name: "Player",
 			score: 0,
 			life: 12,
 			gold: 0,
