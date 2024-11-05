@@ -1,5 +1,4 @@
-import { FunctionComponent, h } from "preact";
-import * as React from "preact";
+import { FunctionComponent, h  } from "preact";
 
 import { SeedInput } from "../components/SeedInput";
 import { AvatarPreview } from "../components/AvatarPreview";

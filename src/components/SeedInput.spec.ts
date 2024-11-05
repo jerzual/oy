@@ -1,12 +1,10 @@
+import { render } from "@testing-library/preact";
 import { SeedInput } from "./SeedInput";
-import { describe, beforeEach, test, expect } from "vitest";
+import { describe, test, expect } from "vitest";
 
 describe("SeedInput", () => {
-	let seedInput: SeedInput;
-	beforeEach(() => {
-		seedInput = new SeedInput();
-	});
 	test("seed input is defined", () => {
-		expect(seedInput).toBeDefined();
+	  const {container} = render(SeedInput);
+		expect(container).toBeDefined();
 	});
 });

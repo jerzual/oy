@@ -1,17 +1,8 @@
-import { describe, beforeEach, test, expect } from "vitest";
+import { test, expect } from "vitest";
 import { JoinScreen } from "./JoinScreen";
+import { render } from "@testing-library/preact";
 
-describe("JoinScreen", () => {
-	describe("Component", () => {
-		let joinScreen: JoinScreen;
-		beforeEach(() => {
-			joinScreen = new JoinScreen();
-		});
-		test("#view()", () => {
-			expect(joinScreen).toBeDefined();
-		});
-		test("#view()", () => {
-			expect(joinScreen).toBeDefined();
-		});
-	});
+test("should render", () => {
+  const { container } = render(JoinScreen);
+  expect(container).toBeTruthy();
 });
