@@ -1,25 +1,38 @@
 name: Playwright Tests
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
   pull_request:
-    branches: [ main, master ]
+    branches: [main, master]
+env:
+  NODE_VERSION: 20
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
+    - uses: actions/checkout@v4
+ 
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
       with:
-        node-version: 16
+        version: 9
+
+    - uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'pnpm'
+
     - name: Install dependencies
-      run: npm ci
+      run: pnpm install
+
     - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+      run: pnpx playwright install --with-deps
+
     - name: Run Playwright tests
-      run: npx playwright test
-    - uses: actions/upload-artifact@v3
+      run: pnpx playwright test
+
+    - uses: actions/upload-artifact@v4
       if: always()
       with:
         name: playwright-report

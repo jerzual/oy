@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "vite",
 		"dev:server": "ts-node src/server",
-		"build": "tsc && vite build",
+		"build": "vite build",
 		"build:client": "vite build --outDir dist/client",
 		"build:server": "vite build --outDir dist/server --ssr src/server.ts ",
 		"build:host": "",
