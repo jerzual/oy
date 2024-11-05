@@ -1,12 +1,14 @@
-import { CanvasRenderingContext2D } from "canvas";
+// import { CanvasRenderingContext2D } from "canvas";
 import seedrandom from "seedrandom";
 
-const AVATAR_SIZE = 16,
-	HAIR_COLORS = [0x333333, 0xe58c00, 0x856d4e],
-	EYE_COLORS = [0x232323, 0x333333, 0x000000, 0x2d4353],
-	SKIN_COLORS = [0xffc39f, 0xffd640, 0xb8b8b8],
-	BODY_COLORS = [0xbf6f12, 0x776286, 0x963127, 0x268d11, 0x5f7b97, 0x6e5a3d],
-	PANT_COLORS = [0x343434, 0x3d4856];
+export const AVATAR_SIZE = 16;
+const HAIR_COLORS = [0x333333, 0xe58c00, 0x856d4e];
+const EYE_COLORS = [0x232323, 0x333333, 0x000000, 0x2d4353];
+const SKIN_COLORS = [0xffc39f, 0xffd640, 0xb8b8b8];
+const BODY_COLORS = [
+	0xbf6f12, 0x776286, 0x963127, 0x268d11, 0x5f7b97, 0x6e5a3d,
+];
+const PANT_COLORS = [0x343434, 0x3d4856];
 
 const enum EyeType {
 	VERTICAL,
@@ -43,8 +45,6 @@ export class AvatarPainter {
 
 	private rng!: seedrandom.PRNG;
 
-	private context: CanvasRenderingContext2D;
-
 	public choices: {
 		skinColor?: number;
 		eyeColor?: number;
@@ -53,8 +53,7 @@ export class AvatarPainter {
 	} = {};
 
 	/** Initialize with  */
-	constructor(context: CanvasRenderingContext2D) {
-		this.context = context;
+	constructor(private context: CanvasRenderingContext2D) {
 		//pixel is a bi-dimensional array of hex colors.
 		this.pixels = [];
 		//init with black
@@ -124,9 +123,11 @@ export class AvatarPainter {
 		this.context.fillStyle = getColor(this.choices.eyeColor);
 		const eyeTypes = fromRandom(this.rng, [0, 0, 0, 1, 1, 2]);
 		switch (eyeTypes) {
-			case 0:
-			//break;
-			case 1: // bicolor
+			case 0: //small
+				this.context.fillRect(6, 5, 1, 1);
+				this.context.fillRect(8, 5, 1, 1);
+				break;
+			case 1: // vertical
 				this.context.fillRect(6, 5, 1, 2);
 				this.context.fillRect(8, 5, 1, 2);
 				break;
