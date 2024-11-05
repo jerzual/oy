@@ -47,6 +47,7 @@ jobs:
         node-version: ${{ env.NODE_VERSION }}
         cache: 'pnpm'
     - run: pnpm install
+    - run: pnpm rebuild
     - run: pnpm run coverage
 
   reports:
