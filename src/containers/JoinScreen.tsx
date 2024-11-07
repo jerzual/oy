@@ -1,15 +1,14 @@
-import { FunctionComponent, h  } from "preact";
+import { FunctionComponent } from "preact";
 
 import { SeedInput } from "../components/SeedInput";
 import { AvatarPreview } from "../components/AvatarPreview";
 
-import "./JoinScreen.scss";
 import { useState } from "preact/hooks";
 
 export const JoinScreen: FunctionComponent = () => {
 		const [seed, setSeed] = useState("");
 		return (
-			<div class="joinScreen">
+			<div class="flex flex-col">
 				<AvatarPreview seed={seed} />
 				<SeedInput
 					seed={seed}

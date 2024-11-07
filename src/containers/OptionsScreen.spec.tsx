@@ -1,8 +1,10 @@
+import { render } from "@testing-library/preact";
 import { OptionsScreen } from "./OptionsScreen";
 import { describe, test, expect } from "vitest";
 
 describe("OptionsScreen", () => {
 	test("should do something", () => {
-		expect(true).toBe(true);
+		const { container } = render(<OptionsScreen />);
+		expect(container).toBeDefined();
 	});
 });

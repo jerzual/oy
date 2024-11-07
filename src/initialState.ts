@@ -40,10 +40,10 @@ export interface AppState {
 	hero?: HeroState;
 }
 export interface LobbyState {
-	members: {};
+	members: unknown[];
 }
 export interface WorldState {
-	members: {};
+	members: unknown[];
 }
 
 export function getInitialState(): AppState {

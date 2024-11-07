@@ -1,6 +1,5 @@
-import { h } from "preact";
 import { render } from "@testing-library/preact";
-import { describe, beforeAll, afterAll, test, expect } from "vitest";
+import { describe, test, expect } from "vitest";
 import { App } from "./app";
 
 describe("App object", () => {

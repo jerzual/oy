@@ -1,9 +1,7 @@
 // AvatarPreview display heart containers and gold over the main game screen.
 
-import { FunctionComponent, h } from "preact";
-import * as React from "preact";
+import { FunctionComponent } from "preact";
 
-import "./AvatarPreview.scss";
 import { useRef } from "preact/hooks";
 import { AvatarPainter } from "../generator/AvatarPainter";
 
@@ -21,8 +19,12 @@ export const AvatarPreview: FunctionComponent<AvatarPreviewAttrs> = (
 		builder.draw();
 	}
 	return (
-		<div class="avatarPreview">
-			<canvas ref={canvasRef} width="16" height="16" data-seed={props.seed} />
+		<div class="flex items-center justify-center">
+			<canvas
+			  class="w-64 h-64"
+				style={{imageRendering: "pixelated"}}
+			  ref={canvasRef} width="16" height="16"
+			 data-seed={props.seed} />
 		</div>
 	);
 };
