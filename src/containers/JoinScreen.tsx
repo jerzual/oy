@@ -1,21 +1,17 @@
-import { FunctionComponent, h  } from "preact";
+import { FunctionComponent } from "preact";
 
 import { SeedInput } from "../components/SeedInput";
 import { AvatarPreview } from "../components/AvatarPreview";
 
-import "./JoinScreen.scss";
 import { useState } from "preact/hooks";
+import { css } from "../../styled-system/css";
 
 export const JoinScreen: FunctionComponent = () => {
-		const [seed, setSeed] = useState("");
-		return (
-			<div class="joinScreen">
-				<AvatarPreview seed={seed} />
-				<SeedInput
-					seed={seed}
-					onChange={setSeed}
-					onSubmit={() => {}}
-				/>
-			</div>
-		);
-}
+	const [seed, setSeed] = useState("");
+	return (
+		<div class={css({ display: "flex", flexDir: "column" })}>
+			<AvatarPreview seed={seed} />
+			<SeedInput seed={seed} onChange={setSeed} onSubmit={() => {}} />
+		</div>
+	);
+};

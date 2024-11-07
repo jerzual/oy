@@ -1,6 +1,4 @@
-import * as React from "preact";
 import { Router, Route } from "preact-router";
-import { default as AsyncRoute } from "preact-async-route";
 
 import { LobbyScreen } from "./containers/LobbyScreen";
 import { CreditsScreen } from "./containers/CreditsScreen";

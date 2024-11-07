@@ -1,21 +1,30 @@
-// AvatarPreview display heart containers and gold over the main game screen.
+import { FunctionComponent, JSX } from "preact";
+import { cva } from "../../styled-system/css";
 
-import { Component, h } from "preact";
-import * as React from "preact";
+const buttonStyle = cva({
+	base: { px: 4, py: 2, rounded: "lg", fontWeight: "medium", transition: "colors" },
+	variants: {
+		variant: {
+			primary: { bg: "blue.600", _hover: { bg: "blue.700" }, color: "white" },
+			secondary: { bg: "gray.200", _hover: { bg: "gray.300" }, color: "gray.800" },
+		},
+	},
+	defaultVariants: { variant: "primary" },
+});
 
-import "./Button.scss";
-
-export interface ButtonAttrs {
-	type: string;
-	onClick?: (value: MouseEvent | KeyboardEvent) => void;
+interface ButtonProps extends JSX.HTMLAttributes<HTMLButtonElement> {
+	variant?: "primary" | "secondary";
 }
 
-export class Button extends Component<ButtonAttrs, any> {
-	public render(props: any) {
-		return (
-			<button class="button" type={props.type} onClick={props.onClick}>
-				{props.children}
-			</button>
-		);
-	}
-}
+export const Button: FunctionComponent<ButtonProps> = ({
+	children,
+	variant = "primary",
+	className = "",
+	...props
+}) => {
+	return (
+		<button className={buttonStyle({ variant })} {...props}>
+			{children}
+		</button>
+	);
+};

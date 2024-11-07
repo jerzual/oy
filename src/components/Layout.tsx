@@ -1,25 +1,23 @@
-import { Component, h } from "preact";
-import * as React from "preact";
-
-import "./Layout.scss";
+import { ComponentChildren, FunctionComponent } from "preact";
+import { css } from "../../styled-system/css";
 
 export interface LayoutAttributes {
-	children: React.ComponentChildren;
+	children: ComponentChildren;
 }
 
-export class Layout extends Component<LayoutAttributes, any> {
-	public componentWillMount(): void {
-		console.log("componentWillMount");
-	}
-	public render(props: any) {
-		return (
-			<main class="mainZone">
-				<nav class="menuItems">
-					<h1>0Y</h1>
-				</nav>
-				<canvas class="gameView" width="320" height="240" />
-				<section class="routeOutlet">{props.children}</section>
-			</main>
-		);
-	}
-}
+export const Layout: FunctionComponent<LayoutAttributes> = (props) => {
+	return (
+		<main>
+			<nav class={css({ position: "fixed", w: "full", textAlign: "center" })}>
+				<h1 class={css({ my: 4 })}>0Y</h1>
+			</nav>
+			<canvas
+				class={css({ w: "full", h: "full" })}
+				width="320"
+				height="240"
+				style={{ imageRendering: "pixelated" }}
+			/>
+			<section class={css({ position: "absolute", inset: 0 })}>{props.children}</section>
+		</main>
+	);
+};

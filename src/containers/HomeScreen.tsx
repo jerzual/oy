@@ -1,33 +1,26 @@
-import { Component, h } from "preact";
-import * as React from "preact";
+import { FunctionalComponent } from "preact";
 
-import "./HomeScreen.scss";
 import { Link } from "preact-router";
+import { css } from "../../styled-system/css";
 
-export interface HomeScreenAttrs {}
+const menu = [
+	{ path: "/join", title: "Play" },
+	{ path: "/options", title: "Options" },
+	{ path: "/credits", title: "About" },
+];
 
-export class HomeScreen extends Component<HomeScreenAttrs, any> {
-	private menu!: any[];
-	public componentWillMount() {
-		this.menu = [
-			{ path: "/join", title: "Play" },
-			{ path: "/options", title: "Options" },
-			{ path: "/credits", title: "About" },
-		];
-	}
-	public render(props: any) {
-		return (
-			<nav class="mainMenu">
-				<ul class="menuList">
-					{this.menu.map((entry, index) => (
-						<li class="menuEntry" key={entry.path}>
-							<Link href={entry.path} tabIndex={0}>
-								{entry.title}
-							</Link>
-						</li>
-					))}
-				</ul>
-			</nav>
-		);
-	}
-}
+export const HomeScreen: FunctionalComponent = () => {
+	return (
+		<nav class={css({ display: "flex", mt: 1 })}>
+			<ul class={css({ display: "flex", flexDir: "column" })}>
+				{menu.map((entry) => (
+					<li class="menuEntry" key={entry.path}>
+						<Link href={entry.path} tabIndex={0}>
+							{entry.title}
+						</Link>
+					</li>
+				))}
+			</ul>
+		</nav>
+	);
+};

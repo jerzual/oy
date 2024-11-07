@@ -1,8 +1,8 @@
-import { FunctionComponent, h } from "preact";
-import * as React from "preact";
+import { FunctionComponent } from "preact";
 
-import "./SeedInput.scss";
-import { Input, Button } from "../elements";
+import { Input } from "../elements/Input";
+import { Button } from "../elements/Button";
+import { css } from "../../styled-system/css";
 
 export interface SeedInputAttributes {
 	seed: string;
@@ -10,17 +10,16 @@ export interface SeedInputAttributes {
 	onSubmit: () => void;
 }
 
-export const SeedInput: FunctionComponent<SeedInputAttributes> = (
-	props: SeedInputAttributes,
-) => {
+export const SeedInput: FunctionComponent<SeedInputAttributes> = (props: SeedInputAttributes) => {
 	return (
-		<div className="formGroup">
+		<div class={css({ display: "flex" })}>
 			<Input
 				key="seed"
 				type="text"
 				placeholder="QWERTY42"
 				max={8}
-				onChange={props.onChange} 
+				label="Enter your name"
+				onChange={props.onChange}
 			/>
 			<Button type="submit" onClick={props.onSubmit}>
 				Play
