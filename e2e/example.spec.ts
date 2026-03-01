@@ -1,18 +1,18 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from "@playwright/test";
 
-test('has title', async ({ page }) => {
-  await page.goto('/');
+test("has title", async ({ page }) => {
+	await page.goto("/");
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/OY/);
+	// Expect a title "to contain" a substring.
+	await expect(page).toHaveTitle(/OY/);
 });
 
-test('get started link', async ({ page }) => {
-  await page.goto('/');
+test("get started link", async ({ page }) => {
+	await page.goto("/");
 
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Play' }).click();
+	// Click the get started link.
+	await page.getByRole("link", { name: "Play" }).click();
 
-  // Expects the URL to contain join.
-  await expect(page).toHaveURL(/.*join/);
+	// Expects the URL to contain join.
+	await expect(page).toHaveURL(/.*join/);
 });

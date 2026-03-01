@@ -1,5 +1,9 @@
 export class Tile {
-	constructor(private x: number, private y: number, private color?: string) {}
+	constructor(
+		private x: number,
+		private y: number,
+		private color?: string,
+	) {}
 }
 
 export function defaultTile() {

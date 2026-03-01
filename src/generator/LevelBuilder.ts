@@ -16,7 +16,11 @@ export enum LevelType {
 export class LevelBuilder<LevelType = any> {
 	private level: Level;
 	private currentSeed: Seed;
-	constructor(private seed: string, private width = 16, private height = 16) {
+	constructor(
+		private seed: string,
+		private width = 16,
+		private height = 16,
+	) {
 		this.currentSeed = new Seed(seed);
 		this.level = new Level(width, height);
 	}

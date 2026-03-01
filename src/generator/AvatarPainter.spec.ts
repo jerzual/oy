@@ -26,9 +26,7 @@ describe("AvatarPainter", () => {
 	afterEach(
 		() =>
 			new Promise((resolve) => {
-				const out = fs.createWriteStream(
-					`${__dirname}/__generated__/avatar-${Date.now()}.png`,
-				);
+				const out = fs.createWriteStream(`${__dirname}/__generated__/avatar-${Date.now()}.png`);
 				const stream = canvas.createPNGStream();
 				stream.pipe(out);
 				out.on("finish", () => {

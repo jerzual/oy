@@ -15,14 +15,7 @@ export interface EntityState {
 	position: Point;
 	velocity: number;
 	direction: Point;
-	status:
-		| "patrolling"
-		| "aiming"
-		| "jumping"
-		| "running"
-		| "sliding"
-		| "dying"
-		| "dead";
+	status: "patrolling" | "aiming" | "jumping" | "running" | "sliding" | "dying" | "dead";
 }
 export interface HeroState {
 	status: "connected" | "offline";

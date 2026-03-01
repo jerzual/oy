@@ -16,14 +16,8 @@ const keyUp$: Observable<Event> = fromEvent(document, "keyup");
 const keyPress$: Observable<Event> = fromEvent(document, "keypress");
 const keyboard$ = merge(keyDown$, keyUp$, keyPress$);
 
-const gamepadConnected$: Observable<Event> = fromEvent(
-	window,
-	"gamepadconnected",
-);
-const gamepadDisconnected$: Observable<Event> = fromEvent(
-	document,
-	"gamepaddisconnected",
-);
+const gamepadConnected$: Observable<Event> = fromEvent(window, "gamepadconnected");
+const gamepadDisconnected$: Observable<Event> = fromEvent(document, "gamepaddisconnected");
 const gamepad$ = merge(gamepadConnected$, gamepadDisconnected$);
 
 // mouse events
