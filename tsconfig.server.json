@@ -8,23 +8,10 @@
 		"esModuleInterop": true,
 		"target": "ESNext",
 		"allowSyntheticDefaultImports": true,
-		"experimentalDecorators": true,
-		"lib": [
-			"ES2023",
-			"dom"
-		],
+		"lib": ["ES2023", "dom"],
 		"jsx": "preserve",
-		"typeRoots": [
-			"node_modules/@types/"
-		],
-		"types": [
-			"node",
-			"express",
-			"supertest",
-			"preact"
-		]
+		"typeRoots": ["node_modules/@types/"],
+		"types": ["node", "express", "supertest", "preact"]
 	},
-	"files": [
-		"src/server.ts"
-	]
+	"files": ["src/server.ts"]
 }

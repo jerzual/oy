@@ -14,13 +14,12 @@
 		{
 			"type": "node",
 			"request": "launch",
-			"name": "server (ts-node)",
-			"runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
+			"name": "server (tsx)",
+			"runtimeArgs": ["--nolazy", "--import", "tsx"],
 			"program": "${workspaceFolder}/src/server.ts",
 			"sourceMaps": true,
 			"cwd": "${workspaceRoot}",
 			"env": {
-				"TS_NODE_PROJECT": "tsconfig.server.json",
 				"NODE_ENV": "development"
 			}
 		},
@@ -29,21 +28,12 @@
 			"request": "launch",
 			"name": "watcher (ts)",
 			"args": ["${workspaceFolder}/watcher.ts"],
-			"runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
+			"runtimeArgs": ["--nolazy", "--import", "tsx"],
 			"sourceMaps": true,
 			"cwd": "${workspaceRoot}",
 			"env": {
-				"TS_NODE_PROJECT": "tsconfig.server.json",
 				"NODE_ENV": "development"
 			}
-		},
-		{
-			"type": "node",
-			"request": "launch",
-			"name": "debug jest",
-			"runtimeArgs": ["--inspect-brk", "${workspaceRoot}/node_modules/.bin/jest", "--runInBand"],
-			"console": "integratedTerminal",
-			"internalConsoleOptions": "neverOpen"
 		}
 	]
 }

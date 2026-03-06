@@ -3,7 +3,7 @@ import { defineConfig, configDefaults } from "vitest/config";
 import { readFileSync } from "node:fs";
 
 export default defineConfig({
-	plugins: [preactPlugin()],
+	plugins: [preactPlugin({ exclude: [/node_modules/, /src\/server\//] })],
 	test: {
 		threads: false,
 		environment: "jsdom",

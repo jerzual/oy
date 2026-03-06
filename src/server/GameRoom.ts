@@ -10,6 +10,8 @@ export class GameRoom extends Room<{ state: GameRoomState }> {
 		this.state.seed = options.seed || nanoid(8);
 		this.state.gameMode = options.gameMode || "freeroam";
 
+		this.setSimulationInterval(() => this.update());
+
 		this.onMessage("chat", (client, message: string) => {
 			this.broadcast("chat", {
 				from: client.sessionId,
@@ -23,6 +25,10 @@ export class GameRoom extends Room<{ state: GameRoomState }> {
 		player.sessionId = client.sessionId;
 		player.name = options.name || "Player";
 		this.state.players.set(client.sessionId, player);
+	}
+
+	update() {
+		/* game loop tick */
 	}
 
 	onLeave(client: Client) {

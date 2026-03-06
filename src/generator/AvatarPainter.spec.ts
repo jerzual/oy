@@ -13,7 +13,7 @@ describe("AvatarPainter", () => {
 	});
 	new Array<string>(26)
 		.fill("", 0, 25)
-		.map((val, index) => {
+		.map((_val, index) => {
 			return String.fromCharCode(96 + index);
 		})
 		.forEach((seed) => {
@@ -26,12 +26,12 @@ describe("AvatarPainter", () => {
 	afterEach(
 		() =>
 			new Promise((resolve) => {
-				const out = fs.createWriteStream(`${__dirname}/__generated__/avatar-${Date.now()}.png`);
+				const filePath = `${__dirname}/__generated__/avatar-${Date.now()}.png`;
+				const out = fs.createWriteStream(filePath);
 				const stream = canvas.createPNGStream();
 				stream.pipe(out);
 				out.on("finish", () => {
-					console.log("The PNG file was created.");
-					resolve();
+					resolve(filePath);
 				});
 			}),
 	);
