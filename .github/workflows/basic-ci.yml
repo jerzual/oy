@@ -29,9 +29,7 @@ jobs:
       - uses: actions/cache@v4
         id: cache
         with:
-          path:
-            - node_modules
-            - styled-system
+          path: node_modules
           key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
           lookup-only: true
       - name: Install Dependencies
@@ -61,6 +59,8 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+      - name: Prepare
+        run: pnpm run prepare
       - name: Build
         id: run
         run: pnpm run build
@@ -88,10 +88,12 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+      - name: Prepare
+        run: pnpm run prepare
       - name: Lint
         id: run
-        run: pnpm run lint
-        continue-on-error: true
+        run: pnpm run lint:github
+        # continue-on-error: true
 
   test:
     runs-on: ubuntu-latest
@@ -116,6 +118,8 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+      - name: Prepare
+        run: pnpm run prepare
       - name: Test
         id: run
         run: pnpm run test
@@ -143,6 +147,8 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+      - name: Prepare
+        run: pnpm run prepare
       - name: Format check
         id: run
         run: pnpm run format:check
