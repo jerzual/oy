@@ -34,28 +34,26 @@ a multiplayer Spelunky, Worms, platformer ?
 
 ### Tech stack
 
-**Runtime deps**
+#### Runtime deps
 
 - [pixi.js]() for sprite rendering
 - [matter-js]() for physics
-- [socket.io](): for communication
-- rxjs: reactive stuff.
+- [ws](): for communication
+- [colyseus](https://docs.colyseus.io) mmo server and communication
 - reactive-state: used to manage server state and client state.
-- express: web server
-- preact with tsx for ui / site rendering
-- css-modules
+- [express](https://expressjs.com/): web server
+- [preact](https://preactjs.com/) with tsx for ui / site rendering
+- [pandacss](https://panda-css.com/) for styling components
 
-**Development tools**
+#### Development tools
 
 - Typescript, node.js,
 
-  | tool | description    |
-  | ---- | -------------- |
-  | jest | test framework |
+| tool | description    |
+| ---- | -------------- |
+| jest | test framework |
 
 ## architecture
-
-Based on redux states,
 
 **ServerState**
 
