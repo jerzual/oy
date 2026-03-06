@@ -30,8 +30,10 @@
 		"coverage": "vitest run --coverage",
 		"lint": "oxlint",
 		"lint:fix": "oxlint --fix",
+		"lint:github": "oxlint --format=github",
 		"format": "oxfmt",
-		"prepare": "panda codegen",
+		"format:check": "oxfmt --check",
+		"prepare": "husky & panda codegen",
 		"e2e": "playwright test"
 	},
 	"dependencies": {
@@ -68,7 +70,9 @@
 		"autoprefixer": "^10.4.27",
 		"axe-core": "^4.11.1",
 		"canvas": "^3.2.1",
+		"husky": "^9.1.7",
 		"jsdom": "^28.1.0",
+		"lint-staged": "^16.3.2",
 		"oxfmt": "^0.36.0",
 		"oxlint": "^1.51.0",
 		"postcss": "^8.5.8",
@@ -85,7 +89,7 @@
 	},
 	"lint-staged": {
 		"*.{js,css,json,md}": [
-			"prettier --write",
+			"oxfmt --no-error-on-unmatched-pattern",
 			"git add"
 		]
 	},
