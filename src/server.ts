@@ -17,7 +17,7 @@ const gameServer = defineServer({
 
 			const template = fs.readFileSync("dist/client/index.html", "utf-8");
 			const ssrEntry = "./server/main.server.js";
-			const { default: render } = await import(ssrEntry);
+			const { default: render } = await import(/* @vite-ignore */ ssrEntry);
 
 			app.get("*all", async (req, res) => {
 				const html = await render(req.originalUrl, template);
