@@ -16,25 +16,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: actions/checkout@v7
+      - name: Setup pnpm and node.js
+        uses: pnpm/setup@v3
         with:
-          run_install: false
-      - name: Setup node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'pnpm'
-      - uses: actions/cache@v4
-        id: cache
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
-          lookup-only: true
-      - name: Install Dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: pnpm install
+          runtime: node@${{ env.NODE_VERSION }}
+          cache: true
 
   build:
     runs-on: ubuntu-latest
@@ -43,22 +30,12 @@ jobs:
       result: ${{ steps.run.outcome }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: actions/checkout@v7
+      - name: Setup pnpm and node.js
+        uses: pnpm/setup@v3
         with:
-          version: ${{ env.PNPM_VERSION }}
-          run_install: false
-      - name: Setup node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'pnpm'
-      - uses: actions/cache@v4
-        id: cache
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          runtime: node@${{ env.NODE_VERSION }}
+          cache: true
       - name: Prepare
         run: pnpm run prepare
       - name: Build
@@ -72,22 +49,12 @@ jobs:
       result: ${{ steps.run.outcome }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: actions/checkout@v7
+      - name: Setup pnpm and node.js
+        uses: pnpm/setup@v3
         with:
-          version: ${{ env.PNPM_VERSION }}
-          run_install: false
-      - name: Setup node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'pnpm'
-      - uses: actions/cache@v4
-        id: cache
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          runtime: node@${{ env.NODE_VERSION }}
+          cache: true
       - name: Prepare
         run: pnpm run prepare
       - name: Lint
@@ -102,22 +69,12 @@ jobs:
       result: ${{ steps.run.outcome }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: actions/checkout@v7
+      - name: Setup pnpm and node.js
+        uses: pnpm/setup@v3
         with:
-          version: ${{ env.PNPM_VERSION }}
-          run_install: false
-      - name: Setup node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'pnpm'
-      - uses: actions/cache@v4
-        id: cache
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          runtime: node@${{ env.NODE_VERSION }}
+          cache: true
       - name: Prepare
         run: pnpm run prepare
       - name: Test
@@ -131,22 +88,12 @@ jobs:
       result: ${{ steps.run.outcome }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: actions/checkout@v7
+      - name: Setup pnpm and node.js
+        uses: pnpm/setup@v3
         with:
-          version: ${{ env.PNPM_VERSION }}
-          run_install: false
-      - name: Setup node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'pnpm'
-      - uses: actions/cache@v4
-        id: cache
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          runtime: node@${{ env.NODE_VERSION }}
+          cache: true
       - name: Prepare
         run: pnpm run prepare
       - name: Format check
@@ -161,7 +108,7 @@ jobs:
       pull-requests: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Generate summary
         run: |
           icon() {
