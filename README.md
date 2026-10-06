@@ -36,9 +36,9 @@ a multiplayer Spelunky, Worms, platformer ?
 
 #### Runtime deps
 
-- [pixi.js]() for sprite rendering
-- [matter-js]() for physics
-- [ws](): for communication
+- [pixi.js](<>) for sprite rendering
+- [matter-js](<>) for physics
+- [ws](<>): for communication
 - [colyseus](https://docs.colyseus.io) mmo server and communication
 - reactive-state: used to manage server state and client state.
 - [express](https://expressjs.com/): web server

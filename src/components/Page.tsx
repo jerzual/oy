@@ -15,7 +15,14 @@ export const Page: FunctionComponent = ({ children }) => {
 			})}
 		>
 			<div
-				class={css({ bg: "white/10", backdropBlur: "lg", p: 8, rounded: "2xl", shadow: "2xl", w: 96 })}
+				class={css({
+					bg: "white/10",
+					backdropBlur: "lg",
+					p: 8,
+					rounded: "2xl",
+					shadow: "2xl",
+					w: 96,
+				})}
 			>
 				{children}
 			</div>
