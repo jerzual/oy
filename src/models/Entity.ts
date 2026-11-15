@@ -1,5 +1,5 @@
 import { Body } from "matter-js";
-import * as PIXI from "pixi.js";
+import { Sprite } from "three";
 
 /**
  * an entity is an aggregation fo two game concepts:
@@ -9,7 +9,7 @@ import * as PIXI from "pixi.js";
  *
  */
 export class Entity {
-	private sprite!: PIXI.Sprite;
+	private sprite!: Sprite;
 	private body!: Body;
 	private textureName: string;
 
@@ -18,7 +18,7 @@ export class Entity {
 	}
 
 	initObjects() {
-		this.sprite = new PIXI.Sprite();
+		this.sprite = new Sprite();
 		this.body = new Body();
 	}
 }

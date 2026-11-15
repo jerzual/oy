@@ -36,7 +36,7 @@ a multiplayer Spelunky, Worms, platformer ?
 
 #### Runtime deps
 
-- [pixi.js](<>) for sprite rendering
+- [three.js](https://threejs.org) for rendering (2D sprites/tiles with an orthographic camera, plus procedural splat effects)
 - [matter-js](<>) for physics
 - [ws](<>): for communication
 - [colyseus](https://docs.colyseus.io) mmo server and communication

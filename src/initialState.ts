@@ -1,4 +1,4 @@
-import { Point } from "pixi.js";
+import type { Vector2 } from "three";
 import { nanoid } from "nanoid";
 
 export interface GameState {
@@ -12,9 +12,9 @@ export interface LevelState {
 }
 export interface EntityState {
 	id: number;
-	position: Point;
+	position: Vector2;
 	velocity: number;
-	direction: Point;
+	direction: Vector2;
 	status: "patrolling" | "aiming" | "jumping" | "running" | "sliding" | "dying" | "dead";
 }
 export interface HeroState {

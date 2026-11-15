@@ -3,9 +3,9 @@
 	"version": "1.0.0",
 	"description": "a rogue platformer",
 	"keywords": [
-		"pixi",
 		"platformer",
-		"rogue-like"
+		"rogue-like",
+		"threejs"
 	],
 	"bugs": {
 		"url": "https://github.com/jerzual/oy/issues"
@@ -46,13 +46,13 @@
 		"express": "^5.2.1",
 		"matter-js": "^0.20.0",
 		"nanoid": "^6.0.1",
-		"pixi.js": "^8.22.0",
 		"preact": "^11.0.0",
 		"preact-async-route": "^2.2.1",
 		"preact-render-to-string": "^6.8.0",
 		"preact-router": "^4.1.2",
 		"rot-js": "^2.2.1",
 		"seedrandom": "^3.0.5",
+		"three": "^0.187.0",
 		"ws": "^8.22.0"
 	},
 	"devDependencies": {
@@ -68,6 +68,7 @@
 		"@types/node": "^26.6.4",
 		"@types/seedrandom": "^3.0.8",
 		"@types/supertest": "^7.2.1",
+		"@types/three": "~0.187.0",
 		"@vitest/coverage-v8": "^5.0.3",
 		"autoprefixer": "^10.6.1",
 		"axe-core": "^4.14.0",
