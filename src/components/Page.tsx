@@ -1,10 +1,10 @@
-import { FunctionComponent } from "preact";
+import type { FC, PropsWithChildren } from "react";
 import { css } from "../../styled-system/css";
 
-export const Page: FunctionComponent = ({ children }) => {
+export const Page: FC<PropsWithChildren> = ({ children }) => {
 	return (
 		<main
-			class={css({
+			className={css({
 				minH: "screen",
 				bgGradient: "to-br",
 				gradientFrom: "blue.900",
@@ -15,7 +15,7 @@ export const Page: FunctionComponent = ({ children }) => {
 			})}
 		>
 			<div
-				class={css({
+				className={css({
 					bg: "white/10",
 					backdropBlur: "lg",
 					p: 8,

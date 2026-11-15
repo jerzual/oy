@@ -1,5 +1,5 @@
-import { FunctionComponent, JSX } from "preact";
-import { cva } from "../../styled-system/css";
+import type { ButtonHTMLAttributes, FC } from "react";
+import { cva, cx } from "../../styled-system/css";
 
 const buttonStyle = cva({
 	base: { px: 4, py: 2, rounded: "lg", fontWeight: "medium", transition: "colors" },
@@ -12,18 +12,18 @@ const buttonStyle = cva({
 	defaultVariants: { variant: "primary" },
 });
 
-interface ButtonProps extends JSX.HTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	variant?: "primary" | "secondary";
 }
 
-export const Button: FunctionComponent<ButtonProps> = ({
+export const Button: FC<ButtonProps> = ({
 	children,
 	variant = "primary",
 	className = "",
 	...props
 }) => {
 	return (
-		<button className={buttonStyle({ variant })} {...props}>
+		<button className={cx(buttonStyle({ variant }), className)} {...props}>
 			{children}
 		</button>
 	);

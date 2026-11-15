@@ -1,12 +1,12 @@
-import { FunctionalComponent } from "preact";
+import type { FC } from "react";
 
 export interface GameScreenAttrs {
 	type?: string;
 }
 
-export const GameScreen: FunctionalComponent<GameScreenAttrs> = () => {
+export const GameScreen: FC<GameScreenAttrs> = () => {
 	return (
-		<div class="gameScreen">
+		<div className="gameScreen">
 			<canvas id="game" />
 		</div>
 	);

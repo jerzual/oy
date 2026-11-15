@@ -42,7 +42,7 @@ a multiplayer Spelunky, Worms, platformer ?
 - [colyseus](https://docs.colyseus.io) mmo server and communication
 - reactive-state: used to manage server state and client state.
 - [express](https://expressjs.com/): web server
-- [preact](https://preactjs.com/) with tsx for ui / site rendering
+- [react](https://react.dev/) with tsx for ui / site rendering, [react-router](https://reactrouter.com/) for routing
 - [pandacss](https://panda-css.com/) for styling components
 
 #### Development tools

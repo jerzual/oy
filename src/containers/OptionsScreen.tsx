@@ -1,6 +1,6 @@
 // OptionsScreen display heart containers and gold over the main game screen.
 
-import { FunctionalComponent } from "preact";
+import type { FC } from "react";
 
 export interface OptionsScreenAttrs {
 	type?: string;
@@ -8,12 +8,14 @@ export interface OptionsScreenAttrs {
 
 const inputs: string[] = ["keyboard", "gamepad", "touch"];
 
-export const OptionsScreen: FunctionalComponent<OptionsScreenAttrs> = () => {
+export const OptionsScreen: FC<OptionsScreenAttrs> = () => {
 	return (
 		<form name="options">
 			<select>
 				{inputs.map((input) => (
-					<option value={input} />
+					<option key={input} value={input}>
+						{input}
+					</option>
 				))}
 			</select>
 		</form>

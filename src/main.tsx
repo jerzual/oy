@@ -1,5 +1,14 @@
-import { render } from "preact";
+import { StrictMode } from "react";
+import { hydrateRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router";
 import { App } from "./app";
 import "./style.css";
 
-render(<App />, document.getElementById("app")!);
+hydrateRoot(
+	document.getElementById("app")!,
+	<StrictMode>
+		<BrowserRouter>
+			<App />
+		</BrowserRouter>
+	</StrictMode>,
+);

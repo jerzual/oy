@@ -1,10 +1,8 @@
-import { FunctionComponent } from "preact";
-
-import { useState } from "preact/hooks";
+import { useState, type FC } from "react";
 import { css } from "../../styled-system/css";
 
 export interface InputAttrs {
-	key: string;
+	id: string;
 	type: string;
 	label?: string;
 	placeholder?: string;
@@ -12,7 +10,7 @@ export interface InputAttrs {
 	onChange: (value: string) => void;
 }
 
-export const Input: FunctionComponent<InputAttrs> = (props: InputAttrs) => {
+export const Input: FC<InputAttrs> = (props: InputAttrs) => {
 	const [value, setValue] = useState("");
 	const onChange = (value: string) => {
 		setValue(value);
@@ -22,7 +20,7 @@ export const Input: FunctionComponent<InputAttrs> = (props: InputAttrs) => {
 		<label>
 			{props.label ? (
 				<span
-					class={css({
+					className={css({
 						flex: 1,
 						p: 4,
 						borderWidth: "1px",
@@ -35,8 +33,8 @@ export const Input: FunctionComponent<InputAttrs> = (props: InputAttrs) => {
 				</span>
 			) : null}
 			<input
-				id={props.key}
-				class={css({
+				id={props.id}
+				className={css({
 					flex: 1,
 					p: 4,
 					borderWidth: "1px",
@@ -51,10 +49,7 @@ export const Input: FunctionComponent<InputAttrs> = (props: InputAttrs) => {
 				})}
 				value={value}
 				placeholder={props.placeholder}
-				onChange={(e) => onChange((e.target as HTMLInputElement).value)}
-				onKeyDown={(e) => {
-					onChange((e.target as HTMLInputElement).value);
-				}}
+				onChange={(e) => onChange(e.target.value)}
 			/>
 		</label>
 	);

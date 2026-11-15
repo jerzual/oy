@@ -1,12 +1,12 @@
-import { FunctionalComponent } from "preact";
+import type { FC } from "react";
 
 export interface CreditsScreenAttrs {
 	type?: string;
 }
 
-export const CreditsScreen: FunctionalComponent<CreditsScreenAttrs> = () => {
+export const CreditsScreen: FC<CreditsScreenAttrs> = () => {
 	return (
-		<div id="credits" class="creditsScreen">
+		<div id="credits" className="creditsScreen">
 			<h2>Credits</h2>
 			<ul>
 				<li>Code and design by jibhaine</li>

@@ -1,5 +1,4 @@
-import { FunctionalComponent } from "preact";
-import { useState, useEffect } from "preact/hooks";
+import { useState, useEffect, type FC } from "react";
 import { getStateCallbacks } from "@colyseus/sdk";
 
 import { getRoom } from "../services/colyseus";
@@ -10,7 +9,7 @@ interface PlayerInfo {
 	name: string;
 }
 
-export const LobbyScreen: FunctionalComponent = () => {
+export const LobbyScreen: FC = () => {
 	const [players, setPlayers] = useState<PlayerInfo[]>([]);
 	const room = getRoom();
 
@@ -37,7 +36,7 @@ export const LobbyScreen: FunctionalComponent = () => {
 	}
 
 	return (
-		<div class={css({ display: "flex", flexDir: "column", gap: "4" })}>
+		<div className={css({ display: "flex", flexDir: "column", gap: "4" })}>
 			<h1>Lobby</h1>
 			<p>
 				Seed: <strong>{room.state.seed}</strong>

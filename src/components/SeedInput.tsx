@@ -1,4 +1,4 @@
-import { FunctionComponent } from "preact";
+import type { FC } from "react";
 
 import { Input } from "../elements/Input";
 import { Button } from "../elements/Button";
@@ -10,11 +10,11 @@ export interface SeedInputAttributes {
 	onSubmit: () => void;
 }
 
-export const SeedInput: FunctionComponent<SeedInputAttributes> = (props: SeedInputAttributes) => {
+export const SeedInput: FC<SeedInputAttributes> = (props: SeedInputAttributes) => {
 	return (
-		<div class={css({ display: "flex" })}>
+		<div className={css({ display: "flex" })}>
 			<Input
-				key="seed"
+				id="seed"
 				type="text"
 				placeholder="QWERTY42"
 				max={8}

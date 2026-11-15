@@ -13,9 +13,7 @@
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"noEmit": true,
-		"jsx": "preserve",
-		"jsxFactory": "h",
-		"jsxFragmentFactory": "Fragment"
+		"jsx": "react-jsx"
 	},
 	"include": ["src", "styled-system"],
 	"exclude": ["src/server"]

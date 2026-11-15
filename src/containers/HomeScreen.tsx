@@ -1,6 +1,6 @@
-import { FunctionalComponent } from "preact";
+import type { FC } from "react";
 
-import { Link } from "preact-router";
+import { Link } from "react-router";
 import { css } from "../../styled-system/css";
 
 const menu = [
@@ -9,13 +9,13 @@ const menu = [
 	{ path: "/credits", title: "About" },
 ];
 
-export const HomeScreen: FunctionalComponent = () => {
+export const HomeScreen: FC = () => {
 	return (
-		<nav class={css({ display: "flex", mt: 1 })}>
-			<ul class={css({ display: "flex", flexDir: "column" })}>
+		<nav className={css({ display: "flex", mt: 1 })}>
+			<ul className={css({ display: "flex", flexDir: "column" })}>
 				{menu.map((entry) => (
-					<li class="menuEntry" key={entry.path}>
-						<Link href={entry.path} tabIndex={0}>
+					<li className="menuEntry" key={entry.path}>
+						<Link to={entry.path} tabIndex={0}>
 							{entry.title}
 						</Link>
 					</li>

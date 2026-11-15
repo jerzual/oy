@@ -1,7 +1,7 @@
 import { describe, test, expect } from "vitest";
 
 import { CreditsScreen } from "./CreditsScreen";
-import { render } from "@testing-library/preact";
+import { render } from "@testing-library/react";
 
 describe("CreditsScreen", () => {
 	describe("Component", () => {

@@ -1,6 +1,6 @@
 import { describe, expect, test } from "vitest";
 import { LobbyScreen } from "./LobbyScreen";
-import { render } from "@testing-library/preact";
+import { render } from "@testing-library/react";
 
 describe("LobbyScreen", () => {
 	test("LobbyScreen", () => {

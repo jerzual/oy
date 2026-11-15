@@ -1,9 +1,9 @@
-import preactPlugin from "@preact/preset-vite";
+import react from "@vitejs/plugin-react";
 import { defineConfig, configDefaults } from "vitest/config";
 import { readFileSync } from "node:fs";
 
 export default defineConfig({
-	plugins: [preactPlugin({ exclude: [/node_modules/, /src\/server\//] })],
+	plugins: [react({ exclude: [/node_modules/, /src\/server\//] })],
 	test: {
 		threads: false,
 		environment: "jsdom",

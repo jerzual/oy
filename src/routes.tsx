@@ -1,4 +1,4 @@
-import { Router, Route } from "preact-router";
+import { Routes as RouterRoutes, Route } from "react-router";
 
 import { LobbyScreen } from "./containers/LobbyScreen";
 import { CreditsScreen } from "./containers/CreditsScreen";
@@ -8,13 +8,13 @@ import { OptionsScreen } from "./containers/OptionsScreen";
 import { JoinScreen } from "./containers/JoinScreen";
 
 export const Routes = () => (
-	<Router>
-		<Route path="/" component={HomeScreen} />
-		<Route path="/join" component={JoinScreen} />
-		<Route path="/lobby" component={LobbyScreen} />
-		<Route path="/world/:seed" component={GameScreen} />
-		<Route path="/world/:worldSeed/level/:levelSeed" component={GameScreen} />
-		<Route path="/options" component={OptionsScreen} />
-		<Route path="/credits" component={CreditsScreen} />
-	</Router>
+	<RouterRoutes>
+		<Route path="/" element={<HomeScreen />} />
+		<Route path="/join" element={<JoinScreen />} />
+		<Route path="/lobby" element={<LobbyScreen />} />
+		<Route path="/world/:seed" element={<GameScreen />} />
+		<Route path="/world/:worldSeed/level/:levelSeed" element={<GameScreen />} />
+		<Route path="/options" element={<OptionsScreen />} />
+		<Route path="/credits" element={<CreditsScreen />} />
+	</RouterRoutes>
 );

@@ -1,4 +1,4 @@
-import { render } from "@testing-library/preact";
+import { render } from "@testing-library/react";
 import { OptionsScreen } from "./OptionsScreen";
 import { describe, test, expect } from "vitest";
 

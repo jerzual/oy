@@ -1,23 +1,23 @@
-import { ComponentChildren, FunctionComponent } from "preact";
+import type { FC, ReactNode } from "react";
 import { css } from "../../styled-system/css";
 
 export interface LayoutAttributes {
-	children: ComponentChildren;
+	children: ReactNode;
 }
 
-export const Layout: FunctionComponent<LayoutAttributes> = (props) => {
+export const Layout: FC<LayoutAttributes> = (props) => {
 	return (
 		<main>
-			<nav class={css({ position: "fixed", w: "full", textAlign: "center" })}>
-				<h1 class={css({ my: 4 })}>0Y</h1>
+			<nav className={css({ position: "fixed", w: "full", textAlign: "center" })}>
+				<h1 className={css({ my: 4 })}>0Y</h1>
 			</nav>
 			<canvas
-				class={css({ w: "full", h: "full" })}
+				className={css({ w: "full", h: "full" })}
 				width="320"
 				height="240"
 				style={{ imageRendering: "pixelated" }}
 			/>
-			<section class={css({ position: "absolute", inset: 0 })}>{props.children}</section>
+			<section className={css({ position: "absolute", inset: 0 })}>{props.children}</section>
 		</main>
 	);
 };
