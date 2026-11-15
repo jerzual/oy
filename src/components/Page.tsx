@@ -5,23 +5,22 @@ export const Page: FC<PropsWithChildren> = ({ children }) => {
 	return (
 		<main
 			className={css({
-				minH: "screen",
-				bgGradient: "to-br",
-				gradientFrom: "blue.900",
-				gradientTo: "purple.900",
+				minH: "100dvh",
+				bg: "bg.canvas",
 				display: "flex",
 				alignItems: "center",
 				justifyContent: "center",
+				p: "4",
 			})}
 		>
 			<div
 				className={css({
-					bg: "white/10",
-					backdropBlur: "lg",
-					p: 8,
-					rounded: "2xl",
-					shadow: "2xl",
-					w: 96,
+					bg: "bg",
+					color: "fg",
+					pixelCorners: "lg",
+					p: "8",
+					w: "full",
+					maxW: "sm",
 				})}
 			>
 				{children}

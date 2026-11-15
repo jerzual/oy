@@ -1,56 +1,27 @@
-import { useState, type FC } from "react";
-import { css } from "../../styled-system/css";
+import type { FC, InputHTMLAttributes, Ref } from "react";
+import { cx } from "../../styled-system/css";
+import { input, type InputVariantProps } from "../../styled-system/recipes";
+import { useFormField } from "./FormField";
 
-export interface InputAttrs {
-	id: string;
-	type: string;
-	label?: string;
-	placeholder?: string;
-	max?: number;
-	onChange: (value: string) => void;
-}
-
-export const Input: FC<InputAttrs> = (props: InputAttrs) => {
-	const [value, setValue] = useState("");
-	const onChange = (value: string) => {
-		setValue(value);
-		props.onChange(value);
+export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "size"> &
+	InputVariantProps & {
+		invalid?: boolean;
+		ref?: Ref<HTMLInputElement>;
 	};
+
+/** Styled `<input>`. Inside a `FormField`, its id and aria attributes are wired automatically. */
+export const Input: FC<InputProps> = ({ size, invalid, className, ...props }) => {
+	const field = useFormField();
+	const isInvalid = invalid ?? field?.invalid ?? false;
 	return (
-		<label>
-			{props.label ? (
-				<span
-					className={css({
-						flex: 1,
-						p: 4,
-						borderWidth: "1px",
-						rounded: "md",
-						color: "white",
-						lineHeight: 8,
-					})}
-				>
-					{props.label}
-				</span>
-			) : null}
-			<input
-				id={props.id}
-				className={css({
-					flex: 1,
-					p: 4,
-					borderWidth: "1px",
-					borderColor: "black",
-					rounded: "md",
-					color: "white",
-					bgGradient: "to-b",
-					gradientFrom: "gray.800",
-					gradientTo: "gray.900",
-					lineHeight: 8,
-					shadow: "inner",
-				})}
-				value={value}
-				placeholder={props.placeholder}
-				onChange={(e) => onChange(e.target.value)}
-			/>
-		</label>
+		<input
+			id={field?.id}
+			aria-describedby={field?.describedBy}
+			aria-invalid={isInvalid || undefined}
+			required={field?.required || undefined}
+			disabled={field?.disabled || undefined}
+			className={cx(input({ size }), className)}
+			{...props}
+		/>
 	);
 };

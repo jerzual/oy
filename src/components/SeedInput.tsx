@@ -1,7 +1,6 @@
-import type { FC } from "react";
+import type { FC, FormEvent } from "react";
 
-import { Input } from "../elements/Input";
-import { Button } from "../elements/Button";
+import { Button, FormField, Input } from "../elements";
 import { css } from "../../styled-system/css";
 
 export interface SeedInputAttributes {
@@ -11,19 +10,26 @@ export interface SeedInputAttributes {
 }
 
 export const SeedInput: FC<SeedInputAttributes> = (props: SeedInputAttributes) => {
+	const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+		event.preventDefault();
+		props.onSubmit();
+	};
 	return (
-		<div className={css({ display: "flex" })}>
-			<Input
-				id="seed"
-				type="text"
-				placeholder="QWERTY42"
-				max={8}
-				label="Enter your name"
-				onChange={props.onChange}
-			/>
-			<Button type="submit" onClick={props.onSubmit}>
-				Play
-			</Button>
-		</div>
+		<form
+			className={css({ display: "flex", alignItems: "flex-end", gap: "2" })}
+			onSubmit={handleSubmit}
+		>
+			<FormField id="seed" label="Enter your name" className={css({ flex: 1 })}>
+				<Input
+					type="text"
+					placeholder="QWERTY42"
+					maxLength={8}
+					autoComplete="off"
+					value={props.seed}
+					onChange={(event) => props.onChange(event.target.value)}
+				/>
+			</FormField>
+			<Button type="submit">Play</Button>
+		</form>
 	);
 };

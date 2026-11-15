@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router";
 import { App } from "./app";
+import "@fontsource/press-start-2p/400.css";
 import "./style.css";
 
 export default async function render(url: string, document: string) {

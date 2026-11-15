@@ -1,30 +1,16 @@
 import type { ButtonHTMLAttributes, FC } from "react";
-import { cva, cx } from "../../styled-system/css";
+import { cx } from "../../styled-system/css";
+import { button, type ButtonVariantProps } from "../../styled-system/recipes";
 
-const buttonStyle = cva({
-	base: { px: 4, py: 2, rounded: "lg", fontWeight: "medium", transition: "colors" },
-	variants: {
-		variant: {
-			primary: { bg: "blue.600", _hover: { bg: "blue.700" }, color: "white" },
-			secondary: { bg: "gray.200", _hover: { bg: "gray.300" }, color: "gray.800" },
-		},
-	},
-	defaultVariants: { variant: "primary" },
-});
-
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-	variant?: "primary" | "secondary";
-}
+export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & ButtonVariantProps;
 
 export const Button: FC<ButtonProps> = ({
-	children,
-	variant = "primary",
-	className = "",
+	variant,
+	size,
+	fullWidth,
+	type = "button",
+	className,
 	...props
-}) => {
-	return (
-		<button className={cx(buttonStyle({ variant }), className)} {...props}>
-			{children}
-		</button>
-	);
-};
+}) => (
+	<button type={type} className={cx(button({ variant, size, fullWidth }), className)} {...props} />
+);
